@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:guidix/core/themes/styles/app_text_style.dart';
 
 class SocialButton extends StatelessWidget {
   const SocialButton({
@@ -29,6 +30,7 @@ class SocialButton extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
           ),
+          textStyle: AppTextStyle.regular16,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,25 +67,19 @@ class PrimaryButton extends StatelessWidget {
       button: true,
       label: lable,
       hint: hint,
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
-            foregroundColor:
-                forGroundColor ?? Theme.of(context).colorScheme.onPrimary,
-            shape: StadiumBorder(
-              side: BorderSide(
-                color: Theme.of(context).primaryColor,
-              ),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          foregroundColor: forGroundColor,
+          shape: StadiumBorder(
+            side: BorderSide(
+              color: Theme.of(context).primaryColor,
             ),
-            textStyle: TextStyle(
-                fontSize: MediaQuery.of(context).textScaler.scale(16)),
           ),
-          child: Text(
-            title,
-          ),
+        ),
+        child: Text(
+          title,
         ),
       ),
     );

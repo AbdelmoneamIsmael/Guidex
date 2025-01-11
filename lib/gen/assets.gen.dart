@@ -15,6 +15,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Google.svg
   String get google => 'assets/icons/Google.svg';
 
+  /// File path: assets/icons/app_logo.svg
+  String get appLogo => 'assets/icons/app_logo.svg';
+
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
 
@@ -22,7 +25,7 @@ class $AssetsIconsGen {
   String get qrcod => 'assets/icons/qrcod.svg';
 
   /// List of all assets
-  List<String> get values => [google, facebook, qrcod];
+  List<String> get values => [google, appLogo, facebook, qrcod];
 }
 
 class $AssetsImagesGen {

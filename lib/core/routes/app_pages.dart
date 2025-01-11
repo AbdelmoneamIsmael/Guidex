@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
 import 'package:guidix/features/login/presentation/screen/login_screen.dart';
-import 'package:guidix/features/onboarding/presentation/pages/onboarding.dart';
+import 'package:guidix/features/onboarding/pages/onboarding.dart';
 import 'package:guidix/features/register/presentation/bindning/register_binding.dart';
 import 'package:guidix/features/register/presentation/screens/register_Screen.dart';
 
