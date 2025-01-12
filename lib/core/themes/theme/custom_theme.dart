@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/themes/colors/colors.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/utils/functions/get_hight.dart';
 
 ThemeData lightTheme = ThemeData(
+  fontFamily: kEnglishFontFamily,
   brightness: Brightness.light,
   scaffoldBackgroundColor: LightColors.backgroundColor,
   primaryColor: LightColors.mainColor,
   useMaterial3: true,
-  colorScheme: const ColorScheme.light(),
+  colorScheme: const ColorScheme.light().copyWith(
+    surface: LightColors.onBoardingColor,
+  ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
+      fontFamily: kEnglishFontFamily,
       color: LightColors.textColor,
     ),
   ),
@@ -26,6 +31,7 @@ ThemeData lightTheme = ThemeData(
     elevation: 0,
     titleTextStyle: TextStyle(
       color: LightColors.textColor,
+      fontFamily: kEnglishFontFamily,
       fontSize: 20.sp,
       height: getTextHeight(20, 24.2),
       fontWeight: FontWeight.w600,
@@ -40,7 +46,9 @@ ThemeData lightTheme = ThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
       ),
-      textStyle: AppTextStyle.simiBold16,
+      textStyle: AppTextStyle.simiBold16.copyWith(
+        fontFamily: kEnglishFontFamily,
+      ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,
     ),
@@ -54,13 +62,17 @@ ThemeData lightTheme = ThemeData(
 ///
 ///
 ThemeData darkTheme = ThemeData(
+  fontFamily: kEnglishFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: DarkColors.backgroundColor,
   primaryColor: DarkColors.mainColor,
   useMaterial3: true,
-  colorScheme: const ColorScheme.dark(),
+  colorScheme: const ColorScheme.dark().copyWith(
+    surface: LightColors.onBoardingColor,
+  ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
+      fontFamily: kEnglishFontFamily,
       color: DarkColors.textColor,
     ),
   ),
@@ -73,6 +85,7 @@ ThemeData darkTheme = ThemeData(
     backgroundColor: DarkColors.backgroundColor,
     elevation: 0,
     titleTextStyle: TextStyle(
+      fontFamily: kEnglishFontFamily,
       color: DarkColors.textColor,
       fontSize: 20.sp,
       height: getTextHeight(20, 24.2),
@@ -88,7 +101,9 @@ ThemeData darkTheme = ThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
       ),
-      textStyle: AppTextStyle.simiBold16,
+      textStyle: AppTextStyle.simiBold16.copyWith(
+        fontFamily: kEnglishFontFamily,
+      ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,
     ),
@@ -103,13 +118,17 @@ ThemeData darkTheme = ThemeData(
 ///
 ///
 ThemeData inverterTheme = ThemeData(
+  fontFamily: kEnglishFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: InverterColors.backgroundColor,
   primaryColor: InverterColors.mainColor,
   useMaterial3: true,
-  colorScheme: const ColorScheme.dark(),
+  colorScheme: const ColorScheme.dark().copyWith(
+    surface: LightColors.onBoardingColor,
+  ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
+      fontFamily: kEnglishFontFamily,
       color: InverterColors.textColor,
     ),
   ),
@@ -122,6 +141,7 @@ ThemeData inverterTheme = ThemeData(
     backgroundColor: InverterColors.backgroundColor,
     elevation: 0,
     titleTextStyle: TextStyle(
+      fontFamily: kEnglishFontFamily,
       color: InverterColors.textColor,
       fontSize: 20.sp,
       height: getTextHeight(20, 24.2),
@@ -137,7 +157,9 @@ ThemeData inverterTheme = ThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
       ),
-      textStyle: AppTextStyle.simiBold16, 
+      textStyle: AppTextStyle.simiBold16.copyWith(
+        fontFamily: kEnglishFontFamily,
+      ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,
     ),

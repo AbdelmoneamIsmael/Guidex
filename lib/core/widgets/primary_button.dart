@@ -52,20 +52,19 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     required this.title,
-    required this.lable,
     required this.hint,
     this.onPressed,
     this.backgroundColor,
     this.forGroundColor,
   });
-  final String title, lable, hint;
+  final String title, hint;
   final void Function()? onPressed;
   final Color? backgroundColor, forGroundColor;
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      label: lable,
+  
       hint: hint,
       child: ElevatedButton(
         onPressed: onPressed,

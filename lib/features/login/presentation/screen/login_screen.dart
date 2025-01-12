@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:guidix/core/helper/responsive_helper.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
@@ -69,14 +69,14 @@ class LoginScreen extends GetView<LoginController> {
                 ),
               );
             }),
-            24.verticalSpace(context),
+            24.verticalSpace,
             PrimaryButton(
               onPressed: () {},
               title: "Sign In",
-              lable: "Sign In Navigation Button",
+             
               hint: "Double tap to sign In",
             ),
-            24.verticalSpace(context),
+            24.verticalSpace,
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -91,21 +91,21 @@ class LoginScreen extends GetView<LoginController> {
                 ),
               ],
             ),
-            24.verticalSpace(context),
+            24.verticalSpace,
             SocialButton(
               label: "Continue With Google",
               hint: "by clicking on this button you can sign up with google",
               onPressed: () {},
               icon: Assets.icons.google,
             ),
-            16.verticalSpace(context),
+            16.verticalSpace,
             SocialButton(
               label: "Continue With Facebook",
               hint: "by clicking on this button you can sign up with Facebook",
               onPressed: () {},
               icon: Assets.icons.facebook,
             ),
-            30.verticalSpace(context),
+            30.verticalSpace,
             RichText(
               text: TextSpan(
                 children: [

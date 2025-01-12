@@ -11,7 +11,7 @@ void main()async {
     FlutterError.dumpErrorToConsole(details);
     runApp(MainErrorScreen(details: details));
   };
-
+  
   runApp(DevicePreview(
     // enabled: !kReleaseMode,
     enabled: false,

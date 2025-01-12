@@ -1,3 +1,6 @@
 {
-  "helloWorld": "Hello World!"
+  "helloWorld": "Hello World!",
+  "welcomeMessage":"Welcome to Guidix\nWe designed this app to make life easier for the blind and visually impaired. You can scan QR codes to access information effortlessly, with the ability to edit QR code data or purchase new codes directly through the app. Start now and make the world more accessible for everyone!",
+  "next":"Next",
+  "signIn":"Sign In"
 }
