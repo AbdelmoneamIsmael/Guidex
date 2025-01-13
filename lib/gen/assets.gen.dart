@@ -31,6 +31,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/onBoarding2.png
+  AssetGenImage get onBoarding2 =>
+      const AssetGenImage('assets/images/onBoarding2.png');
+
   /// File path: assets/images/onboarding.png
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
@@ -39,7 +43,7 @@ class $AssetsImagesGen {
   AssetGenImage get qrcode => const AssetGenImage('assets/images/qrcode.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [onboarding, qrcode];
+  List<AssetGenImage> get values => [onBoarding2, onboarding, qrcode];
 }
 
 class Assets {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/login/presentation/controller/login_controller.dart';
@@ -33,7 +34,7 @@ class LoginScreen extends GetView<LoginController> {
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
         child: Column(
           children: [
             AppTextField(
@@ -43,40 +44,50 @@ class LoginScreen extends GetView<LoginController> {
               semanticHint: "Enter your  Email Adress",
               prefixIcon: const Icon(Icons.person),
             ),
-            GetBuilder<LoginController>(builder: (controller) {
-              return AppTextField(
-                controller: controller.passwordController,
-                hintText: "Password",
-                obscureText: controller.passwordSecure,
-                semanticLabel: "Enter your Passowrd",
-                semanticHint: "Password Input Field",
-                prefixIcon: const Icon(Icons.lock),
-                suffixIcon: Semantics(
-                  label: " Password",
-                  hint: "change  password visibility",
-                  button: true,
-                  value: controller.passwordSecure.toString(),
-                  checked: controller.passwordSecure,
-                  obscured: controller.passwordSecure,
-                  child: GestureDetector(
-                    onTap: () {
-                      controller.changePasswordSecure();
-                    },
-                    child: controller.passwordSecure
-                        ? const Icon(Icons.visibility)
-                        : const Icon(Icons.visibility_off),
+            16.verticalSpace,
+            GetBuilder<LoginController>(
+              builder: (controller) {
+                return AppTextField(
+                  controller: controller.passwordController,
+                  hintText: "Password",
+                  obscureText: controller.passwordSecure,
+                  semanticLabel: "Enter your Passowrd",
+                  semanticHint: "Password Input Field",
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: Semantics(
+                    label: " Password",
+                    hint: "change  password visibility",
+                    button: true,
+                    value: controller.passwordSecure.toString(),
+                    checked: controller.passwordSecure,
+                    obscured: controller.passwordSecure,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.changePasswordSecure();
+                      },
+                      child: controller.passwordSecure
+                          ? const Icon(Icons.visibility)
+                          : const Icon(Icons.visibility_off),
+                    ),
                   ),
-                ),
-              );
-            }),
-            24.verticalSpace,
+                );
+              },
+            ),
+            8.verticalSpace,
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                " Forget Password ?",
+                style: AppTextStyle.medium14,
+              ),
+            ),
+            32.verticalSpace,
             PrimaryButton(
               onPressed: () {},
               title: "Sign In",
-             
               hint: "Double tap to sign In",
             ),
-            24.verticalSpace,
+            32.verticalSpace,
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -105,13 +116,14 @@ class LoginScreen extends GetView<LoginController> {
               onPressed: () {},
               icon: Assets.icons.facebook,
             ),
-            30.verticalSpace,
+            32.verticalSpace,
             RichText(
               text: TextSpan(
+                style: AppTextStyle.medium16,
                 children: [
                   TextSpan(
                     text: "Don't have an account?",
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: AppTextStyle.medium16,
                   ),
                   WidgetSpan(
                     child: GestureDetector(
@@ -119,10 +131,10 @@ class LoginScreen extends GetView<LoginController> {
                         Get.toNamed(Routes.registerScreen);
                       },
                       child: Text(
-                        "  Sign Up",
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              color: Theme.of(context).primaryColor,
-                            ),
+                        " Sign Up",
+                        style: AppTextStyle.medium16.copyWith(
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),

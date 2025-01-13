@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -53,7 +55,9 @@ class OnBoardingScreen extends StatelessWidget {
                   PrimaryButton(
                     title: AppLocalizations.of(context).next,
                     hint: AppLocalizations.of(context).next,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.onBoarding2);
+                    },
                   ),
                 ],
               ),

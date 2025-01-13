@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/themes/colors/colors.dart';
-import 'package:guidix/core/themes/styles/app_text_style.dart';
+
 import 'package:guidix/core/utils/functions/get_hight.dart';
 
 ThemeData lightTheme = ThemeData(
@@ -22,6 +22,7 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   appBarTheme: AppBarTheme(
+    centerTitle: true,
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarColor: LightColors.backgroundColor,
       statusBarIconBrightness: Brightness.dark,
@@ -46,8 +47,12 @@ ThemeData lightTheme = ThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
       ),
-      textStyle: AppTextStyle.simiBold16.copyWith(
+      textStyle: TextStyle(
         fontFamily: kEnglishFontFamily,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        height: getTextHeight(16, 19.36),
+        color: LightColors.textColor,
       ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,
@@ -77,6 +82,7 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   appBarTheme: AppBarTheme(
+    centerTitle: true,
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarColor: DarkColors.backgroundColor,
       statusBarIconBrightness: Brightness.light,
@@ -100,9 +106,16 @@ ThemeData darkTheme = ThemeData(
       backgroundColor: DarkColors.mainColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
+        side: const BorderSide(
+          color: DarkColors.mainColor,
+        ),
       ),
-      textStyle: AppTextStyle.simiBold16.copyWith(
+      textStyle: TextStyle(
         fontFamily: kEnglishFontFamily,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        height: getTextHeight(16, 19.36),
+        color: DarkColors.textColor,
       ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,
@@ -133,6 +146,7 @@ ThemeData inverterTheme = ThemeData(
     ),
   ),
   appBarTheme: AppBarTheme(
+    centerTitle: true,
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarColor: InverterColors.backgroundColor,
       statusBarIconBrightness: Brightness.light,
@@ -156,9 +170,16 @@ ThemeData inverterTheme = ThemeData(
       backgroundColor: InverterColors.mainColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100.r),
+        side: const BorderSide(
+          color: InverterColors.mainColor,
+        ),
       ),
-      textStyle: AppTextStyle.simiBold16.copyWith(
+      textStyle: TextStyle(
         fontFamily: kEnglishFontFamily,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        height: getTextHeight(16, 19.36),
+        color: InverterColors.textColor,
       ),
       fixedSize: Size(double.maxFinite, 48.h),
       foregroundColor: Colors.white,

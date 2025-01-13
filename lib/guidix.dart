@@ -32,7 +32,6 @@ class GuiDixApplication extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        AppTextStyle.setContext(context);
         return GetBuilder<AppController>(
           init: AppController(),
           builder: (controller) {
@@ -42,6 +41,10 @@ class GuiDixApplication extends StatelessWidget {
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
               locale: Locale(controller.langCode),
+              builder: (context, child) {
+                AppTextStyle.setContext(context);
+                return child!;
+              },
               smartManagement: SmartManagement.full,
               debugShowCheckedModeBanner: false,
               getPages: AppPages.routes,

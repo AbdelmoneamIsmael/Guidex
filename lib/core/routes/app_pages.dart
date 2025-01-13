@@ -3,6 +3,7 @@ import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
 import 'package:guidix/features/login/presentation/screen/login_screen.dart';
 import 'package:guidix/features/onboarding/pages/onboarding.dart';
+import 'package:guidix/features/onboarding/pages/second_onboard_screen.dart';
 import 'package:guidix/features/register/presentation/bindning/register_binding.dart';
 import 'package:guidix/features/register/presentation/screens/register_Screen.dart';
 
@@ -16,6 +17,10 @@ class AppPages {
     GetPage(
       name: Routes.onBoarding,
       page: () => const OnBoardingScreen(),
+    ),
+    GetPage(
+      name: Routes.onBoarding2,
+      page: () => const SecondOnboardScreen(),
     ),
     GetPage(
       name: Routes.registerScreen,
