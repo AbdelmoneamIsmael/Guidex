@@ -9,6 +9,7 @@ abstract class LightColors {
   static const Color buttonColor = Color(0xFF004080);
   static const Color secondButtonColor = Color(0xFF004080);
   static const Color onBoardingColor = Color(0xFFC0C0C0);
+  static const Color grey1 = Color(0xFF8B8B8B);
 }
 abstract class InverterColors {
   static const Color forGroundColor = Color(0xFFEFEFEF);
@@ -19,6 +20,7 @@ abstract class InverterColors {
   static const Color buttonColor = Color(0xFF004080);
   static const Color secondButtonColor = Color(0xFF004080);
   static const Color onBoardingColor = Color(0xFFC0C0C0);
+  static const Color grey1 = Color(0xFF8B8B8B);
 }
 abstract class DarkColors {
   static const Color forGroundColor = Color(0xFFEFEFEF);
@@ -29,4 +31,5 @@ abstract class DarkColors {
   static const Color buttonColor = Color(0xFF004080);
   static const Color secondButtonColor = Color(0xFF004080);
   static const Color onBoardingColor = Color(0xFFC0C0C0);
+  static const Color grey1 = Color(0xFF8B8B8B);
 }

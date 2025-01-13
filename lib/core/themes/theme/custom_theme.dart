@@ -14,6 +14,7 @@ ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   colorScheme: const ColorScheme.light().copyWith(
     surface: LightColors.onBoardingColor,
+    scrim: LightColors.grey1,
   ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
@@ -73,7 +74,8 @@ ThemeData darkTheme = ThemeData(
   primaryColor: DarkColors.mainColor,
   useMaterial3: true,
   colorScheme: const ColorScheme.dark().copyWith(
-    surface: LightColors.onBoardingColor,
+    surface: DarkColors.onBoardingColor,
+    scrim: DarkColors.grey1,
   ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
@@ -137,7 +139,8 @@ ThemeData inverterTheme = ThemeData(
   primaryColor: InverterColors.mainColor,
   useMaterial3: true,
   colorScheme: const ColorScheme.dark().copyWith(
-    surface: LightColors.onBoardingColor,
+    surface: InverterColors.onBoardingColor,
+    scrim: InverterColors.grey1,
   ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(

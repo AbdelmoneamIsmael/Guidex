@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
+import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/login/presentation/controller/login_controller.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -14,23 +15,8 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Semantics(
-          label: "Back Button",
-          hint: "click to go back to previous screen",
-          button: true,
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        title: Semantics(
-          label: "sign in Screen",
-          hint: "in this screen you can Login to your account",
-          child: const Text("Welcome Back!"),
-        ),
+      appBar: const GuidixAppBar(
+        title: "Welcome Back!",
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -76,9 +62,14 @@ class LoginScreen extends GetView<LoginController> {
             8.verticalSpace,
             Align(
               alignment: Alignment.centerRight,
-              child: Text(
-                " Forget Password ?",
-                style: AppTextStyle.medium14,
+              child: GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.forgetPassScreen);
+                },
+                child: Text(
+                  " Forget Password ?",
+                  style: AppTextStyle.medium14,
+                ),
               ),
             ),
             32.verticalSpace,

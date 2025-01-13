@@ -21,11 +21,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
 
+  /// File path: assets/icons/lock_window.svg
+  String get lockWindow => 'assets/icons/lock_window.svg';
+
   /// File path: assets/icons/qrcod.svg
   String get qrcod => 'assets/icons/qrcod.svg';
 
+  /// File path: assets/icons/unlock_window.svg
+  String get unlockWindow => 'assets/icons/unlock_window.svg';
+
   /// List of all assets
-  List<String> get values => [google, appLogo, facebook, qrcod];
+  List<String> get values =>
+      [google, appLogo, facebook, lockWindow, qrcod, unlockWindow];
 }
 
 class $AssetsImagesGen {

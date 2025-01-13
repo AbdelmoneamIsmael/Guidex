@@ -33,6 +33,7 @@ class AppTextField extends StatelessWidget {
         Semantics(
           // label: semanticLabel,
           hint: semanticHint,
+
           child: TextFormField(
             obscureText: obscureText!,
             style: AppTextStyle.regular16,
@@ -44,8 +45,8 @@ class AppTextField extends StatelessWidget {
                   Radius.circular(6),
                 ),
                 borderSide: BorderSide(
-                  color: Theme.of(context).primaryColor,
-                  width: .8,
+                  color: Theme.of(context).textTheme.bodyMedium!.color!,
+                  width: 1,
                 ),
               ),
               contentPadding: const EdgeInsets.symmetric(
@@ -53,18 +54,21 @@ class AppTextField extends StatelessWidget {
                 vertical: 12,
               ).w,
               hintText: "Enter $hintText",
+              hintStyle: AppTextStyle.regular16.copyWith(
+                color: Theme.of(context).colorScheme.scrim,
+              ),
               semanticCounterText: semanticLabel,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Theme.of(context).primaryColor,
-                  width: .8,
+                  color: Theme.of(context).textTheme.bodyMedium!.color!,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.circular(6),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Theme.of(context).primaryColor,
-                  width: .8,
+                  color: Theme.of(context).textTheme.bodyMedium!.color!,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.circular(6),
               ),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
+import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/register/presentation/controller/register_controller.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -14,23 +15,8 @@ class RegisterScreen extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Semantics(
-          label: "Back Button",
-          hint: "click to go back to previous screen",
-          button: true,
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-        title: Semantics(
-          label: "Create an account",
-          hint: "in this screen you can create an account",
-          child: const Text("Create an account"),
-        ),
+      appBar: const GuidixAppBar(
+        title: "Create an account",
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
