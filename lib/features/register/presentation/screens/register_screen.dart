@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/register/presentation/controller/register_controller.dart';
@@ -33,7 +34,7 @@ class RegisterScreen extends GetView<RegisterController> {
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
         child: Column(
           children: [
             AppTextField(
@@ -43,6 +44,7 @@ class RegisterScreen extends GetView<RegisterController> {
               semanticHint: "Enter your  Full Name",
               prefixIcon: const Icon(Icons.person),
             ),
+            16.verticalSpace,
             AppTextField(
               controller: controller.emailController,
               hintText: "Email",
@@ -50,6 +52,7 @@ class RegisterScreen extends GetView<RegisterController> {
               semanticHint: "Email Input Field",
               prefixIcon: const Icon(Icons.email),
             ),
+            16.verticalSpace,
             GetBuilder<RegisterController>(builder: (controller) {
               return AppTextField(
                 controller: controller.passwordController,
@@ -76,6 +79,7 @@ class RegisterScreen extends GetView<RegisterController> {
                 ),
               );
             }),
+            16.verticalSpace,
             GetBuilder<RegisterController>(builder: (controller) {
               return AppTextField(
                 controller: controller.confirmPasswordController,
@@ -102,24 +106,26 @@ class RegisterScreen extends GetView<RegisterController> {
                 ),
               );
             }),
-            24.verticalSpace,
+            16.verticalSpace,
             PrimaryButton(
               onPressed: () {},
               title: "Sign Up",
-              
               hint: "Double tap to sign Up",
             ),
             24.verticalSpace,
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                const Expanded(
                   child: Divider(thickness: 1),
                 ),
-                SizedBox(width: 12),
-                Text("Or"),
-                SizedBox(width: 12),
-                Expanded(
+                const SizedBox(width: 12),
+                Text(
+                  "Or",
+                  style: AppTextStyle.medium16,
+                ),
+                const SizedBox(width: 12),
+                const Expanded(
                   child: Divider(thickness: 1),
                 ),
               ],
@@ -138,13 +144,13 @@ class RegisterScreen extends GetView<RegisterController> {
               onPressed: () {},
               icon: Assets.icons.facebook,
             ),
-            30.verticalSpace,
+            32.verticalSpace,
             RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
                     text: "Already have an account?",
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: AppTextStyle.medium16,
                   ),
                   WidgetSpan(
                     child: GestureDetector(
@@ -153,9 +159,9 @@ class RegisterScreen extends GetView<RegisterController> {
                       },
                       child: Text(
                         " Sign In",
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              color: Theme.of(context).primaryColor,
-                            ),
+                        style: AppTextStyle.bold16.copyWith(
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),

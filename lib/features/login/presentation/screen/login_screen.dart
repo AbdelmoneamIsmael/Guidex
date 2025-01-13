@@ -88,16 +88,19 @@ class LoginScreen extends GetView<LoginController> {
               hint: "Double tap to sign In",
             ),
             32.verticalSpace,
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
+                const Expanded(
                   child: Divider(thickness: 1),
                 ),
-                SizedBox(width: 12),
-                Text("Or"),
-                SizedBox(width: 12),
-                Expanded(
+                const SizedBox(width: 12),
+                Text(
+                  "Or",
+                  style: AppTextStyle.medium16,
+                ),
+                const SizedBox(width: 12),
+                const Expanded(
                   child: Divider(thickness: 1),
                 ),
               ],
@@ -132,7 +135,7 @@ class LoginScreen extends GetView<LoginController> {
                       },
                       child: Text(
                         " Sign Up",
-                        style: AppTextStyle.medium16.copyWith(
+                        style: AppTextStyle.bold16.copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
