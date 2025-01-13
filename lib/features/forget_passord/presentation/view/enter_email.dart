@@ -20,6 +20,7 @@ class EnterEmail extends StatelessWidget {
         48.verticalSpace,
         SvgPicture.asset(
           Assets.icons.lockWindow,
+          width: 236.w,
         ),
         48.verticalSpace,
         Text(

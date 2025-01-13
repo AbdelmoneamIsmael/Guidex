@@ -32,9 +32,7 @@ class AppTextField extends StatelessWidget {
       children: [
         Text(
           hintText,
-          style: AppTextStyle.regular16.copyWith(
-            color: Theme.of(context).textTheme.bodyMedium!.color,
-          ),
+          style: AppTextStyle.regular16,
         ),
         4.verticalSpace,
         GuidixFormField(
