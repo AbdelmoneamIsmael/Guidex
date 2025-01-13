@@ -21,6 +21,10 @@ ThemeData lightTheme = ThemeData(
       fontFamily: kEnglishFontFamily,
       color: LightColors.textColor,
     ),
+    bodySmall: TextStyle(
+      fontFamily: kEnglishFontFamily,
+      color: LightColors.text2Color,
+    ),
   ),
   appBarTheme: AppBarTheme(
     centerTitle: true,
@@ -81,6 +85,10 @@ ThemeData darkTheme = ThemeData(
     bodyMedium: TextStyle(
       fontFamily: kEnglishFontFamily,
       color: DarkColors.textColor,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: kEnglishFontFamily,
+      color: DarkColors.text2Color,
     ),
   ),
   appBarTheme: AppBarTheme(
@@ -146,6 +154,10 @@ ThemeData inverterTheme = ThemeData(
     bodyMedium: TextStyle(
       fontFamily: kEnglishFontFamily,
       color: InverterColors.textColor,
+    ),
+    bodySmall: TextStyle(
+      fontFamily: kEnglishFontFamily,
+      color: InverterColors.text2Color,
     ),
   ),
   appBarTheme: AppBarTheme(

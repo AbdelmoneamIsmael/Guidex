@@ -4,6 +4,7 @@ abstract class LightColors {
   static const Color backgroundColor = Color(0xFFEFEFEF);
   static const Color forGroundColor = Color(0xFF000000);
   static const Color textColor = Color(0xFF000000);
+  static const Color text2Color = Color(0xFF272727);
   static const Color mainColor = Color(0xFF004080);
   static const Color primaryColor = Color(0xFF004080);
   static const Color buttonColor = Color(0xFF004080);
@@ -11,10 +12,12 @@ abstract class LightColors {
   static const Color onBoardingColor = Color(0xFFC0C0C0);
   static const Color grey1 = Color(0xFF8B8B8B);
 }
+
 abstract class InverterColors {
   static const Color forGroundColor = Color(0xFFEFEFEF);
   static const Color backgroundColor = Color(0xFF000000);
   static const Color textColor = Color(0xFFFFFFFF);
+  static const Color text2Color = Color(0xFFD0D0D0);
   static const Color mainColor = Color(0xFFFFBF7F);
   static const Color primaryColor = Color(0xFFFFBF7F);
   static const Color buttonColor = Color(0xFF004080);
@@ -22,10 +25,12 @@ abstract class InverterColors {
   static const Color onBoardingColor = Color(0xFFC0C0C0);
   static const Color grey1 = Color(0xFF8B8B8B);
 }
+
 abstract class DarkColors {
   static const Color forGroundColor = Color(0xFFEFEFEF);
   static const Color backgroundColor = Color(0xFF000000);
   static const Color textColor = Color(0xFFFFFFFF);
+  static const Color text2Color = Color(0xFFD0D0D0);
   static const Color mainColor = Color(0xFF004080);
   static const Color primaryColor = Color(0xFF004080);
   static const Color buttonColor = Color(0xFF004080);
