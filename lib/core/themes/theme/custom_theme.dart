@@ -26,6 +26,9 @@ ThemeData lightTheme = ThemeData(
       color: LightColors.text2Color,
     ),
   ),
+  bottomAppBarTheme: const BottomAppBarTheme(
+    color: LightColors.bottomNavColor,
+  ),
   appBarTheme: AppBarTheme(
     centerTitle: true,
     systemOverlayStyle: const SystemUiOverlayStyle(
@@ -75,6 +78,9 @@ ThemeData darkTheme = ThemeData(
   fontFamily: kEnglishFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: DarkColors.backgroundColor,
+  bottomAppBarTheme: const BottomAppBarTheme(
+    color: DarkColors.bottomNavColor,
+  ),
   primaryColor: DarkColors.mainColor,
   useMaterial3: true,
   colorScheme: const ColorScheme.dark().copyWith(
@@ -159,6 +165,9 @@ ThemeData inverterTheme = ThemeData(
       fontFamily: kEnglishFontFamily,
       color: InverterColors.text2Color,
     ),
+  ),
+  bottomAppBarTheme: const BottomAppBarTheme(
+    color: InverterColors.bottomNavColor,
   ),
   appBarTheme: AppBarTheme(
     centerTitle: true,

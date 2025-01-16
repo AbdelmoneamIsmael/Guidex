@@ -74,7 +74,9 @@ class LoginScreen extends GetView<LoginController> {
             ),
             32.verticalSpace,
             PrimaryButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offAllNamed(Routes.mainGuidixScreen);
+              },
               title: "Sign In",
               hint: "Double tap to sign In",
             ),

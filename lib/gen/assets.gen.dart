@@ -15,8 +15,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Google.svg
   String get google => 'assets/icons/Google.svg';
 
+  /// File path: assets/icons/QR.svg
+  String get qr => 'assets/icons/QR.svg';
+
   /// File path: assets/icons/app_logo.svg
   String get appLogo => 'assets/icons/app_logo.svg';
+
+  /// File path: assets/icons/cart.svg
+  String get cart => 'assets/icons/cart.svg';
+
+  /// File path: assets/icons/community.svg
+  String get community => 'assets/icons/community.svg';
 
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
@@ -30,9 +39,22 @@ class $AssetsIconsGen {
   /// File path: assets/icons/unlock_window.svg
   String get unlockWindow => 'assets/icons/unlock_window.svg';
 
+  /// File path: assets/icons/user.svg
+  String get user => 'assets/icons/user.svg';
+
   /// List of all assets
-  List<String> get values =>
-      [google, appLogo, facebook, lockWindow, qrcod, unlockWindow];
+  List<String> get values => [
+        google,
+        qr,
+        appLogo,
+        cart,
+        community,
+        facebook,
+        lockWindow,
+        qrcod,
+        unlockWindow,
+        user
+      ];
 }
 
 class $AssetsImagesGen {

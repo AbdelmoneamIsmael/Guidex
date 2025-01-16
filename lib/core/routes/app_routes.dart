@@ -4,6 +4,7 @@ abstract class Routes {
   static const onBoarding2 = '/onBoarding2';
   static const loginScreen = '/loginScreen';
   static const homeScreen = '/homeScreen';
+  static const mainGuidixScreen = '/mainGuidixScreen';
   static const registerScreen = '/registerScreen';
   static const forgetPassScreen = '/forgetPassScreen';
 
