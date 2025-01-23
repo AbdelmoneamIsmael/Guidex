@@ -30,11 +30,23 @@ class $AssetsIconsGen {
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
 
+  /// File path: assets/icons/flash.svg
+  String get flash => 'assets/icons/flash.svg';
+
   /// File path: assets/icons/lock_window.svg
   String get lockWindow => 'assets/icons/lock_window.svg';
 
   /// File path: assets/icons/qrcod.svg
   String get qrcod => 'assets/icons/qrcod.svg';
+
+  /// File path: assets/icons/refresh.svg
+  String get refresh => 'assets/icons/refresh.svg';
+
+  /// File path: assets/icons/remove-slash.svg
+  String get removeSlash => 'assets/icons/remove-slash.svg';
+
+  /// File path: assets/icons/scan code border.svg
+  String get scanCodeBorder => 'assets/icons/scan code border.svg';
 
   /// File path: assets/icons/scanner.svg
   String get scanner => 'assets/icons/scanner.svg';
@@ -53,8 +65,12 @@ class $AssetsIconsGen {
         cart,
         community,
         facebook,
+        flash,
         lockWindow,
         qrcod,
+        refresh,
+        removeSlash,
+        scanCodeBorder,
         scanner,
         unlockWindow,
         user

@@ -23,7 +23,9 @@ class GuidixMainView extends GetView<MainController> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Theme.of(context).primaryColor,
           shape: const CircleBorder(),
-          onPressed: () {},
+          onPressed: () {
+            controller.changePage(2);
+          },
           child: SvgPicture.asset(
             Assets.icons.scanner,
           ),
@@ -57,19 +59,19 @@ class GuidixMainView extends GetView<MainController> {
               ),
               SizedBox(width: 40.w),
               GuidixNaveItem(
-                isSelected: controller.currentIndex == 2,
+                isSelected: controller.currentIndex == 3,
                 title: AppLocalizations.of(context).qrcode,
                 svg: Assets.icons.qr,
                 onPressed: () {
-                  controller.changePage(2);
+                  controller.changePage(3);
                 },
               ),
               GuidixNaveItem(
-                isSelected: controller.currentIndex == 3,
+                isSelected: controller.currentIndex == 4,
                 title: AppLocalizations.of(context).myAccount,
                 svg: Assets.icons.user,
                 onPressed: () {
-                  controller.changePage(3);
+                  controller.changePage(4);
                 },
               ),
             ],

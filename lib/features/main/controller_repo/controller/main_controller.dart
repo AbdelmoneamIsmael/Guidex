@@ -6,21 +6,22 @@ import 'package:guidix/features/cart/presentation/screen/cart_screen.dart';
 import 'package:guidix/features/communityScreen/presentation/screen/community_screen.dart';
 import 'package:guidix/features/mt_qr_codes/presentation/screen/my_qr_codes_screen.dart';
 import 'package:guidix/features/profile_screen/presentation/screen/profile_screen.dart';
+import 'package:guidix/features/scan_Screen/controller_repo/binding/scanner_binding.dart';
 import 'package:guidix/features/scan_Screen/presentation/screen/scan_screen.dart';
 
 class MainController extends GetxController {
-  int currentIndex = 0;
+  int currentIndex = 2;
   List screens = [
     Routes.communityScreen,
     Routes.cartScreen,
+    Routes.scannerScreen,
     Routes.qrcoodsScreen,
     Routes.profileScreen,
-    Routes.scannerScreen,
   ];
   void changePage(int index) {
     if (index != currentIndex) {
       currentIndex = index;
-      Get.offAndToNamed(screens[currentIndex], id: 1);
+      Get.offAllNamed(screens[currentIndex], id: 1);
       update();
     }
   }
@@ -48,7 +49,7 @@ class MainController extends GetxController {
           routeName: Routes.scannerScreen,
           settings: settings,
           page: () => const ScanScreen(),
-          // binding: SpecializationBindings(),
+          binding: ScannerBinding(),
           transition: Transition.cupertino,
         );
       case Routes.qrcoodsScreen:

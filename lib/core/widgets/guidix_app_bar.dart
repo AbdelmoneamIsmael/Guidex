@@ -4,10 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GuidixAppBar(
-      {super.key, this.actions, required this.title, this.onBack});
+      {super.key,
+      this.actions,
+      required this.title,
+      this.onBack,
+      this.applyLeading = true});
   final List<Widget>? actions;
   final void Function()? onBack;
   final String title;
+  final bool applyLeading;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,7 +27,7 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
             Expanded(
               child: Row(
                 children: [
-                  Navigator.canPop(context)
+                  Navigator.canPop(context) && applyLeading
                       ? Semantics(
                           label: "Back Button",
                           hint: "click to go back to previous screen",
@@ -43,7 +48,16 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
                             ),
                           ),
                         )
-                      : const SizedBox(),
+                      : CupertinoButton(
+                          padding: const EdgeInsets.all(
+                            12,
+                          ).w,
+                          minSize: 0,
+                          onPressed: null,
+                          child: const SizedBox(
+                            height: 24,
+                            width: 24,
+                          )),
                 ],
               ),
             ),
