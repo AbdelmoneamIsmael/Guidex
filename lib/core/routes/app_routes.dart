@@ -12,4 +12,5 @@ abstract class Routes {
   static const cartScreen = '/cartScreen';
   static const profileScreen = '/profileScreen';
   static const qrcoodsScreen = '/qrcoodsScreen';
+  static const addNewQr = '/addNewQr';
 }

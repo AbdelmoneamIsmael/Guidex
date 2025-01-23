@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
 import 'package:guidix/features/forget_passord/presentation/screens/forget_pass_screen.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
@@ -47,6 +48,14 @@ class AppPages {
     GetPage(
       name: Routes.mainGuidixScreen,
       page: () => const GuidixMainView(),
+      binding: MainBinding(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.addNewQr,
+      page: () => AddNewQr(
+        qrCodeID: Get.arguments as String,
+      ),
       binding: MainBinding(),
       transition: Transition.cupertino,
     ),

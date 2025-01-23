@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class ScnnerController extends GetxController {
-  String barCodeValue = "";
+  String barCodeValue = "Abdelmoneam";
   ScannerState scannerState = ScannerState.initial;
   setBarCode(String value) {
     barCodeValue = value;

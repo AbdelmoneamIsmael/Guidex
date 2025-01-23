@@ -11,7 +11,7 @@
     "confirmPassword":"تأكيد كلمة المرور",
     "or":"او",
     "continueWithGoogle":"متابعة بواسطة جوجل",
-    "continueWithFacebook":"متابعة بواسطة جوجل",
+    "continueWithFacebook":"متابعة بواسطة فيسبوك",
     "alreadyHaveAnAccount":"هل لديك حساب بالفعل",
     "welcomeBack":"مرحبا مجددا",
     "forgotPassword":"نسيت كلمة المرور",
@@ -51,5 +51,9 @@
     "discard":"تجاهل",
     "delete":"حذف",
     "newCategory":"فئة حديدة",
-    "add":"اضافة"
+    "add":"اضافة",
+        "community":"المجتمع",
+    "cart":"السلة",
+    "qrcode":"الكود الخاص بي",
+    "myAccount":"حسابي"
     }

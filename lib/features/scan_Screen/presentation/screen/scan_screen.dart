@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
+import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
 import 'package:guidix/features/scan_Screen/controller_repo/controller/scnner_controller.dart';
 import 'package:guidix/features/scan_Screen/presentation/screen/scan_code.dart';
-import 'package:guidix/features/scan_Screen/presentation/screen/scan_error.dart';
 import 'package:guidix/gen/assets.gen.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:syncfusion_flutter_barcodes/barcodes.dart';
@@ -95,16 +96,20 @@ class ScanScreen extends GetView<ScnnerController> {
                           SizedBox(
                             height: 200,
                             width: 200,
-                            child: SfBarcodeGenerator(
-                              value: '',
-                              symbology: QRCode(),
+                            child: QrcodeWidget(
+                              qrCodeID: controller.barCodeValue,
                             ),
                           ),
                           42.verticalSpace,
                           PrimaryButton(
                             title: AppLocalizations.of(context).addNew,
                             hint: "hint",
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(
+                                Routes.addNewQr,
+                                arguments: controller.barCodeValue,
+                              );
+                            },
                           ),
                           16.verticalSpace,
                           PrimaryButton(

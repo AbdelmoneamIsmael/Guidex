@@ -11,19 +11,21 @@ class AppTextField extends StatelessWidget {
     required this.semanticHint,
     this.suffixIcon,
     this.prefixIcon,
-    required this.controller,
+    this.controller,
     this.obscureText = false,
     this.keyboardType,
     this.inputFormatters,
+    this.maxLines = 1,
     this.textAlign,
   });
   final TextAlign? textAlign;
   final String hintText, semanticLabel, semanticHint;
   final Widget? suffixIcon, prefixIcon;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final bool? obscureText;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final int maxLines;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,6 +43,7 @@ class AppTextField extends StatelessWidget {
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             hintText: hintText,
+            maxLines: maxLines,
             semanticLabel: semanticLabel,
             keyboardType: keyboardType,
             inputFormatters: inputFormatters),
@@ -56,6 +59,7 @@ class GuidixFormField extends StatelessWidget {
     this.obscureText = false,
     this.prefixIcon,
     this.suffixIcon,
+    this.maxLines = 1,
     required this.hintText,
     required this.semanticLabel,
     this.keyboardType,
@@ -71,6 +75,7 @@ class GuidixFormField extends StatelessWidget {
   final String semanticLabel;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final int maxLines;
   final TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
@@ -79,6 +84,7 @@ class GuidixFormField extends StatelessWidget {
       hint: semanticHint,
 
       child: TextFormField(
+        maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,
         obscureText: obscureText!,
         keyboardType: TextInputType.name,
