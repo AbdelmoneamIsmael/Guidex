@@ -104,7 +104,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeMessage.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Guidix\nWe designed this app to make life easier for the blind and visually impaired. You can scan QR codes to access information effortlessly, with the ability to edit QR code data or purchase new codes directly through the app. Start now and make the world more accessible for everyone!'**
+  /// **'Welcome to Guidix\nWe designed this app to make life easier for the blind and visually impaired. You can scan QR codes to access information effortlessly, with the ability to edit QR code data or purchase new codes directly through the app. Start now and make the world more accessible for everyone!'**
   String get welcomeMessage;
 
   /// No description provided for @next.
@@ -113,11 +113,305 @@ abstract class AppLocalizations {
   /// **'Next'**
   String get next;
 
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'sign Up'**
+  String get signUp;
+
   /// No description provided for @signIn.
   ///
   /// In en, this message translates to:
   /// **'Sign In'**
   String get signIn;
+
+  /// No description provided for @creatAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'creat An Account'**
+  String get creatAnAccount;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'email'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'password'**
+  String get password;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'confirmPassword'**
+  String get confirmPassword;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get or;
+
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue With Google'**
+  String get continueWithGoogle;
+
+  /// No description provided for @continueWithFacebook.
+  ///
+  /// In en, this message translates to:
+  /// **'continue With Facebook'**
+  String get continueWithFacebook;
+
+  /// No description provided for @alreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'AlreadyHaveAnAccount?'**
+  String get alreadyHaveAnAccount;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'welcomeBack!'**
+  String get welcomeBack;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'forgotPassword'**
+  String get forgotPassword;
+
+  /// No description provided for @donotHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'don\'t Have An Account'**
+  String get donotHaveAnAccount;
+
+  /// No description provided for @enterYourEmailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'enterYourEmailAddress'**
+  String get enterYourEmailAddress;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'send'**
+  String get send;
+
+  /// No description provided for @verifyYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'verify Your Email'**
+  String get verifyYourEmail;
+
+  /// No description provided for @enteringTheCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the code we sent to email'**
+  String get enteringTheCode;
+
+  /// No description provided for @recevivingTheCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t Receive The Code'**
+  String get recevivingTheCode;
+
+  /// No description provided for @resendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code'**
+  String get resendCode;
+
+  /// No description provided for @verify.
+  ///
+  /// In en, this message translates to:
+  /// **'verify'**
+  String get verify;
+
+  /// No description provided for @createNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'create New Password'**
+  String get createNewPassword;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'save'**
+  String get save;
+
+  /// No description provided for @scanQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan your QR Code'**
+  String get scanQr;
+
+  /// No description provided for @scan.
+  ///
+  /// In en, this message translates to:
+  /// **'scan'**
+  String get scan;
+
+  /// No description provided for @cameraAcess.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera access for this app'**
+  String get cameraAcess;
+
+  /// No description provided for @allowOnlyWhileUsingTheApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Only While Using The App'**
+  String get allowOnlyWhileUsingTheApp;
+
+  /// No description provided for @askEveryTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask Every Time'**
+  String get askEveryTime;
+
+  /// No description provided for @donotAllow.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t Allow'**
+  String get donotAllow;
+
+  /// No description provided for @addNew.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New'**
+  String get addNew;
+
+  /// No description provided for @viewDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'View Details'**
+  String get viewDetails;
+
+  /// No description provided for @newQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'New QR Code'**
+  String get newQrCode;
+
+  /// No description provided for @category.
+  ///
+  /// In en, this message translates to:
+  /// **'category'**
+  String get category;
+
+  /// No description provided for @qrCodeDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'QR Code Details'**
+  String get qrCodeDetails;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'description'**
+  String get description;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'edit'**
+  String get edit;
+
+  /// No description provided for @myQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'My QR Code'**
+  String get myQrCode;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'search'**
+  String get search;
+
+  /// No description provided for @clothes.
+  ///
+  /// In en, this message translates to:
+  /// **'clothes'**
+  String get clothes;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAll;
+
+  /// No description provided for @addCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Category'**
+  String get addCategory;
+
+  /// No description provided for @tools.
+  ///
+  /// In en, this message translates to:
+  /// **'tools'**
+  String get tools;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'other'**
+  String get other;
+
+  /// No description provided for @history.
+  ///
+  /// In en, this message translates to:
+  /// **'history'**
+  String get history;
+
+  /// No description provided for @deleteSelectedItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Selected Item'**
+  String get deleteSelectedItem;
+
+  /// No description provided for @discard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get discard;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @newCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'New Category'**
+  String get newCategory;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

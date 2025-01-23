@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/app_texts/app_localizations_ar.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
@@ -15,8 +17,8 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GuidixAppBar(
-        title: "Welcome Back!",
+      appBar: GuidixAppBar(
+        title: AppLocalizations.of(context).welcomeBack,
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -67,7 +69,7 @@ class LoginScreen extends GetView<LoginController> {
                   Get.toNamed(Routes.forgetPassScreen);
                 },
                 child: Text(
-                  " Forget Password ?",
+                  AppLocalizations.of(context).forgotPassword,
                   style: AppTextStyle.medium14,
                 ),
               ),
@@ -77,7 +79,7 @@ class LoginScreen extends GetView<LoginController> {
               onPressed: () {
                 Get.offAllNamed(Routes.mainGuidixScreen);
               },
-              title: "Sign In",
+              title: AppLocalizations.of(context).signIn,
               hint: "Double tap to sign In",
             ),
             32.verticalSpace,
@@ -89,7 +91,7 @@ class LoginScreen extends GetView<LoginController> {
                 ),
                 const SizedBox(width: 12),
                 Text(
-                  "Or",
+                  AppLocalizations.of(context).or,
                   style: AppTextStyle.medium16,
                 ),
                 const SizedBox(width: 12),
@@ -100,14 +102,14 @@ class LoginScreen extends GetView<LoginController> {
             ),
             24.verticalSpace,
             SocialButton(
-              label: "Continue With Google",
+              label: AppLocalizations.of(context).continueWithGoogle,
               hint: "by clicking on this button you can sign up with google",
               onPressed: () {},
               icon: Assets.icons.google,
             ),
             16.verticalSpace,
             SocialButton(
-              label: "Continue With Facebook",
+              label: AppLocalizations.of(context).continueWithFacebook,
               hint: "by clicking on this button you can sign up with Facebook",
               onPressed: () {},
               icon: Assets.icons.facebook,
@@ -118,7 +120,7 @@ class LoginScreen extends GetView<LoginController> {
                 style: AppTextStyle.medium16,
                 children: [
                   TextSpan(
-                    text: "Don't have an account?",
+                    text: AppLocalizations.of(context).donotHaveAnAccount,
                     style: AppTextStyle.medium16,
                   ),
                   WidgetSpan(
@@ -127,7 +129,7 @@ class LoginScreen extends GetView<LoginController> {
                         Get.toNamed(Routes.registerScreen);
                       },
                       child: Text(
-                        " Sign Up",
+                        " ${AppLocalizations.of(context).signUp}",
                         style: AppTextStyle.bold16.copyWith(
                           color: Theme.of(context).primaryColor,
                         ),

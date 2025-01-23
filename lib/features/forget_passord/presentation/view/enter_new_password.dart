@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/forget_passord/controller/forget_pass_controller.dart';
@@ -65,7 +66,7 @@ class EnterNewPassword extends GetView<ForgetPassController> {
         32.verticalSpace,
         PrimaryButton(
           hint: "Navigate to next step",
-          title: "Save",
+          title: AppLocalizations.of(context).save,
           onPressed: () => controller.nextStep(),
         ),
       ],

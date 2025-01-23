@@ -35,12 +35,13 @@ class GuiDixApplication extends StatelessWidget {
         return GetBuilder<AppController>(
           init: AppController(),
           builder: (controller) {
+            // print(WidgetsBinding.instance..locale);
             return GetMaterialApp(
               title: "Guidix Application",
               initialBinding: AppBindings(),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              locale: Locale(controller.langCode),
+              locale: Locale("ar"),
               builder: (context, child) {
                 AppTextStyle.setContext(context);
                 return child!;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
@@ -24,7 +25,7 @@ class EnterEmail extends StatelessWidget {
         ),
         48.verticalSpace,
         Text(
-          "Enter your email address",
+          AppLocalizations.of(context).enterYourEmailAddress,
           style: AppTextStyle.regular16,
         ),
         23.73.verticalSpace,
@@ -38,7 +39,7 @@ class EnterEmail extends StatelessWidget {
         32.verticalSpace,
         PrimaryButton(
           hint: "Navigate to next step",
-          title: "Send",
+          title:  AppLocalizations.of(context).send,
           onPressed: () => Get.find<ForgetPassController>().nextStep(),
         )
       ],

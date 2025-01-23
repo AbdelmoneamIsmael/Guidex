@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
@@ -15,8 +16,8 @@ class RegisterScreen extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GuidixAppBar(
-        title: "Create an account",
+      appBar: GuidixAppBar(
+        title: AppLocalizations.of(context).creatAnAccount,
       ),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -95,7 +96,7 @@ class RegisterScreen extends GetView<RegisterController> {
             16.verticalSpace,
             PrimaryButton(
               onPressed: () {},
-              title: "Sign Up",
+              title: AppLocalizations.of(context).signUp,
               hint: "Double tap to sign Up",
             ),
             24.verticalSpace,
@@ -107,7 +108,7 @@ class RegisterScreen extends GetView<RegisterController> {
                 ),
                 const SizedBox(width: 12),
                 Text(
-                  "Or",
+                  AppLocalizations.of(context).or,
                   style: AppTextStyle.medium16,
                 ),
                 const SizedBox(width: 12),
@@ -118,14 +119,14 @@ class RegisterScreen extends GetView<RegisterController> {
             ),
             24.verticalSpace,
             SocialButton(
-              label: "Continue With Google",
+              label: AppLocalizations.of(context).continueWithGoogle,
               hint: "by clicking on this button you can sign up with google",
               onPressed: () {},
               icon: Assets.icons.google,
             ),
             16.verticalSpace,
             SocialButton(
-              label: "Continue With Facebook",
+              label: AppLocalizations.of(context).continueWithFacebook,
               hint: "by clicking on this button you can sign up with Facebook",
               onPressed: () {},
               icon: Assets.icons.facebook,
@@ -135,7 +136,7 @@ class RegisterScreen extends GetView<RegisterController> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "Already have an account?",
+                    text: AppLocalizations.of(context).alreadyHaveAnAccount,
                     style: AppTextStyle.medium16,
                   ),
                   WidgetSpan(
@@ -144,7 +145,7 @@ class RegisterScreen extends GetView<RegisterController> {
                         Get.toNamed(Routes.loginScreen);
                       },
                       child: Text(
-                        " Sign In",
+                        " ${AppLocalizations.of(context).signIn}",
                         style: AppTextStyle.bold16.copyWith(
                           color: Theme.of(context).primaryColor,
                         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:guidix/core/themes/colors/colors.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/features/forget_passord/controller/forget_pass_controller.dart';
 

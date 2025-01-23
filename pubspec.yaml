@@ -45,6 +45,8 @@ dependencies:
   intl: any
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.3.3
+  simple_barcode_scanner: ^0.2.5
+  syncfusion_flutter_barcodes: ^28.1.37
 
 dev_dependencies:
   flutter_lints: ^4.0.0

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
@@ -17,7 +18,7 @@ class EnterCode extends StatelessWidget {
       children: [
         32.verticalSpace,
         Text(
-          "Please enter the code we sent you to email",
+          AppLocalizations.of(context).enteringTheCode,
           style: AppTextStyle.regular16,
           textAlign: TextAlign.center,
         ),
@@ -32,20 +33,20 @@ class EnterCode extends StatelessWidget {
         ),
         44.93.verticalSpace,
         Text(
-          "Didn’t Receive the Code ?",
+          AppLocalizations.of(context).recevivingTheCode,
           style: AppTextStyle.regular16.copyWith(
             color: Theme.of(context).textTheme.bodySmall!.color,
           ),
         ),
         16.verticalSpace,
         Text(
-          "Resend Code",
+          AppLocalizations.of(context).resendCode,
           style: AppTextStyle.simiBold16,
         ),
         44.07.verticalSpace,
         PrimaryButton(
           hint: "Navigate to next step",
-          title: "Verify",
+          title:  AppLocalizations.of(context).verify,
           onPressed: () => Get.find<ForgetPassController>().nextStep(),
         )
       ],

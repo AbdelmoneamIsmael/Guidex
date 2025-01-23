@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -32,7 +33,7 @@ class SecondOnboardScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   PrimaryButton(
-                    title: "Sign Up",
+                    title:  AppLocalizations.of(context).signUp,
                     hint: "Navigate to sign up Screen",
                     onPressed: () {
                       Get.toNamed(Routes.registerScreen);
@@ -40,7 +41,7 @@ class SecondOnboardScreen extends StatelessWidget {
                   ),
                   16.verticalSpace,
                   PrimaryButton(
-                    title: "Sign In",
+                    title:  AppLocalizations.of(context).signIn,
                     hint: "Navigate to sign in Screen",
                     backgroundColor: Colors.transparent,
                     forGroundColor: Theme.of(context).primaryColor,
