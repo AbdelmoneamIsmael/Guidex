@@ -41,7 +41,7 @@ class GuiDixApplication extends StatelessWidget {
               initialBinding: AppBindings(),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              locale: Locale("ar"),
+              locale: Locale(controller.langCode),
               builder: (context, child) {
                 AppTextStyle.setContext(context);
                 return child!;

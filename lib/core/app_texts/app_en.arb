@@ -51,5 +51,9 @@
     "discard":"Discard",
     "delete":"Delete",
     "newCategory":"New Category",
-    "add":"Add"
+    "add":"Add",
+    "community":"Community",
+    "cart":"Cart",
+    "qrcode":"My QR",
+    "myAccount":"My Account"
 }

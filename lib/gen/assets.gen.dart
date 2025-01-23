@@ -36,6 +36,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/qrcod.svg
   String get qrcod => 'assets/icons/qrcod.svg';
 
+  /// File path: assets/icons/scanner.svg
+  String get scanner => 'assets/icons/scanner.svg';
+
   /// File path: assets/icons/unlock_window.svg
   String get unlockWindow => 'assets/icons/unlock_window.svg';
 
@@ -52,6 +55,7 @@ class $AssetsIconsGen {
         facebook,
         lockWindow,
         qrcod,
+        scanner,
         unlockWindow,
         user
       ];

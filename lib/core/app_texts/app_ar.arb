@@ -51,5 +51,9 @@
     "discard":"تجاهل",
     "delete":"حذف",
     "newCategory":"فئة حديدة",
-    "add":"اضافة"
+    "add":"اضافة",
+        "community":"المجتمع",
+    "cart":"السلة",
+    "qrcode":"الكود الخاص بي",
+    "myAccount":"حسابي"
     }

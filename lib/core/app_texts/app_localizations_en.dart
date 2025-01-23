@@ -164,4 +164,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get add => 'Add';
+
+  @override
+  String get community => 'Community';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get qrcode => 'My QR';
+
+  @override
+  String get myAccount => 'My Account';
 }

@@ -1,3 +1,80 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/features/cart/presentation/screen/cart_screen.dart';
+import 'package:guidix/features/communityScreen/presentation/screen/community_screen.dart';
+import 'package:guidix/features/mt_qr_codes/presentation/screen/my_qr_codes_screen.dart';
+import 'package:guidix/features/profile_screen/presentation/screen/profile_screen.dart';
+import 'package:guidix/features/scan_Screen/presentation/screen/scan_screen.dart';
 
-class MainController extends GetxController{}
+class MainController extends GetxController {
+  int currentIndex = 0;
+  List screens = [
+    Routes.communityScreen,
+    Routes.cartScreen,
+    Routes.qrcoodsScreen,
+    Routes.profileScreen,
+    Routes.scannerScreen,
+  ];
+  void changePage(int index) {
+    if (index != currentIndex) {
+      currentIndex = index;
+      Get.offAndToNamed(screens[currentIndex], id: 1);
+      update();
+    }
+  }
+
+  Route onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case Routes.communityScreen:
+        return GetPageRoute(
+          routeName: Routes.communityScreen,
+          settings: settings,
+          page: () => const CommunityScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+      case Routes.cartScreen:
+        return GetPageRoute(
+          routeName: Routes.cartScreen,
+          settings: settings,
+          page: () => const CartScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+      case Routes.scannerScreen:
+        return GetPageRoute(
+          routeName: Routes.scannerScreen,
+          settings: settings,
+          page: () => const ScanScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+      case Routes.qrcoodsScreen:
+        return GetPageRoute(
+          routeName: Routes.qrcoodsScreen,
+          settings: settings,
+          page: () => const MyQrCodesScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+      case Routes.profileScreen:
+        return GetPageRoute(
+          routeName: Routes.profileScreen,
+          settings: settings,
+          page: () => const ProfileScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+      default:
+        return GetPageRoute(
+          routeName: Routes.scannerScreen,
+          settings: settings,
+          page: () => const ScanScreen(),
+          // binding: SpecializationBindings(),
+          transition: Transition.cupertino,
+        );
+    }
+  }
+}

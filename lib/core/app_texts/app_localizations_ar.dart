@@ -164,4 +164,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get add => 'اضافة';
+
+  @override
+  String get community => 'المجتمع';
+
+  @override
+  String get cart => 'السلة';
+
+  @override
+  String get qrcode => 'الكود الخاص بي';
+
+  @override
+  String get myAccount => 'حسابي';
 }

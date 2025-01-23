@@ -7,6 +7,9 @@ abstract class Routes {
   static const mainGuidixScreen = '/mainGuidixScreen';
   static const registerScreen = '/registerScreen';
   static const forgetPassScreen = '/forgetPassScreen';
-
-  
+  static const scannerScreen = '/scannerScreen';
+  static const communityScreen = '/communityScreen';
+  static const cartScreen = '/cartScreen';
+  static const profileScreen = '/profileScreen';
+  static const qrcoodsScreen = '/qrcoodsScreen';
 }
