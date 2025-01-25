@@ -12,6 +12,7 @@ abstract class LightColors {
   static const Color onBoardingColor = Color(0xFFC0C0C0);
   static const Color grey1 = Color(0xFF8B8B8B);
   static const Color bottomNavColor = Color(0xffD7D6D6);
+  static const Color redColor = Color(0xFFFF3737);
 }
 
 abstract class InverterColors {

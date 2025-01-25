@@ -137,11 +137,23 @@ abstract class AppLocalizations {
   /// **'Full Name'**
   String get fullName;
 
+  /// No description provided for @fullNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Please type ypur name'**
+  String get fullNameHint;
+
   /// No description provided for @email.
   ///
   /// In en, this message translates to:
   /// **'email'**
   String get email;
+
+  /// No description provided for @emailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Please typr your email'**
+  String get emailHint;
 
   /// No description provided for @password.
   ///
@@ -152,7 +164,7 @@ abstract class AppLocalizations {
   /// No description provided for @confirmPassword.
   ///
   /// In en, this message translates to:
-  /// **'confirmPassword'**
+  /// **'confirm Password'**
   String get confirmPassword;
 
   /// No description provided for @or.
@@ -176,31 +188,31 @@ abstract class AppLocalizations {
   /// No description provided for @alreadyHaveAnAccount.
   ///
   /// In en, this message translates to:
-  /// **'AlreadyHaveAnAccount?'**
+  /// **'Already Have An Account?'**
   String get alreadyHaveAnAccount;
 
   /// No description provided for @welcomeBack.
   ///
   /// In en, this message translates to:
-  /// **'welcomeBack!'**
+  /// **'welcome Back!'**
   String get welcomeBack;
 
   /// No description provided for @forgotPassword.
   ///
   /// In en, this message translates to:
-  /// **'forgotPassword'**
+  /// **'forgot Password'**
   String get forgotPassword;
 
   /// No description provided for @donotHaveAnAccount.
   ///
   /// In en, this message translates to:
-  /// **'don\'t Have An Account'**
+  /// **'don\'t Have An Account?'**
   String get donotHaveAnAccount;
 
   /// No description provided for @enterYourEmailAddress.
   ///
   /// In en, this message translates to:
-  /// **'enterYourEmailAddress'**
+  /// **'enter Your Email Address'**
   String get enterYourEmailAddress;
 
   /// No description provided for @send.
@@ -224,7 +236,7 @@ abstract class AppLocalizations {
   /// No description provided for @recevivingTheCode.
   ///
   /// In en, this message translates to:
-  /// **'Didn\'t Receive The Code'**
+  /// **'Didn\'t Receive The Code ?'**
   String get recevivingTheCode;
 
   /// No description provided for @resendCode.
@@ -311,6 +323,12 @@ abstract class AppLocalizations {
   /// **'category'**
   String get category;
 
+  /// No description provided for @categoryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a name of category'**
+  String get categoryHint;
+
   /// No description provided for @qrCodeDetails.
   ///
   /// In en, this message translates to:
@@ -323,11 +341,23 @@ abstract class AppLocalizations {
   /// **'Name'**
   String get name;
 
+  /// No description provided for @nameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'enter the product name'**
+  String get nameHint;
+
   /// No description provided for @description.
   ///
   /// In en, this message translates to:
   /// **'description'**
   String get description;
+
+  /// No description provided for @descriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your description'**
+  String get descriptionHint;
 
   /// No description provided for @edit.
   ///
@@ -386,7 +416,7 @@ abstract class AppLocalizations {
   /// No description provided for @deleteSelectedItem.
   ///
   /// In en, this message translates to:
-  /// **'Delete Selected Item'**
+  /// **'Delete Selected Item ?'**
   String get deleteSelectedItem;
 
   /// No description provided for @discard.

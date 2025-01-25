@@ -28,13 +28,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fullName => 'Full Name';
 
   @override
+  String get fullNameHint => 'Please type ypur name';
+
+  @override
   String get email => 'email';
+
+  @override
+  String get emailHint => 'Please typr your email';
 
   @override
   String get password => 'password';
 
   @override
-  String get confirmPassword => 'confirmPassword';
+  String get confirmPassword => 'confirm Password';
 
   @override
   String get or => 'or';
@@ -46,19 +52,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithFacebook => 'continue With Facebook';
 
   @override
-  String get alreadyHaveAnAccount => 'AlreadyHaveAnAccount?';
+  String get alreadyHaveAnAccount => 'Already Have An Account?';
 
   @override
-  String get welcomeBack => 'welcomeBack!';
+  String get welcomeBack => 'welcome Back!';
 
   @override
-  String get forgotPassword => 'forgotPassword';
+  String get forgotPassword => 'forgot Password';
 
   @override
-  String get donotHaveAnAccount => 'don\'t Have An Account';
+  String get donotHaveAnAccount => 'don\'t Have An Account?';
 
   @override
-  String get enterYourEmailAddress => 'enterYourEmailAddress';
+  String get enterYourEmailAddress => 'enter Your Email Address';
 
   @override
   String get send => 'send';
@@ -70,7 +76,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enteringTheCode => 'Please enter the code we sent to email';
 
   @override
-  String get recevivingTheCode => 'Didn\'t Receive The Code';
+  String get recevivingTheCode => 'Didn\'t Receive The Code ?';
 
   @override
   String get resendCode => 'Resend Code';
@@ -115,13 +121,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get category => 'category';
 
   @override
+  String get categoryHint => 'Type a name of category';
+
+  @override
   String get qrCodeDetails => 'QR Code Details';
 
   @override
   String get name => 'Name';
 
   @override
+  String get nameHint => 'enter the product name';
+
+  @override
   String get description => 'description';
+
+  @override
+  String get descriptionHint => 'Enter your description';
 
   @override
   String get edit => 'edit';
@@ -151,7 +166,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get history => 'history';
 
   @override
-  String get deleteSelectedItem => 'Delete Selected Item';
+  String get deleteSelectedItem => 'Delete Selected Item ?';
 
   @override
   String get discard => 'Discard';

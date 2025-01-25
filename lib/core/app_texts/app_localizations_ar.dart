@@ -28,7 +28,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get fullName => 'الاسم الكامل';
 
   @override
+  String get fullNameHint => 'من فضلك اكتب اسمك';
+
+  @override
   String get email => 'الإيميل';
+
+  @override
+  String get emailHint => 'من فضلك اكتب الايميل الخاص بك';
 
   @override
   String get password => 'كلمة المرور';
@@ -46,7 +52,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continueWithFacebook => 'متابعة بواسطة فيسبوك';
 
   @override
-  String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل';
+  String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل ؟';
 
   @override
   String get welcomeBack => 'مرحبا مجددا';
@@ -55,7 +61,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get forgotPassword => 'نسيت كلمة المرور';
 
   @override
-  String get donotHaveAnAccount => 'don\'t Have An Account';
+  String get donotHaveAnAccount => 'لا تمتلك حساب ؟';
 
   @override
   String get enterYourEmailAddress => 'ادخل الإميل الخاص بك';
@@ -115,13 +121,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get category => 'الفئة';
 
   @override
+  String get categoryHint => 'اكتب اسم الفئة';
+
+  @override
   String get qrCodeDetails => 'تفاصيل الكود الجديد';
 
   @override
   String get name => 'الاسم';
 
   @override
+  String get nameHint => 'اكتب اسم المنتج';
+
+  @override
   String get description => 'الوصف';
+
+  @override
+  String get descriptionHint => 'اكتب الوصف الخاص بالمنتج';
 
   @override
   String get edit => 'تعديل';

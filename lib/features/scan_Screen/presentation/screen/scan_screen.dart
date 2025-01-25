@@ -41,7 +41,7 @@ class ScanScreen extends GetView<ScnnerController> {
                   ),
                   child: Row(
                     children: [
-                      ScanOptions(
+                      CircleOption(
                         onPresss: () {
                           Get.to(BarcodeScannerWithScanWindow(
                             controller: MobileScannerController(
@@ -52,7 +52,7 @@ class ScanScreen extends GetView<ScnnerController> {
                         svg: Assets.icons.flash,
                       ),
                       const Expanded(child: SizedBox()),
-                      ScanOptions(
+                      CircleOption(
                         onPresss: () {
                           Get.to(BarcodeScannerWithScanWindow(
                             controller: MobileScannerController(
@@ -63,7 +63,7 @@ class ScanScreen extends GetView<ScnnerController> {
                         svg: Assets.icons.removeSlash,
                       ),
                       const Expanded(child: SizedBox()),
-                      ScanOptions(
+                      CircleOption(
                         onPresss: () {
                           controller.setInitialState();
                         },
@@ -132,20 +132,23 @@ class ScanScreen extends GetView<ScnnerController> {
   }
 }
 
-class ScanOptions extends StatelessWidget {
-  const ScanOptions({
+class CircleOption extends StatelessWidget {
+  const CircleOption({
     super.key,
     required this.svg,
     required this.onPresss,
+    this.padding, this.color,
   });
   final String svg;
   final VoidCallback onPresss;
+  final double? padding;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPresss,
       child: Container(
-        padding: const EdgeInsets.all(4),
+        padding: EdgeInsets.all(padding ?? 4),
         decoration: ShapeDecoration(
           shape: const CircleBorder(),
           color: Theme.of(context).scaffoldBackgroundColor,
@@ -153,8 +156,9 @@ class ScanOptions extends StatelessWidget {
         child: SvgPicture.asset(
           svg,
           width: 24.w,
+          fit: BoxFit.scaleDown,
           colorFilter: ColorFilter.mode(
-              Theme.of(context).textTheme.bodyMedium!.color!, BlendMode.srcIn),
+             color ?? Theme.of(context).textTheme.bodyMedium!.color!, BlendMode.srcIn),
         ),
       ),
     );

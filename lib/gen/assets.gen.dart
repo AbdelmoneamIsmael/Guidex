@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Delete.svg
+  String get delete => 'assets/icons/Delete.svg';
+
   /// File path: assets/icons/Google.svg
   String get google => 'assets/icons/Google.svg';
 
@@ -51,6 +54,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/scanner.svg
   String get scanner => 'assets/icons/scanner.svg';
 
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
+
   /// File path: assets/icons/unlock_window.svg
   String get unlockWindow => 'assets/icons/unlock_window.svg';
 
@@ -59,6 +65,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<String> get values => [
+        delete,
         google,
         qr,
         appLogo,
@@ -72,6 +79,7 @@ class $AssetsIconsGen {
         removeSlash,
         scanCodeBorder,
         scanner,
+        search,
         unlockWindow,
         user
       ];
