@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
+import 'package:guidix/features/all_categories/controller_repo/binding/all_categories_bindings.dart';
+import 'package:guidix/features/all_categories/presentation/screen/all_category_page.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
 import 'package:guidix/features/forget_passord/presentation/screens/forget_pass_screen.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
@@ -57,6 +59,12 @@ class AppPages {
         qrCodeID: Get.arguments as String,
       ),
       binding: MainBinding(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.allCategories,
+      page: () => const AllCategoryPage(),
+      binding: AllCategoriesBindings(),
       transition: Transition.cupertino,
     ),
   ];
