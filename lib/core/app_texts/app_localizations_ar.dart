@@ -191,4 +191,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get myAccount => 'حسابي';
+
+  @override
+  String get settings => 'الاعدادات';
+
+  @override
+  String get darkMode => 'الوضع الداكن';
+
+  @override
+  String get lightMode => 'الوضع الفاتح';
+
+  @override
+  String get inverterTheme => 'الوضع العكسي';
+
+  @override
+  String get arabic => 'العربية';
+
+  @override
+  String get english => 'الانجليزية';
+
+  @override
+  String get ar => 'Ar';
+
+  @override
+  String get en => 'En';
+
+  @override
+  String get signOut => 'تسجيل الخروج';
 }

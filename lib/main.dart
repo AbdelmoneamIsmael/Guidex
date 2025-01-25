@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:guidix/guidix.dart';
 
 void main()async {
@@ -11,6 +12,7 @@ void main()async {
     FlutterError.dumpErrorToConsole(details);
     runApp(MainErrorScreen(details: details));
   };
+  await GetStorage.init();
   
   runApp(DevicePreview(
     // enabled: !kReleaseMode,

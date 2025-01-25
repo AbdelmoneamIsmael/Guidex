@@ -60,5 +60,14 @@
     "community":"المجتمع",
     "cart":"السلة",
     "qrcode":"الكود الخاص بي",
-    "myAccount":"حسابي"
+    "myAccount":"حسابي",
+    "settings":"الاعدادات",
+    "language":"اللغة",
+    "english":"الانجليزية",
+    "arabic":"العربية",
+    "darkMode":"الوضع الداكن",
+    "lightMode":"الوضع الفاتح",
+    "logOut":"تسجيل الخروج",
+    "inverterTheme":"الوضع العكسي",
+    "signOut" : "تسجيل الخروج"
     }

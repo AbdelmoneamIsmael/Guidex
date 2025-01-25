@@ -5,6 +5,8 @@ import 'package:guidix/features/all_categories/controller_repo/binding/all_categ
 import 'package:guidix/features/all_categories/presentation/screen/all_category_page.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
 import 'package:guidix/features/forget_passord/presentation/screens/forget_pass_screen.dart';
+import 'package:guidix/features/settings/controller_repo/binding/settings_bindings.dart';
+import 'package:guidix/features/settings/presentation/screen/settings_screen.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
 import 'package:guidix/features/login/presentation/screen/login_screen.dart';
 import 'package:guidix/features/main/controller_repo/binding/main_binding.dart';
@@ -65,6 +67,12 @@ class AppPages {
       name: Routes.allCategories,
       page: () => const AllCategoryPage(),
       binding: AllCategoriesBindings(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.settingScreen,
+      page: () => const SettingsScreen(),
+      binding: SettingsBindings(),
       transition: Transition.cupertino,
     ),
   ];

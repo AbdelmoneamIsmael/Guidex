@@ -191,4 +191,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get myAccount => 'My Account';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get darkMode => 'Dark Mode';
+
+  @override
+  String get lightMode => 'Light Mode';
+
+  @override
+  String get inverterTheme => 'Inverter Theme';
+
+  @override
+  String get arabic => 'Arabic';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get ar => 'Ar';
+
+  @override
+  String get en => 'En';
+
+  @override
+  String get signOut => 'Sign Out';
 }

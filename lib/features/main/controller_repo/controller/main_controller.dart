@@ -5,6 +5,7 @@ import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/cart/presentation/screen/cart_screen.dart';
 import 'package:guidix/features/communityScreen/presentation/screen/community_screen.dart';
 import 'package:guidix/features/my_qr_codes/presentation/screen/my_qr_codes_screen.dart';
+import 'package:guidix/features/profile_screen/controller_repo/binding/profile_binding.dart';
 import 'package:guidix/features/profile_screen/presentation/screen/profile_screen.dart';
 import 'package:guidix/features/scan_Screen/controller_repo/binding/scanner_binding.dart';
 import 'package:guidix/features/scan_Screen/presentation/screen/scan_screen.dart';
@@ -65,7 +66,7 @@ class MainController extends GetxController {
           routeName: Routes.profileScreen,
           settings: settings,
           page: () => const ProfileScreen(),
-          // binding: SpecializationBindings(),
+          binding: ProfileBinding(),
           transition: Transition.cupertino,
         );
       default:

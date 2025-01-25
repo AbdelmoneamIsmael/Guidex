@@ -60,5 +60,15 @@
     "community":"Community",
     "cart":"Cart",
     "qrcode":"My QR",
-    "myAccount":"My Account"
+    "myAccount":"My Account",
+    "settings":"Settings",
+    "darkMode":"Dark Mode",
+    "lightMode":"Light Mode",
+    "inverterTheme":"Inverter Theme",
+    "arabic":"Arabic",
+    "english":"English",
+    "ar":"Ar",
+    "en":"En",
+    "signOut":"Sign Out"
+
 }

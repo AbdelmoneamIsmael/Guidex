@@ -466,6 +466,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My Account'**
   String get myAccount;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @lightMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Light Mode'**
+  String get lightMode;
+
+  /// No description provided for @inverterTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Inverter Theme'**
+  String get inverterTheme;
+
+  /// No description provided for @arabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get arabic;
+
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @ar.
+  ///
+  /// In en, this message translates to:
+  /// **'Ar'**
+  String get ar;
+
+  /// No description provided for @en.
+  ///
+  /// In en, this message translates to:
+  /// **'En'**
+  String get en;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
