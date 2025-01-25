@@ -24,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: AppTextStyle.medium16,
+        style: AppTextStyle.medium16(context),
       ),
     );
   }

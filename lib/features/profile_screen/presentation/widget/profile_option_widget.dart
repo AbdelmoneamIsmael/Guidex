@@ -40,7 +40,7 @@ class ProfileOptionWidget extends StatelessWidget {
             8.horizontalSpace,
             Text(
               title,
-              style: AppTextStyle.regular16,
+              style: AppTextStyle.regular16(context),
             ),
             const Spacer(),
             leadingWidget ??

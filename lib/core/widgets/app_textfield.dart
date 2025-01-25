@@ -34,7 +34,7 @@ class AppTextField extends StatelessWidget {
       children: [
         Text(
           hintText,
-          style: AppTextStyle.regular16,
+          style: AppTextStyle.regular16(context),
         ),
         4.verticalSpace,
         GuidixFormField(
@@ -88,7 +88,7 @@ class GuidixFormField extends StatelessWidget {
         textAlign: textAlign ?? TextAlign.start,
         obscureText: obscureText!,
         keyboardType: TextInputType.name,
-        style: AppTextStyle.regular16,
+        style: AppTextStyle.regular16(context),
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
@@ -107,7 +107,7 @@ class GuidixFormField extends StatelessWidget {
             vertical: 12,
           ).w,
           hintText: "Enter $hintText",
-          hintStyle: AppTextStyle.regular16.copyWith(
+          hintStyle: AppTextStyle.regular16(context).copyWith(
             color: Theme.of(context).colorScheme.scrim,
           ),
           semanticCounterText: semanticLabel,

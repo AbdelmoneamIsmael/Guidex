@@ -19,7 +19,7 @@ class EnterCode extends StatelessWidget {
         32.verticalSpace,
         Text(
           AppLocalizations.of(context).enteringTheCode,
-          style: AppTextStyle.regular16,
+          style: AppTextStyle.regular16(context),
           textAlign: TextAlign.center,
         ),
         24.verticalSpace,
@@ -34,14 +34,14 @@ class EnterCode extends StatelessWidget {
         44.93.verticalSpace,
         Text(
           AppLocalizations.of(context).recevivingTheCode,
-          style: AppTextStyle.regular16.copyWith(
+          style: AppTextStyle.regular16(context).copyWith(
             color: Theme.of(context).textTheme.bodySmall!.color,
           ),
         ),
         16.verticalSpace,
         Text(
           AppLocalizations.of(context).resendCode,
-          style: AppTextStyle.simiBold16,
+          style: AppTextStyle.simiBold16(context),
         ),
         44.07.verticalSpace,
         PrimaryButton(

@@ -30,7 +30,7 @@ class SocialButton extends StatelessWidget {
               color: Theme.of(context).textTheme.bodyMedium!.color!,
             ),
           ),
-          textStyle: AppTextStyle.regular16,
+          textStyle: AppTextStyle.regular16(context),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

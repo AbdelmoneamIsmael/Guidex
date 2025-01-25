@@ -53,15 +53,15 @@ class MyQrCodesScreen extends StatelessWidget {
                   children: [
                     Text(
                       AppLocalizations.of(context).category,
-                      style: AppTextStyle.medium16,
+                      style: AppTextStyle.medium16(context),
                     ),
                     Text(
                       " : ",
-                      style: AppTextStyle.medium16,
+                      style: AppTextStyle.medium16(context),
                     ),
                     Text(
                       "Clothes",
-                      style: AppTextStyle.regular16,
+                      style: AppTextStyle.regular16(context),
                     ),
                     const Spacer(),
                     GestureDetector(
@@ -70,7 +70,7 @@ class MyQrCodesScreen extends StatelessWidget {
                       },
                       child: Text(
                         AppLocalizations.of(context).seeAll,
-                        style: AppTextStyle.regular16.copyWith(
+                        style: AppTextStyle.regular16(context).copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
@@ -119,15 +119,15 @@ class QrCodeItem extends StatelessWidget {
               children: [
                 Text(
                   "Dress",
-                  style: AppTextStyle.simiBold16,
+                  style: AppTextStyle.simiBold16(context),
                 ),
                 Text(
                   "Clothes",
-                  style: AppTextStyle.regular16,
+                  style: AppTextStyle.regular16(context),
                 ),
                 Text(
                   "Dress",
-                  style: AppTextStyle.regular16.copyWith(
+                  style: AppTextStyle.regular16(context).copyWith(
                     color: Theme.of(context).textTheme.bodySmall!.color,
                   ),
                 ),

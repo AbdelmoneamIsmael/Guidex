@@ -48,7 +48,7 @@ class OnBoardingScreen extends StatelessWidget {
                   15.verticalSpace,
                   Text(
                     AppLocalizations.of(context).welcomeMessage,
-                    style: AppTextStyle.regular16,
+                    style: AppTextStyle.regular16(context),
                     textAlign: TextAlign.center,
                   ),
                   32.verticalSpace,

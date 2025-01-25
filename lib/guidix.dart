@@ -35,7 +35,9 @@ class GuiDixApplication extends StatelessWidget {
         return GetBuilder<AppController>(
           init: AppController(),
           builder: (controller) {
-           
+            print(
+                "-------------------------update MainApp=======================");
+
             return GetMaterialApp(
               title: "Guidix Application",
               initialBinding: AppBindings(),
@@ -43,7 +45,9 @@ class GuiDixApplication extends StatelessWidget {
               supportedLocales: AppLocalizations.supportedLocales,
               locale: Locale(controller.appModel.language.name),
               builder: (context, child) {
-                AppTextStyle.setContext(context);
+                print(
+                    "-------------------------inside builder=======================");
+            
                 return child!;
               },
               smartManagement: SmartManagement.full,

@@ -121,6 +121,7 @@ ThemeData darkTheme = ThemeData(
     ),
     iconTheme: const IconThemeData(
       color: DarkColors.mainColor,
+      
     ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(

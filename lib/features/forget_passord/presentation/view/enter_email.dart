@@ -26,7 +26,7 @@ class EnterEmail extends StatelessWidget {
         48.verticalSpace,
         Text(
           AppLocalizations.of(context).enterYourEmailAddress,
-          style: AppTextStyle.regular16,
+          style: AppTextStyle.regular16(context),
         ),
         23.73.verticalSpace,
         AppTextField(

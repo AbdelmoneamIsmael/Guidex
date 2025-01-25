@@ -70,7 +70,7 @@ class LoginScreen extends GetView<LoginController> {
                 },
                 child: Text(
                   AppLocalizations.of(context).forgotPassword,
-                  style: AppTextStyle.medium14,
+                  style: AppTextStyle.medium14(context),
                 ),
               ),
             ),
@@ -92,7 +92,7 @@ class LoginScreen extends GetView<LoginController> {
                 const SizedBox(width: 12),
                 Text(
                   AppLocalizations.of(context).or,
-                  style: AppTextStyle.medium16,
+                  style: AppTextStyle.medium16(context),
                 ),
                 const SizedBox(width: 12),
                 const Expanded(
@@ -117,11 +117,11 @@ class LoginScreen extends GetView<LoginController> {
             32.verticalSpace,
             RichText(
               text: TextSpan(
-                style: AppTextStyle.medium16,
+                style: AppTextStyle.medium16(context),
                 children: [
                   TextSpan(
                     text: AppLocalizations.of(context).donotHaveAnAccount,
-                    style: AppTextStyle.medium16,
+                    style: AppTextStyle.medium16(context),
                   ),
                   WidgetSpan(
                     child: GestureDetector(
@@ -130,7 +130,7 @@ class LoginScreen extends GetView<LoginController> {
                       },
                       child: Text(
                         " ${AppLocalizations.of(context).signUp}",
-                        style: AppTextStyle.bold16.copyWith(
+                        style: AppTextStyle.bold16(context).copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),

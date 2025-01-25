@@ -27,9 +27,9 @@ class ProfileScreen extends GetView<ProfileController> {
               title: const Text(
                 "Hi, Abdelmoenam",
               ),
-              titleTextStyle: AppTextStyle.medium16,
+              titleTextStyle: AppTextStyle.medium16(context),
               subtitle: const Text("Met you always be good"),
-              subtitleTextStyle: AppTextStyle.regular14,
+              subtitleTextStyle: AppTextStyle.regular14(context),
               contentPadding: EdgeInsets.zero,
             ),
             24.verticalSpace,

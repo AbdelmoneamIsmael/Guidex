@@ -109,7 +109,7 @@ class RegisterScreen extends GetView<RegisterController> {
                 const SizedBox(width: 12),
                 Text(
                   AppLocalizations.of(context).or,
-                  style: AppTextStyle.medium16,
+                  style: AppTextStyle.medium16(context),
                 ),
                 const SizedBox(width: 12),
                 const Expanded(
@@ -137,7 +137,7 @@ class RegisterScreen extends GetView<RegisterController> {
                 children: [
                   TextSpan(
                     text: AppLocalizations.of(context).alreadyHaveAnAccount,
-                    style: AppTextStyle.medium16,
+                    style: AppTextStyle.medium16(context),
                   ),
                   WidgetSpan(
                     child: GestureDetector(
@@ -146,7 +146,7 @@ class RegisterScreen extends GetView<RegisterController> {
                       },
                       child: Text(
                         " ${AppLocalizations.of(context).signIn}",
-                        style: AppTextStyle.bold16.copyWith(
+                        style: AppTextStyle.bold16(context).copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),

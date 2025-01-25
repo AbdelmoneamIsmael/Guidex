@@ -114,7 +114,7 @@ class GuidixNaveItem extends StatelessWidget {
           4.verticalSpace,
           Text(
             title,
-            style: AppTextStyle.regular12.copyWith(
+            style: AppTextStyle.regular12(context).copyWith(
               color: isSelected
                   ? Theme.of(context).primaryColor
                   : Theme.of(context).iconTheme.color,
