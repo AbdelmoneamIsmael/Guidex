@@ -28,7 +28,7 @@ class ScanScreen extends GetView<ScnnerController> {
             title: AppLocalizations.of(context).scanQr,
             applyLeading: false,
           ),
-          body: Padding(
+          body: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 16).w,
             child: Column(
               children: [
@@ -80,7 +80,8 @@ class ScanScreen extends GetView<ScnnerController> {
                 ),
                 59.verticalSpace,
                 controller.scannerState == ScannerState.initial
-                    ? Expanded(
+                    ? AspectRatio(
+                        aspectRatio: 1,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [

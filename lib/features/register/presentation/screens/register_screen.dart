@@ -25,14 +25,14 @@ class RegisterScreen extends GetView<RegisterController> {
           children: [
             AppTextField(
               controller: controller.nameController,
-              hintText: "Full Name",
+              hintText: AppLocalizations.of(context).fullName,
               semanticLabel: "Enter your Full Name",
               prefixIcon: const Icon(Icons.person),
             ),
             16.verticalSpace,
             AppTextField(
               controller: controller.emailController,
-              hintText: "Email",
+              hintText: AppLocalizations.of(context).email,
               semanticLabel: "Enter your email",
               prefixIcon: const Icon(Icons.email),
             ),
@@ -40,7 +40,7 @@ class RegisterScreen extends GetView<RegisterController> {
             GetBuilder<RegisterController>(builder: (controller) {
               return AppTextField(
                 controller: controller.passwordController,
-                hintText: "Password",
+                hintText: AppLocalizations.of(context).password,
                 obscureText: controller.passowrdVisible,
                 semanticLabel: "Enter your Passowrd",
                 prefixIcon: const Icon(Icons.lock),
@@ -67,7 +67,7 @@ class RegisterScreen extends GetView<RegisterController> {
               return AppTextField(
                 controller: controller.confirmPasswordController,
                 obscureText: controller.confirmPasswordVisible,
-                hintText: "Confirm Password",
+                hintText: AppLocalizations.of(context).confirmPassword,
                 semanticLabel: "Confirm your Passowrd",
                 prefixIcon: const Icon(Icons.lock),
                 suffixIcon: Semantics(

@@ -25,7 +25,7 @@ class LoginScreen extends GetView<LoginController> {
           children: [
             AppTextField(
               controller: controller.emailController,
-              hintText: "Email Adress",
+              hintText: AppLocalizations.of(context).email,
               semanticLabel: "Enter your Email Adress",
               prefixIcon: const Icon(Icons.person),
             ),
@@ -34,7 +34,7 @@ class LoginScreen extends GetView<LoginController> {
               builder: (controller) {
                 return AppTextField(
                   controller: controller.passwordController,
-                  hintText: "Password",
+                  hintText: AppLocalizations.of(context).password,
                   obscureText: controller.passwordSecure,
                   semanticLabel: "Enter your Passowrd",
                   prefixIcon: const Icon(Icons.lock),
