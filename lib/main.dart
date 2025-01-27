@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:guidix/guidix.dart';
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   FlutterError.onError = (FlutterErrorDetails details) {
@@ -13,10 +13,10 @@ void main()async {
     runApp(MainErrorScreen(details: details));
   };
   await GetStorage.init();
-  
+
   runApp(DevicePreview(
     // enabled: !kReleaseMode,
-    enabled: false,
+    enabled: true,
     builder: (context) => const GuiDixApplication(),
   ));
 }

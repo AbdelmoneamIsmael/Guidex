@@ -47,7 +47,7 @@ class CommunityScreen extends StatelessWidget {
             ),
             47.verticalSpace,
             Text(
-              "Lorem ipsum dolor sit amet consectetur. Mi risus in augue ut malesuada ac posuere tempor. Proin molestie gravida euismod quis. Phasellus et neque sed velit. Ridiculus commodo eu massa sed in sit.",
+              AppLocalizations.of(context).communitySoon,
               style: AppTextStyle.regular16(context).copyWith(
                 color: Theme.of(context).primaryColor,
               ),
@@ -58,6 +58,7 @@ class CommunityScreen extends StatelessWidget {
               Assets.icons.communityInfo,
               fit: BoxFit.scaleDown,
             ),
+            47.verticalSpace,
           ],
         ),
       ),

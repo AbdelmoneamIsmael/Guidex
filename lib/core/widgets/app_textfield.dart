@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 
 class AppTextField extends StatelessWidget {
@@ -8,7 +9,6 @@ class AppTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.semanticLabel,
-   
     this.suffixIcon,
     this.prefixIcon,
     this.controller,
@@ -38,7 +38,7 @@ class AppTextField extends StatelessWidget {
         ),
         4.verticalSpace,
         GuidixFormField(
-          
+            controller: controller,
             obscureText: obscureText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
@@ -55,7 +55,7 @@ class AppTextField extends StatelessWidget {
 class GuidixFormField extends StatelessWidget {
   const GuidixFormField({
     super.key,
-  
+    this.controller,
     this.obscureText = false,
     this.prefixIcon,
     this.suffixIcon,
@@ -67,7 +67,6 @@ class GuidixFormField extends StatelessWidget {
     this.textAlign,
   });
 
- 
   final bool? obscureText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -77,18 +76,18 @@ class GuidixFormField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final int maxLines;
   final TextAlign? textAlign;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Semantics(
       // label: semanticLabel,
-     
 
       child: TextFormField(
+        controller: controller,
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,
         obscureText: obscureText!,
         keyboardType: TextInputType.name,
-        
         style: AppTextStyle.regular16(context),
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
@@ -107,7 +106,7 @@ class GuidixFormField extends StatelessWidget {
             horizontal: 16,
             vertical: 12,
           ).w,
-          hintText: "Enter $hintText",
+          hintText: "${AppLocalizations.of(context).enter} $hintText",
           hintStyle: AppTextStyle.regular16(context).copyWith(
             color: Theme.of(context).colorScheme.scrim,
           ),

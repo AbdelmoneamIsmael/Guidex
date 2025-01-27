@@ -15,6 +15,8 @@ import 'package:guidix/features/onboarding/pages/onboarding.dart';
 import 'package:guidix/features/onboarding/pages/second_onboard_screen.dart';
 import 'package:guidix/features/register/presentation/bindning/register_binding.dart';
 import 'package:guidix/features/register/presentation/screens/register_Screen.dart';
+import 'package:guidix/features/view_qr_details/controller_repo/binding/qrcode_bindings.dart';
+import 'package:guidix/features/view_qr_details/presentation/screen/qrcode_details.dart';
 
 class AppPages {
   AppPages._();
@@ -61,6 +63,12 @@ class AppPages {
         qrCodeID: Get.arguments as String,
       ),
       binding: MainBinding(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.qrCodeDetails,
+      page: () => const QrCodeDetails(),
+      binding: QrcodeBindings(),
       transition: Transition.cupertino,
     ),
     GetPage(

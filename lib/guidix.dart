@@ -6,7 +6,6 @@ import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/routes/app_pages.dart';
 import 'package:guidix/core/routes/app_routes.dart';
-import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -47,7 +46,7 @@ class GuiDixApplication extends StatelessWidget {
               builder: (context, child) {
                 print(
                     "-------------------------inside builder=======================");
-            
+
                 return child!;
               },
               smartManagement: SmartManagement.full,

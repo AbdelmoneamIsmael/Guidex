@@ -562,6 +562,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete Category'**
   String get deleteCategory;
+
+  /// No description provided for @enter.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter'**
+  String get enter;
+
+  /// No description provided for @communitySoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Get ready to connect even deeper! We\'re developing a brand new community feature that will make it easier to interact with each other and build stronger relationships. More details coming soon!'**
+  String get communitySoon;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

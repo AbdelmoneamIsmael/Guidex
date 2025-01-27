@@ -239,4 +239,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteCategory => 'Delete Category';
+
+  @override
+  String get enter => 'Enter';
+
+  @override
+  String get communitySoon => 'Get ready to connect even deeper! We\'re developing a brand new community feature that will make it easier to interact with each other and build stronger relationships. More details coming soon!';
 }

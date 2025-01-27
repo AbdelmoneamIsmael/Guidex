@@ -20,6 +20,7 @@ class AllCategoryPage extends StatelessWidget {
         child: PrimaryButton(
           title: AppLocalizations.of(context).addCategory,
           hint: "hint",
+          onPressed: () {},
         ),
       ),
       body: SingleChildScrollView(

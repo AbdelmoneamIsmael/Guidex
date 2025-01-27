@@ -20,7 +20,6 @@ class LoginScreen extends GetView<LoginController> {
         title: AppLocalizations.of(context).welcomeBack,
       ),
       body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
         child: Column(
           children: [

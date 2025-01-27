@@ -13,6 +13,7 @@ abstract class Routes {
   static const profileScreen = '/profileScreen';
   static const qrcoodsScreen = '/qrcoodsScreen';
   static const addNewQr = '/addNewQr';
+  static const qrCodeDetails = '/qrCodeDetails';
   static const allCategories = '/allCategories';
   static const settingScreen = '/settingScreen';
 }

@@ -20,7 +20,6 @@ class RegisterScreen extends GetView<RegisterController> {
         title: AppLocalizations.of(context).creatAnAccount,
       ),
       body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
         child: Column(
           children: [

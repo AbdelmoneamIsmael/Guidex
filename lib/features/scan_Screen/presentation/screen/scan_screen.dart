@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/models/category_model.dart';
+import 'package:guidix/core/models/qr_code_model.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
@@ -77,7 +79,7 @@ class ScanScreen extends GetView<ScnnerController> {
                   ),
                 ),
                 59.verticalSpace,
-                controller.scannerState != ScannerState.initial
+                controller.scannerState == ScannerState.initial
                     ? Expanded(
                         child: Stack(
                           alignment: Alignment.center,
@@ -122,7 +124,18 @@ class ScanScreen extends GetView<ScnnerController> {
                             forGroundColor: Theme.of(context).primaryColor,
                             title: AppLocalizations.of(context).viewDetails,
                             hint: "hint",
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(Routes.qrCodeDetails, arguments: {
+                                "qrCodeModel": QrModel(
+                                  id: "abdelmoneam",
+                                  title: "Scarf",
+                                  category: Category(
+                                      categoryId: "2", categoryName: "Clothes"),
+                                  describtion:
+                                      "an in-line joint made by chamfering, halving, or notching two pieces to correspond and lapping them",
+                                )
+                              });
+                            },
                           )
                         ],
                       ),

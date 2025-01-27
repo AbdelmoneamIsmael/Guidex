@@ -42,6 +42,10 @@ class MyQrCodesScreen extends StatelessWidget {
                 prefixIcon: SvgPicture.asset(
                   Assets.icons.search,
                   fit: BoxFit.scaleDown,
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).iconTheme.color!,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),

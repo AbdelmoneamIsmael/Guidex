@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:guidix/core/app_controller/app_controller.dart';
+import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
@@ -47,14 +50,20 @@ class ProfileOptionWidget extends StatelessWidget {
               style: AppTextStyle.regular16(context),
             ),
             const Spacer(),
-            leadingWidget ??
-                SvgPicture.asset(
-                  Assets.icons.forwardIos,
-                  colorFilter: ColorFilter.mode(
-                    Theme.of(context).iconTheme.color!,
-                    BlendMode.srcIn,
+            RotatedBox(
+              quarterTurns: Get.find<AppController>().appModel.language ==
+                      ApplicationLanguage.en
+                  ? 0
+                  : 2,
+              child: leadingWidget ??
+                  SvgPicture.asset(
+                    Assets.icons.forwardIos,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).iconTheme.color!,
+                      BlendMode.srcIn,
+                    ),
                   ),
-                )
+            )
           ],
         ),
       ),

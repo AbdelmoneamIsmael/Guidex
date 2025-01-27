@@ -239,4 +239,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteCategory => 'حذف الفئة';
+
+  @override
+  String get enter => 'ادخل';
+
+  @override
+  String get communitySoon => 'استعد للتواصل بشكل أعمق! نحن نعمل على تطوير ميزة مجتمعية جديدة تمامًا ستجعل من السهل التفاعل مع بعضنا البعض وبناء علاقات أقوى. المزيد من التفاصيل قريبًا!';
 }

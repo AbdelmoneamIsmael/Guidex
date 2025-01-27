@@ -76,7 +76,10 @@
     "scanQrCodeWithFlash": "Scan QR Code With camera using flash",
     "scanQrCodeWithoutFlash": "Scan QR Code with camera Without Flash",
     "refresh": "Refresh",
-    "deleteCategory": "Delete Category"
+    "deleteCategory": "Delete Category",
+    "enter": "Enter",
+    "communitySoon":"Get ready to connect even deeper! We're developing a brand new community feature that will make it easier to interact with each other and build stronger relationships. More details coming soon!"
+
 
 
 }
