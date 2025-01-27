@@ -211,11 +211,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get english => 'الانجليزية';
 
   @override
-  String get ar => 'Ar';
+  String get ar => 'العربية';
 
   @override
-  String get en => 'En';
+  String get en => 'الانجليزية';
 
   @override
   String get signOut => 'تسجيل الخروج';
+
+  @override
+  String get language => 'العربية';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
+
+  @override
+  String get chat => 'الدردشة';
+
+  @override
+  String get scanQrCodeWithFlash => 'مسح الكود باكاميرة و الفلاش';
+
+  @override
+  String get scanQrCodeWithoutFlash => ' مسح الكود بدون الفلاش';
+
+  @override
+  String get refresh => 'تحديث';
+
+  @override
+  String get deleteCategory => 'حذف الفئة';
 }

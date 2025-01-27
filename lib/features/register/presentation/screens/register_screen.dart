@@ -28,7 +28,6 @@ class RegisterScreen extends GetView<RegisterController> {
               controller: controller.nameController,
               hintText: "Full Name",
               semanticLabel: "Enter your Full Name",
-              semanticHint: "Enter your  Full Name",
               prefixIcon: const Icon(Icons.person),
             ),
             16.verticalSpace,
@@ -36,7 +35,6 @@ class RegisterScreen extends GetView<RegisterController> {
               controller: controller.emailController,
               hintText: "Email",
               semanticLabel: "Enter your email",
-              semanticHint: "Email Input Field",
               prefixIcon: const Icon(Icons.email),
             ),
             16.verticalSpace,
@@ -46,7 +44,6 @@ class RegisterScreen extends GetView<RegisterController> {
                 hintText: "Password",
                 obscureText: controller.passowrdVisible,
                 semanticLabel: "Enter your Passowrd",
-                semanticHint: "Password Input Field",
                 prefixIcon: const Icon(Icons.lock),
                 suffixIcon: Semantics(
                   label: " Password",
@@ -73,7 +70,6 @@ class RegisterScreen extends GetView<RegisterController> {
                 obscureText: controller.confirmPasswordVisible,
                 hintText: "Confirm Password",
                 semanticLabel: "Confirm your Passowrd",
-                semanticHint: "Confirm Password Input Field",
                 prefixIcon: const Icon(Icons.lock),
                 suffixIcon: Semantics(
                   label: "Confirm Password",

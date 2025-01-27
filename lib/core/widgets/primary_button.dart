@@ -18,7 +18,6 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      hint: hint,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -64,7 +63,6 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
-      hint: hint,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

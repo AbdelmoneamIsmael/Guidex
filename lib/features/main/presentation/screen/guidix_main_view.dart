@@ -34,7 +34,7 @@ class GuidixMainView extends GetView<MainController> {
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          height: 60.h,
+          height: 65.h,
           color: Theme.of(context).bottomAppBarTheme.color,
           notchMargin: 5,
           child: Row(
@@ -112,12 +112,15 @@ class GuidixNaveItem extends StatelessWidget {
             width: 24.w,
           ),
           4.verticalSpace,
-          Text(
-            title,
-            style: AppTextStyle.regular12(context).copyWith(
-              color: isSelected
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).iconTheme.color,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              style: AppTextStyle.regular12(context).copyWith(
+                color: isSelected
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).iconTheme.color,
+              ),
             ),
           )
         ],

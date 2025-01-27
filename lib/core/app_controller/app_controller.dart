@@ -53,17 +53,15 @@ class AppController extends GetxController {
     update();
   }
 
-  changeLanguage(
-    ApplicationLanguage language,
-  ) {
-    switch (language) {
+  changeLanguage() {
+    switch (appModel.language) {
       case ApplicationLanguage.ar:
-        appModel.language = ApplicationLanguage.ar;
+        appModel.language = ApplicationLanguage.en;
 
         appModel.fontFamily = kArabicFontFamily;
         break;
       case ApplicationLanguage.en:
-        appModel.language = ApplicationLanguage.en;
+        appModel.language = ApplicationLanguage.ar;
 
         appModel.fontFamily = kEnglishFontFamily;
         break;

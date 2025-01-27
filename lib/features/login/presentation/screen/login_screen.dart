@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
-import 'package:guidix/core/app_texts/app_localizations_ar.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
@@ -29,7 +28,6 @@ class LoginScreen extends GetView<LoginController> {
               controller: controller.emailController,
               hintText: "Email Adress",
               semanticLabel: "Enter your Email Adress",
-              semanticHint: "Enter your  Email Adress",
               prefixIcon: const Icon(Icons.person),
             ),
             16.verticalSpace,
@@ -40,7 +38,6 @@ class LoginScreen extends GetView<LoginController> {
                   hintText: "Password",
                   obscureText: controller.passwordSecure,
                   semanticLabel: "Enter your Passowrd",
-                  semanticHint: "Password Input Field",
                   prefixIcon: const Icon(Icons.lock),
                   suffixIcon: Semantics(
                     label: " Password",

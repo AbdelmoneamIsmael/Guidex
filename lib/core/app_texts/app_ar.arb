@@ -62,12 +62,19 @@
     "qrcode":"الكود الخاص بي",
     "myAccount":"حسابي",
     "settings":"الاعدادات",
-    "language":"اللغة",
+    "language":"العربية",
     "english":"الانجليزية",
     "arabic":"العربية",
     "darkMode":"الوضع الداكن",
     "lightMode":"الوضع الفاتح",
     "logOut":"تسجيل الخروج",
     "inverterTheme":"الوضع العكسي",
-    "signOut" : "تسجيل الخروج"
+        "ar":"العربية",
+    "en":"الانجليزية",
+    "signOut" : "تسجيل الخروج",
+    "chat":"الدردشة",
+    "scanQrCodeWithFlash": "مسح الكود باكاميرة و الفلاش", 
+    "scanQrCodeWithoutFlash": " مسح الكود بدون الفلاش",
+    "refresh": "تحديث",
+    "deleteCategory": "حذف الفئة"
     }

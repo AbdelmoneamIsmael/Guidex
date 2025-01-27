@@ -24,7 +24,6 @@ class EnterCode extends StatelessWidget {
         ),
         24.verticalSpace,
         GuidixFormField(
-          semanticHint: "Type your code",
           hintText: "Code",
           semanticLabel: "Code Input Field",
           inputFormatters: [FilteringTextInputFormatter.digitsOnly],

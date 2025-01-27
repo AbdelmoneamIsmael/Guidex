@@ -8,7 +8,7 @@ class AppTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.semanticLabel,
-    required this.semanticHint,
+   
     this.suffixIcon,
     this.prefixIcon,
     this.controller,
@@ -19,7 +19,7 @@ class AppTextField extends StatelessWidget {
     this.textAlign,
   });
   final TextAlign? textAlign;
-  final String hintText, semanticLabel, semanticHint;
+  final String hintText, semanticLabel;
   final Widget? suffixIcon, prefixIcon;
   final TextEditingController? controller;
   final bool? obscureText;
@@ -38,7 +38,7 @@ class AppTextField extends StatelessWidget {
         ),
         4.verticalSpace,
         GuidixFormField(
-            semanticHint: semanticHint,
+          
             obscureText: obscureText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
@@ -55,7 +55,7 @@ class AppTextField extends StatelessWidget {
 class GuidixFormField extends StatelessWidget {
   const GuidixFormField({
     super.key,
-    required this.semanticHint,
+  
     this.obscureText = false,
     this.prefixIcon,
     this.suffixIcon,
@@ -67,7 +67,7 @@ class GuidixFormField extends StatelessWidget {
     this.textAlign,
   });
 
-  final String semanticHint;
+ 
   final bool? obscureText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -81,13 +81,14 @@ class GuidixFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       // label: semanticLabel,
-      hint: semanticHint,
+     
 
       child: TextFormField(
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,
         obscureText: obscureText!,
         keyboardType: TextInputType.name,
+        
         style: AppTextStyle.regular16(context),
         inputFormatters: inputFormatters,
         decoration: InputDecoration(

@@ -69,6 +69,14 @@
     "english":"English",
     "ar":"Ar",
     "en":"En",
-    "signOut":"Sign Out"
+    "signOut":"Sign Out",
+    "language":"English",
+    "logOut":"Log Out",
+    "chat":"Chat",
+    "scanQrCodeWithFlash": "Scan QR Code With camera using flash",
+    "scanQrCodeWithoutFlash": "Scan QR Code with camera Without Flash",
+    "refresh": "Refresh",
+    "deleteCategory": "Delete Category"
+
 
 }

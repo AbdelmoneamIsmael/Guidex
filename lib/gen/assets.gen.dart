@@ -33,11 +33,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/chat.svg
+  String get chat => 'assets/icons/chat.svg';
+
+  /// File path: assets/icons/community info.svg
+  String get communityInfo => 'assets/icons/community info.svg';
+
   /// File path: assets/icons/community.svg
   String get community => 'assets/icons/community.svg';
 
   /// File path: assets/icons/darkMood.svg
   String get darkMood => 'assets/icons/darkMood.svg';
+
+  /// File path: assets/icons/empty_cart.svg.svg
+  String get emptyCartSvg => 'assets/icons/empty_cart.svg.svg';
 
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
@@ -117,8 +126,11 @@ class $AssetsIconsGen {
         blueSettingSvg,
         card,
         cart,
+        chat,
+        communityInfo,
         community,
         darkMood,
+        emptyCartSvg,
         facebook,
         flash,
         forwardIos,

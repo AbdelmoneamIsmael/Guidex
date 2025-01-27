@@ -520,6 +520,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign Out'**
   String get signOut;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get language;
+
+  /// No description provided for @logOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get logOut;
+
+  /// No description provided for @chat.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get chat;
+
+  /// No description provided for @scanQrCodeWithFlash.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR Code With camera using flash'**
+  String get scanQrCodeWithFlash;
+
+  /// No description provided for @scanQrCodeWithoutFlash.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR Code with camera Without Flash'**
+  String get scanQrCodeWithoutFlash;
+
+  /// No description provided for @refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get refresh;
+
+  /// No description provided for @deleteCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Category'**
+  String get deleteCategory;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

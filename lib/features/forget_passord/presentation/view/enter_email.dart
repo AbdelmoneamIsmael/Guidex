@@ -32,7 +32,6 @@ class EnterEmail extends StatelessWidget {
         AppTextField(
           hintText: "Email",
           semanticLabel: "Email Input Field",
-          semanticHint: "Enter your email address",
           controller: Get.find<ForgetPassController>().emailController,
           prefixIcon: const Icon(Icons.email),
         ),

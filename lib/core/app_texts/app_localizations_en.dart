@@ -218,4 +218,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signOut => 'Sign Out';
+
+  @override
+  String get language => 'English';
+
+  @override
+  String get logOut => 'Log Out';
+
+  @override
+  String get chat => 'Chat';
+
+  @override
+  String get scanQrCodeWithFlash => 'Scan QR Code With camera using flash';
+
+  @override
+  String get scanQrCodeWithoutFlash => 'Scan QR Code with camera Without Flash';
+
+  @override
+  String get refresh => 'Refresh';
+
+  @override
+  String get deleteCategory => 'Delete Category';
 }

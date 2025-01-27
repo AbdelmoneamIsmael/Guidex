@@ -27,7 +27,6 @@ class EnterNewPassword extends GetView<ForgetPassController> {
             return AppTextField(
               hintText: "Password",
               semanticLabel: "Password Input Field",
-              semanticHint: "Enter your password",
               controller: controller.passwordController,
               obscureText: controller.isPasswordSecure,
               prefixIcon: const Icon(Icons.lock),
@@ -48,7 +47,6 @@ class EnterNewPassword extends GetView<ForgetPassController> {
             return AppTextField(
               hintText: "Confirm Password",
               semanticLabel: "Confirm Password Input Field",
-              semanticHint: "Enter your Confirm Password",
               controller: controller.rePasswordController,
               obscureText: controller.isRePasswordSecure,
               prefixIcon: const Icon(Icons.lock),

@@ -42,6 +42,7 @@ class ScanScreen extends GetView<ScnnerController> {
                   child: Row(
                     children: [
                       CircleOption(
+                        hint: AppLocalizations.of(context).scanQrCodeWithFlash,
                         onPresss: () {
                           Get.to(BarcodeScannerWithScanWindow(
                             controller: MobileScannerController(
@@ -53,6 +54,8 @@ class ScanScreen extends GetView<ScnnerController> {
                       ),
                       const Expanded(child: SizedBox()),
                       CircleOption(
+                        hint:
+                            AppLocalizations.of(context).scanQrCodeWithoutFlash,
                         onPresss: () {
                           Get.to(BarcodeScannerWithScanWindow(
                             controller: MobileScannerController(
@@ -64,6 +67,7 @@ class ScanScreen extends GetView<ScnnerController> {
                       ),
                       const Expanded(child: SizedBox()),
                       CircleOption(
+                        hint: AppLocalizations.of(context).refresh,
                         onPresss: () {
                           controller.setInitialState();
                         },
@@ -137,28 +141,36 @@ class CircleOption extends StatelessWidget {
     super.key,
     required this.svg,
     required this.onPresss,
-    this.padding, this.color,
+    this.padding,
+    this.color,
+    required this.hint,
   });
   final String svg;
   final VoidCallback onPresss;
   final double? padding;
   final Color? color;
+  final String hint;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPresss,
-      child: Container(
-        padding: EdgeInsets.all(padding ?? 4),
-        decoration: ShapeDecoration(
-          shape: const CircleBorder(),
-          color: Theme.of(context).scaffoldBackgroundColor,
-        ),
-        child: SvgPicture.asset(
-          svg,
-          width: 24.w,
-          fit: BoxFit.scaleDown,
-          colorFilter: ColorFilter.mode(
-             color ?? Theme.of(context).textTheme.bodyMedium!.color!, BlendMode.srcIn),
+    return Semantics(
+      hint: hint,
+      label: AppLocalizations.of(context).scanQr,
+      child: GestureDetector(
+        onTap: onPresss,
+        child: Container(
+          padding: EdgeInsets.all(padding ?? 4),
+          decoration: ShapeDecoration(
+            shape: const CircleBorder(),
+            color: Theme.of(context).scaffoldBackgroundColor,
+          ),
+          child: SvgPicture.asset(
+            svg,
+            width: 24.w,
+            fit: BoxFit.scaleDown,
+            colorFilter: ColorFilter.mode(
+                color ?? Theme.of(context).textTheme.bodyMedium!.color!,
+                BlendMode.srcIn),
+          ),
         ),
       ),
     );

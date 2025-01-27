@@ -36,6 +36,10 @@ class ProfileOptionWidget extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).iconTheme.color!,
+                BlendMode.srcIn,
+              ),
             ),
             8.horizontalSpace,
             Text(

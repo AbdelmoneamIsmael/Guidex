@@ -39,7 +39,6 @@ class MyQrCodesScreen extends StatelessWidget {
               child: GuidixFormField(
                 hintText: AppLocalizations.of(context).search,
                 semanticLabel: "semanticLabel",
-                semanticHint: "semanticHint",
                 prefixIcon: SvgPicture.asset(
                   Assets.icons.search,
                   fit: BoxFit.scaleDown,
@@ -135,6 +134,7 @@ class QrCodeItem extends StatelessWidget {
             ),
             const Spacer(),
             CircleOption(
+              hint: AppLocalizations.of(context).deleteCategory,
               padding: 7,
               svg: Assets.icons.delete,
               color: LightColors.redColor,

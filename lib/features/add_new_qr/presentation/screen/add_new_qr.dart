@@ -54,20 +54,17 @@ class AddNewQr extends StatelessWidget {
             AppTextField(
               hintText: AppLocalizations.of(context).category,
               semanticLabel: "semanticLabel",
-              semanticHint: "semanticHint",
             ),
             24.verticalSpace,
             AppTextField(
               hintText: AppLocalizations.of(context).name,
               semanticLabel: "semanticLabel",
-              semanticHint: "semanticHint",
             ),
             24.verticalSpace,
             AppTextField(
               maxLines: 5,
               hintText: AppLocalizations.of(context).description,
               semanticLabel: "semanticLabel",
-              semanticHint: "semanticHint",
             ),
           ],
         ),

@@ -57,10 +57,10 @@ class SettingsScreen extends StatelessWidget {
               ),
               24.verticalSpace,
               ProfileOptionWidget(
-                title: AppLocalizations.of(context).arabic,
+                title: AppLocalizations.of(context).language,
                 icon: Assets.icons.language,
                 onTap: () {
-                  controller.changeLanguage(ApplicationLanguage.ar);
+                  controller.changeLanguage();
                 },
               ),
               24.verticalSpace,
