@@ -16,7 +16,7 @@ void main() async {
 
   runApp(DevicePreview(
     // enabled: !kReleaseMode,
-    enabled: true,
+    enabled: false,
     builder: (context) => const GuiDixApplication(),
   ));
 }

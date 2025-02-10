@@ -25,7 +25,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get creatAnAccount => 'إنشاء حساب';
 
   @override
-  String get fullName => 'الاسم الكامل';
+  String get fullName => 'الإسم الكامل';
 
   @override
   String get fullNameHint => 'من فضلك اكتب اسمك';
@@ -43,7 +43,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmPassword => 'تأكيد كلمة المرور';
 
   @override
-  String get or => 'او';
+  String get or => 'أو';
 
   @override
   String get continueWithGoogle => 'متابعة بواسطة جوجل';
@@ -79,13 +79,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get recevivingTheCode => 'لم يتم ارسال رمز اليك؟';
 
   @override
-  String get resendCode => 'اعادة ارسال الكود';
+  String get resendCode => 'إعادة ارسال الكود';
 
   @override
   String get verify => 'التحقق';
 
   @override
-  String get createNewPassword => 'انشاء كلمه مرور جديده';
+  String get createNewPassword => 'إنشاء كلمه مرور جديده';
 
   @override
   String get save => 'حفظ';
@@ -109,7 +109,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get donotAllow => 'عدم السماح';
 
   @override
-  String get addNew => 'اضافة جديد';
+  String get addNew => 'إضافة جديد';
 
   @override
   String get viewDetails => 'عرض التفاصيل';
@@ -187,62 +187,341 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'السلة';
 
   @override
-  String get qrcode => 'الكود الخاص بي';
+  String get qrCode => 'My QR';
 
   @override
   String get myAccount => 'حسابي';
 
   @override
-  String get settings => 'الاعدادات';
+  String get chat => 'الدردشة';
 
   @override
-  String get darkMode => 'الوضع الداكن';
+  String get price => 'السعر';
 
   @override
-  String get lightMode => 'الوضع الفاتح';
+  String get typeQrCode => 'نوع الأكواد';
 
   @override
-  String get inverterTheme => 'الوضع العكسي';
+  String get sticker => 'استيكر';
 
   @override
-  String get arabic => 'العربية';
+  String get quantityOfSticker => 'كمية الاستيكر';
 
   @override
-  String get english => 'الانجليزية';
+  String get fabric => 'قماش';
 
   @override
-  String get ar => 'العربية';
+  String get quantityOfFabric => 'كمية القماش:';
 
   @override
-  String get en => 'الانجليزية';
+  String get buyNow => 'اشتري الان';
+
+  @override
+  String get showNearbyServices => 'عرض الخدمات القريبة';
+
+  @override
+  String get accessMessage => 'نحتاج الى معرفه موقعك لاقتراح الخدمات القريبه منك';
+
+  @override
+  String get enterAddressManually => 'إدخال العنوان يدويا';
+
+  @override
+  String get locateMe => 'حدد موقعي';
+
+  @override
+  String get donotAskAgain => 'لا تسأل مرة أخرى';
+
+  @override
+  String get enterYourAddress => 'أدخل عوانك';
+
+  @override
+  String get deliverTo => 'التوصيل إلى';
+
+  @override
+  String get streetName => 'اسم الشارع';
+
+  @override
+  String get buildingName => 'اسم المبنى';
+
+  @override
+  String get floorAppartmentVilla => 'الطابق،الشقة او الفيلا';
+
+  @override
+  String get landnark => 'علامة مميزة';
+
+  @override
+  String get addDeliveryInstructions => 'إضافة تعليمات التوصيل';
+
+  @override
+  String get addressType => 'نوع التوصيل';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get youraddress => 'عنوانك';
+
+  @override
+  String get continuee => 'متابعة';
+
+  @override
+  String get addNewAddress => 'إضافة عنوان جديد';
+
+  @override
+  String get paymentMethod => 'طريقة الدفع';
+
+  @override
+  String get selectPaymentMethod => 'اختر طريقة الدفع';
+
+  @override
+  String get cash => 'نقدا';
 
   @override
   String get signOut => 'تسجيل الخروج';
 
   @override
-  String get language => 'العربية';
+  String get instapay => 'انستاباي';
+
+  @override
+  String get vodafoneCash => 'فودافون كاش';
+
+  @override
+  String get confirmPayment => 'تأكيد الدفع';
+
+  @override
+  String get addNewCard => 'إضافة بطاقة الدفع';
+
+  @override
+  String get enterYourEmail => 'ادخل بريدك الإلكتروني';
+
+  @override
+  String get cardNumber => 'رقم البطاقة';
+
+  @override
+  String get ccv => 'رقم النحقيق CVV';
+
+  @override
+  String get expires => 'تاريخ الإنتهاء';
+
+  @override
+  String get lightMode => 'الوضع الفاتح';
+
+  @override
+  String get darkMode => 'الوضع الليلي';
+
+  @override
+  String get inverterTheme => 'عكس اللون';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get otp => 'OTP';
+
+  @override
+  String get linkAccount => 'ربط الحساب';
+
+  @override
+  String get defaultCard => 'اجعل هذه بطاقتي الاافتراضية ';
+
+  @override
+  String get visa => 'فيزا';
+
+  @override
+  String get experience => 'كيف كانت تجربتك معنا؟';
+
+  @override
+  String get trackOrder => 'تتبع الطلب';
+
+  @override
+  String get paymentSuccess => 'تم الدفع بنجاح';
+
+  @override
+  String get thankYou => 'شكرا جدا';
+
+  @override
+  String get done => 'تم';
+
+  @override
+  String get greetingHi => 'اهلا،الاسم';
+
+  @override
+  String get greeting => 'أتمنى لك دوام الخير';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get orders => 'الطلبات';
+
+  @override
+  String get payments => 'المدفوعات';
+
+  @override
+  String get myAddresses => 'عناويني';
+
+  @override
+  String get inviteFriends => 'دعوة الأصدقاء';
+
+  @override
+  String get help => 'المساعدة';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get remove => 'حذف';
+
+  @override
+  String get setAsDefault => 'تعيين كافتراضي';
+
+  @override
+  String get lightMood => 'الوضع الفاتح';
+
+  @override
+  String get darkMood => 'الوضع الليلي';
+
+  @override
+  String get invertColor => 'عكس الألوان';
+
+  @override
+  String get arabic => 'اللغة العربيه';
 
   @override
   String get logOut => 'تسجيل الخروج';
 
   @override
-  String get chat => 'الدردشة';
+  String get english => 'اللغة الإنجليزية';
 
   @override
-  String get scanQrCodeWithFlash => 'مسح الكود باكاميرة و الفلاش';
+  String get wanttologOut => 'هل تريد تسجيل الخروج';
 
   @override
-  String get scanQrCodeWithoutFlash => ' مسح الكود بدون الفلاش';
+  String get yes => 'نعم،تسجيل الخروج';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get firstName => 'الاسم الأول ';
+
+  @override
+  String get firstNameHint => 'يرجى إدخال إسمك الأول';
+
+  @override
+  String get lastName => 'اسم العائلة';
+
+  @override
+  String get lastNameHint => 'يرجى إدخال اسم العائلة ';
+
+  @override
+  String get enterYourBirthday => 'أدخل تاريخ ميلادك';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get cancelled => 'ملغي';
+
+  @override
+  String get order => 'طلب';
+
+  @override
+  String get quantity => 'الكمية';
+
+  @override
+  String get subTotal => 'المجموع الفرعي';
+
+  @override
+  String get cashOnDelivery => 'الدفع عند الإستلام';
+
+  @override
+  String get total => 'الإجمالي';
+
+  @override
+  String get orderPlaced => 'تم تقديم الطلب';
+
+  @override
+  String get orderDispatched => 'تم شحن الطلب';
+
+  @override
+  String get orderInTransit => 'الطلب في الطريق';
+
+  @override
+  String get deliveredSuccessfully => 'تم التوصيل';
+
+  @override
+  String get howToScan => 'كيف يمكنني مسح الكود؟';
+
+  @override
+  String get howToScanHint => '';
+
+  @override
+  String get howToBuy => 'كيف يمكنني شراء الأكواد اونلاين؟';
+
+  @override
+  String get howToBuyHint => '';
+
+  @override
+  String get howToEdit => 'كيف يمكنني تعديل المعلومات على الأكواد؟';
+
+  @override
+  String get howToEditHint => '';
 
   @override
   String get refresh => 'تحديث';
 
   @override
-  String get deleteCategory => 'حذف الفئة';
+  String get noProductYet => 'لا يوجد منتج حتى الان';
+
+  @override
+  String get noProductCompletedYet => 'لم يتم إكمال اي منتج حتى الان';
+
+  @override
+  String get noProductCancelled => 'لم يتم إلغاء أي منتج';
+
+  @override
+  String get myAddress => 'عنواني';
+
+  @override
+  String get enableLocation => 'تفعيل الموقع';
+
+  @override
+  String get enableYourLocation => 'يرجى تفعيل خدمات الموقع على جهازك';
+
+  @override
+  String get wallet => 'المحفظة';
+
+  @override
+  String get emptyWallet => 'محفظتك فارغة.\nيرجى أضافة طرق دفع اولا';
+
+  @override
+  String get connectionError => 'لا يوجد اتصال بالإنترنت';
+
+  @override
+  String get checkyourInternet => 'يرجى التحقق من اتصال الإنترنت لديك';
+
+  @override
+  String get scanQrCodeWithFlash => ' مسح الكود بالفلاش';
+
+  @override
+  String get scanQrCodeWithoutFlash => 'مسح الكود بدون فلاش';
+
+  @override
+  String get scanQrCodeWithCamera => 'مسح الكود بالكاميرا';
+
+  @override
+  String get scanQrCodeWithCameraAndFlash => 'مسح الكود بالكاميرا والفلاش';
+
+  @override
+  String get communitySoon => 'المجتمع قريبا';
 
   @override
   String get enter => 'ادخل';
 
   @override
-  String get communitySoon => 'استعد للتواصل بشكل أعمق! نحن نعمل على تطوير ميزة مجتمعية جديدة تمامًا ستجعل من السهل التفاعل مع بعضنا البعض وبناء علاقات أقوى. المزيد من التفاصيل قريبًا!';
+  String get qrcode => 'QR code';
+
+  @override
+  String get deleteCategory => 'حذف القسم';
 }
