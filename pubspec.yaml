@@ -43,16 +43,17 @@ dependencies:
   get_it: ^8.0.3
   get_storage: ^2.1.1
   intl: any
+  mobile_scanner: ^6.0.6
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.3.3
   simple_barcode_scanner: ^0.2.5
   syncfusion_flutter_barcodes: ^28.1.37
-  mobile_scanner: ^6.0.6
+  timeline_tile: ^2.0.0
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
   build_runner: null
   flutter_gen_runner: null
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
 
@@ -60,8 +61,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-  generate: true 
-  
+  generate: true
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -70,10 +71,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-  
-
-    
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -95,7 +92,7 @@ flutter:
           weight: 400
         - asset: assets/fonts/english_font/Inter_18pt-SemiBold.ttf
           weight: 600
-          
+
     - family: Arial
       fonts:
         - asset: assets/fonts/arabic_fonts/ARIALBD.TTF
@@ -104,7 +101,5 @@ flutter:
           weight: 400
         - asset: assets/fonts/arabic_fonts/ArialMdm.ttf
           weight: 500
-          
-  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

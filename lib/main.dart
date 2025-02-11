@@ -8,10 +8,10 @@ import 'package:guidix/guidix.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  FlutterError.onError = (FlutterErrorDetails details) {
-    FlutterError.dumpErrorToConsole(details);
-    runApp(MainErrorScreen(details: details));
-  };
+  // FlutterError.onError = (FlutterErrorDetails details) {
+  //   FlutterError.dumpErrorToConsole(details);
+  //   runApp(MainErrorScreen(details: details));
+  // };
   await GetStorage.init();
 
   runApp(DevicePreview(

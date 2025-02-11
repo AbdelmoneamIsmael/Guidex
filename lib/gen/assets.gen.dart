@@ -21,17 +21,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/QR.svg
   String get qr => 'assets/icons/QR.svg';
 
+  /// File path: assets/icons/airport_shuttle.svg
+  String get airportShuttle => 'assets/icons/airport_shuttle.svg';
+
   /// File path: assets/icons/app_logo.svg
   String get appLogo => 'assets/icons/app_logo.svg';
 
   /// File path: assets/icons/blueSettingSvg.svg
   String get blueSettingSvg => 'assets/icons/blueSettingSvg.svg';
 
+  /// File path: assets/icons/canceld.svg
+  String get canceld => 'assets/icons/canceld.svg';
+
   /// File path: assets/icons/card.svg
   String get card => 'assets/icons/card.svg';
 
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
+
+  /// File path: assets/icons/cart_bag.svg
+  String get cartBag => 'assets/icons/cart_bag.svg';
 
   /// File path: assets/icons/chat.svg
   String get chat => 'assets/icons/chat.svg';
@@ -41,6 +50,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/community.svg
   String get community => 'assets/icons/community.svg';
+
+  /// File path: assets/icons/completed.svg
+  String get completed => 'assets/icons/completed.svg';
 
   /// File path: assets/icons/darkMood.svg
   String get darkMood => 'assets/icons/darkMood.svg';
@@ -84,8 +96,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/marker.svg
   String get marker => 'assets/icons/marker.svg';
 
+  /// File path: assets/icons/no_canceld_products.svg
+  String get noCanceldProducts => 'assets/icons/no_canceld_products.svg';
+
+  /// File path: assets/icons/no_completed_products.svg
+  String get noCompletedProducts => 'assets/icons/no_completed_products.svg';
+
+  /// File path: assets/icons/no_products.svg
+  String get noProducts => 'assets/icons/no_products.svg';
+
   /// File path: assets/icons/order.svg
   String get order => 'assets/icons/order.svg';
+
+  /// File path: assets/icons/product_cart.svg
+  String get productCart => 'assets/icons/product_cart.svg';
 
   /// File path: assets/icons/profile-Panner.svg
   String get profilePanner => 'assets/icons/profile-Panner.svg';
@@ -108,11 +132,24 @@ class $AssetsIconsGen {
   /// File path: assets/icons/search.svg
   String get search => 'assets/icons/search.svg';
 
+  /// File path: assets/icons/shopping_cart.png
+  AssetGenImage get shoppingCart =>
+      const AssetGenImage('assets/icons/shopping_cart.png');
+
+  /// File path: assets/icons/shopping_cart_track.svg
+  String get shoppingCartTrack => 'assets/icons/shopping_cart_track.svg';
+
   /// File path: assets/icons/sitting 2.svg
   String get sitting2 => 'assets/icons/sitting 2.svg';
 
+  /// File path: assets/icons/store.svg
+  String get store => 'assets/icons/store.svg';
+
   /// File path: assets/icons/sun.svg
   String get sun => 'assets/icons/sun.svg';
+
+  /// File path: assets/icons/thumb_up.svg
+  String get thumbUp => 'assets/icons/thumb_up.svg';
 
   /// File path: assets/icons/unlock_window.svg
   String get unlockWindow => 'assets/icons/unlock_window.svg';
@@ -124,17 +161,21 @@ class $AssetsIconsGen {
   String get user => 'assets/icons/user.svg';
 
   /// List of all assets
-  List<String> get values => [
+  List<dynamic> get values => [
         delete,
         google,
         qr,
+        airportShuttle,
         appLogo,
         blueSettingSvg,
+        canceld,
         card,
         cart,
+        cartBag,
         chat,
         communityInfo,
         community,
+        completed,
         darkMood,
         edit,
         emptyCartSvg,
@@ -149,7 +190,11 @@ class $AssetsIconsGen {
         lockWindow,
         logout,
         marker,
+        noCanceldProducts,
+        noCompletedProducts,
+        noProducts,
         order,
+        productCart,
         profilePanner,
         qrcod,
         refresh,
@@ -157,8 +202,12 @@ class $AssetsIconsGen {
         scanCodeBorder,
         scanner,
         search,
+        shoppingCart,
+        shoppingCartTrack,
         sitting2,
+        store,
         sun,
+        thumbUp,
         unlockWindow,
         userProfile,
         user
@@ -176,6 +225,10 @@ class $AssetsImagesGen {
   AssetGenImage get onboarding =>
       const AssetGenImage('assets/images/onboarding.png');
 
+  /// File path: assets/images/productCart.png
+  AssetGenImage get productCart =>
+      const AssetGenImage('assets/images/productCart.png');
+
   /// File path: assets/images/profile_image.jpg
   AssetGenImage get profileImage =>
       const AssetGenImage('assets/images/profile_image.jpg');
@@ -185,7 +238,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [onBoarding2, onboarding, profileImage, qrcode];
+      [onBoarding2, onboarding, productCart, profileImage, qrcode];
 }
 
 class Assets {
