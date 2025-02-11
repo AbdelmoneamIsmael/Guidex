@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
-import 'package:guidix/core/app_texts/app_localizations_ar.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/gen/assets.gen.dart';

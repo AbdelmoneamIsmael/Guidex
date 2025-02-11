@@ -37,7 +37,6 @@ class EnterEmail extends StatelessWidget {
         ),
         32.verticalSpace,
         PrimaryButton(
-          hint: "Navigate to next step",
           title:  AppLocalizations.of(context).send,
           onPressed: () => Get.find<ForgetPassController>().nextStep(),
         )

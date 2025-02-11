@@ -20,7 +20,6 @@ class AddNewQr extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32).w,
         child: PrimaryButton(
-          hint: "",
           title: AppLocalizations.of(context).save,
           onPressed: () {},
         ),

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
-import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/view_qr_details/controller_repo/controller/details_controller.dart';
 import 'package:syncfusion_flutter_barcodes/barcodes.dart';
 

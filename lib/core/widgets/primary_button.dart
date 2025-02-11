@@ -51,12 +51,11 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
     required this.title,
-    required this.hint,
     this.onPressed,
     this.backgroundColor,
     this.forGroundColor,
   });
-  final String title, hint;
+  final String title;
   final void Function()? onPressed;
   final Color? backgroundColor, forGroundColor;
   @override

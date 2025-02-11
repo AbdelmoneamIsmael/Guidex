@@ -63,7 +63,6 @@ class EnterNewPassword extends GetView<ForgetPassController> {
         ),
         32.verticalSpace,
         PrimaryButton(
-          hint: "Navigate to next step",
           title: AppLocalizations.of(context).save,
           onPressed: () => controller.nextStep(),
         ),

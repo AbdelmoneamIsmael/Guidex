@@ -92,7 +92,6 @@ class RegisterScreen extends GetView<RegisterController> {
             PrimaryButton(
               onPressed: () {},
               title: AppLocalizations.of(context).signUp,
-              hint: "Double tap to sign Up",
             ),
             24.verticalSpace,
             Row(

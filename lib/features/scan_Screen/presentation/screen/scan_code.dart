@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,7 +34,7 @@ class _BarcodeScannerWithScanWindowState
 
   StreamSubscription? _subscription;
 
-  // TODO: Fix BoxFit.fill & BoxFit.fitHeight
+  // 
   final boxFit = BoxFit.contain;
 
   @override
@@ -106,7 +105,6 @@ class _BarcodeScannerWithScanWindowState
     super.dispose();
     unawaited(widget.controller.stop());
     _subscription?.cancel();
-    print("disposed Camera  controller------------------------------------");
     await widget.controller.dispose();
     
   }

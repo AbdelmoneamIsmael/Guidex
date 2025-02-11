@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/cart/presentation/screen/cart_screen.dart';
 import 'package:guidix/features/communityScreen/presentation/screen/community_screen.dart';
@@ -27,7 +26,7 @@ class MainController extends GetxController {
     }
   }
 
-  Route onGenerateRoute(RouteSettings settings) {
+  Route onGenerateRoute(RouteSettings settings, BuildContext context) {
     switch (settings.name) {
       case Routes.communityScreen:
         return GetPageRoute(
@@ -66,7 +65,7 @@ class MainController extends GetxController {
           routeName: Routes.profileScreen,
           settings: settings,
           page: () => const ProfileScreen(),
-          binding: ProfileBinding(),
+          binding: ProfileBinding(context: context),
           transition: Transition.cupertino,
         );
       default:

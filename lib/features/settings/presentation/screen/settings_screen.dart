@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
-import 'package:guidix/core/app_texts/app_localizations_ar.dart';
 import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/features/profile_screen/presentation/widget/profile_option_widget.dart';

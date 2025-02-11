@@ -134,7 +134,7 @@ abstract class AppLocalizations {
   /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
-  /// **'Full ىame'**
+  /// **'Full Name'**
   String get fullName;
 
   /// No description provided for @fullNameHint.
@@ -1132,6 +1132,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Delete category'**
   String get deleteCategory;
+
+  /// No description provided for @backLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Back To Previouse Screen'**
+  String get backLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

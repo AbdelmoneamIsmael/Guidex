@@ -18,7 +18,9 @@ class GuidixMainView extends GetView<MainController> {
         body: Navigator(
           key: Get.nestedKey(1),
           initialRoute: Routes.scannerScreen,
-          onGenerateRoute: controller.onGenerateRoute,
+          onGenerateRoute: (settings) {
+            return controller.onGenerateRoute(settings, context);
+          },
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Theme.of(context).primaryColor,

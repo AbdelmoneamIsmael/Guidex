@@ -524,4 +524,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteCategory => 'حذف القسم';
+
+  @override
+  String get backLabel => 'الرجوع للشاشه السابقه';
 }

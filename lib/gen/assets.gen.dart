@@ -45,6 +45,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/darkMood.svg
   String get darkMood => 'assets/icons/darkMood.svg';
 
+  /// File path: assets/icons/edit.svg
+  String get edit => 'assets/icons/edit.svg';
+
   /// File path: assets/icons/empty_cart.svg.svg
   String get emptyCartSvg => 'assets/icons/empty_cart.svg.svg';
 
@@ -83,6 +86,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/order.svg
   String get order => 'assets/icons/order.svg';
+
+  /// File path: assets/icons/profile-Panner.svg
+  String get profilePanner => 'assets/icons/profile-Panner.svg';
 
   /// File path: assets/icons/qrcod.svg
   String get qrcod => 'assets/icons/qrcod.svg';
@@ -130,6 +136,7 @@ class $AssetsIconsGen {
         communityInfo,
         community,
         darkMood,
+        edit,
         emptyCartSvg,
         facebook,
         flash,
@@ -143,6 +150,7 @@ class $AssetsIconsGen {
         logout,
         marker,
         order,
+        profilePanner,
         qrcod,
         refresh,
         removeSlash,

@@ -103,9 +103,9 @@ class _MarqueeTextWidgetState extends State<MarqueeTextWidget> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      widget.fadeColor!.withOpacity(0.9),
-                      widget.fadeColor!.withOpacity(0.4),
-                      widget.fadeColor!.withOpacity(0.2),
+                      widget.fadeColor!.withValues(alpha: 0.9),
+                      widget.fadeColor!.withValues(alpha:0.4),
+                      widget.fadeColor!.withValues(alpha:0.2),
                     ],
                   ),
                 ),
@@ -122,9 +122,9 @@ class _MarqueeTextWidgetState extends State<MarqueeTextWidget> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      widget.fadeColor!.withOpacity(0.9),
-                      widget.fadeColor!.withOpacity(0.4),
-                      widget.fadeColor!.withOpacity(0.2),
+                      widget.fadeColor!.withValues(alpha:0.9),
+                      widget.fadeColor!.withValues(alpha:0.4),
+                      widget.fadeColor!.withValues(alpha:0.2),
                     ],
                   ),
                 ),

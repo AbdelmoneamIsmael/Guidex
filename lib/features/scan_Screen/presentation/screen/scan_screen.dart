@@ -110,7 +110,6 @@ class ScanScreen extends GetView<ScnnerController> {
                           42.verticalSpace,
                           PrimaryButton(
                             title: AppLocalizations.of(context).addNew,
-                            hint: "hint",
                             onPressed: () {
                               Get.toNamed(
                                 Routes.addNewQr,
@@ -124,7 +123,6 @@ class ScanScreen extends GetView<ScnnerController> {
                                 Theme.of(context).scaffoldBackgroundColor,
                             forGroundColor: Theme.of(context).primaryColor,
                             title: AppLocalizations.of(context).viewDetails,
-                            hint: "hint",
                             onPressed: () {
                               Get.toNamed(Routes.qrCodeDetails, arguments: {
                                 "qrCodeModel": QrModel(

@@ -76,7 +76,6 @@ class LoginScreen extends GetView<LoginController> {
                 Get.offAllNamed(Routes.mainGuidixScreen);
               },
               title: AppLocalizations.of(context).signIn,
-              hint: "Double tap to sign In",
             ),
             32.verticalSpace,
             Row(

@@ -56,7 +56,6 @@ class OnBoardingScreen extends StatelessWidget {
                   32.verticalSpace,
                   PrimaryButton(
                     title: AppLocalizations.of(context).next,
-                    hint: AppLocalizations.of(context).next,
                     onPressed: () {
                       Get.toNamed(Routes.onBoarding2);
                     },

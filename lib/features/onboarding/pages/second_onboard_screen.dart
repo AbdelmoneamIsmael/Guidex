@@ -34,7 +34,6 @@ class SecondOnboardScreen extends StatelessWidget {
                   const Spacer(),
                   PrimaryButton(
                     title:  AppLocalizations.of(context).signUp,
-                    hint: "Navigate to sign up Screen",
                     onPressed: () {
                       Get.toNamed(Routes.registerScreen);
                     },
@@ -42,7 +41,6 @@ class SecondOnboardScreen extends StatelessWidget {
                   16.verticalSpace,
                   PrimaryButton(
                     title:  AppLocalizations.of(context).signIn,
-                    hint: "Navigate to sign in Screen",
                     backgroundColor: Colors.transparent,
                     forGroundColor: Theme.of(context).primaryColor,
                     onPressed: () {

@@ -8,7 +8,7 @@ import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
 class ProfileOptionWidget extends StatelessWidget {
-  const ProfileOptionWidget({
+  const ProfileOptionWidget( {
     super.key,
     required this.title,
     required this.icon,

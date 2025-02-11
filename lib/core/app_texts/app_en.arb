@@ -5,7 +5,7 @@
     "signUp": "sign Up",
     "signIn": "Sign In",
     "creatAnAccount": "}reat An Account",
-    "fullName": "Full ىame",
+    "fullName": "Full Name",
     "fullNameHint": "Please type ypur name",
     "email": "Email",
     "emailHint": "Please typr your email",
@@ -172,5 +172,7 @@
     "communitySoon": "Community soon",
     "enter": "Enter",
     "qrcode": "QR code",
-    "deleteCategory": "Delete category"
+    "deleteCategory": "Delete category",
+    "backLabel":"Back To Previouse Screen"
+
 }

@@ -170,5 +170,6 @@
     "scanQrCodeWithCameraAndFlash": "مسح الكود بالكاميرا والفلاش",
     "communitySoon": "المجتمع قريبا",
     "enter": "ادخل",
-    "deleteCategory": "حذف القسم"
+    "deleteCategory": "حذف القسم",
+    "backLabel":"الرجوع للشاشه السابقه"
 }

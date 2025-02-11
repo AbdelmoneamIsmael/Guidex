@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 
 class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GuidixAppBar(
@@ -8,11 +9,13 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.actions,
       required this.title,
       this.onBack,
-      this.applyLeading = true});
+      this.applyLeading = true,
+      this.forgroundColor});
   final List<Widget>? actions;
   final void Function()? onBack;
   final String title;
   final bool applyLeading;
+  final Color? forgroundColor;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,8 +32,7 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Navigator.canPop(context) && applyLeading
                       ? Semantics(
-                          label: "Back Button",
-                          hint: "click to go back to previous screen",
+                          label: AppLocalizations.of(context).backLabel,
                           button: true,
                           child: CupertinoButton(
                             padding: const EdgeInsets.all(
@@ -43,7 +45,8 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 },
                             child: Icon(
                               Icons.arrow_back_ios,
-                              color: Theme.of(context).iconTheme.color,
+                              color: forgroundColor ??
+                                  Theme.of(context).iconTheme.color,
                               size: 24,
                             ),
                           ),
@@ -57,13 +60,17 @@ class GuidixAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: const SizedBox(
                             height: 24,
                             width: 24,
-                          )),
+                          ),
+                        ),
                 ],
               ),
             ),
             Text(
               title,
-              style: Theme.of(context).appBarTheme.titleTextStyle,
+              style: Theme.of(context)
+                  .appBarTheme
+                  .titleTextStyle!
+                  .copyWith(color: forgroundColor),
             ),
             Expanded(
                 child: Row(

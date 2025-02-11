@@ -44,7 +44,6 @@ class EnterCode extends StatelessWidget {
         ),
         44.07.verticalSpace,
         PrimaryButton(
-          hint: "Navigate to next step",
           title:  AppLocalizations.of(context).verify,
           onPressed: () => Get.find<ForgetPassController>().nextStep(),
         )

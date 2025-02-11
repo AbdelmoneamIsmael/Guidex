@@ -25,7 +25,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get creatAnAccount => '';
 
   @override
-  String get fullName => 'Full ىame';
+  String get fullName => 'Full Name';
 
   @override
   String get fullNameHint => 'Please type ypur name';
@@ -524,4 +524,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteCategory => 'Delete category';
+
+  @override
+  String get backLabel => 'Back To Previouse Screen';
 }
