@@ -150,7 +150,7 @@
     "howToScan": "How can you scan ?",
     "howToScanHint": "1. Open the application.\n2. Select the 'Scan' button.\n3. Point your camera at the QR code.\n4. The app will scan the code and display options: 'Add New' or 'View Details'.\n5. If you select 'Add New', you can enter information: Name, Category, and Description. You can either choose an existing category or create a new one.\n6. If you choose 'View Details', you'll see the existing details: Name, Category, and Description, with an option to edit them.",
     "howToBuy": "How can you buy QR code online ?",
-    "howToBuyHint": "1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n.4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.",
+    "howToBuyHint": "1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.",
     "howToEdit": "How can you edit info in your QR Code ?",
     "howToEditHint": "1. Open the application.\n2. Select the 'Scan' button.\n3. Point the camera at the QR code.\n4. Click on 'View Details' when it appears.\n5. Click on 'View Details' to see the information.\n6 .Scroll down and select 'Edit'.\n7. Modify the information as needed.\n",
     "refresh": "Refresh",

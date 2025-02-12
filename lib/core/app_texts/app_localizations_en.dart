@@ -460,7 +460,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get howToBuy => 'How can you buy QR code online ?';
 
   @override
-  String get howToBuyHint => '1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n.4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.';
+  String get howToBuyHint => '1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.';
 
   @override
   String get howToEdit => 'How can you edit info in your QR Code ?';

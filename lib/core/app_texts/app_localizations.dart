@@ -1004,7 +1004,7 @@ abstract class AppLocalizations {
   /// No description provided for @howToBuyHint.
   ///
   /// In en, this message translates to:
-  /// **'1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n.4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.'**
+  /// **'1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.'**
   String get howToBuyHint;
 
   /// No description provided for @howToEdit.
