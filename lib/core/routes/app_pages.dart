@@ -1,14 +1,17 @@
 import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
+import 'package:guidix/features/adresses/screen/adrsess.dart';
 import 'package:guidix/features/all_categories/controller_repo/binding/all_categories_bindings.dart';
 import 'package:guidix/features/all_categories/presentation/screen/all_category_page.dart';
 import 'package:guidix/features/edit_profile/controller/controller/binndings/edit_profile_bindings.dart';
 import 'package:guidix/features/edit_profile/presentation/edit_profile.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
 import 'package:guidix/features/forget_passord/presentation/screens/forget_pass_screen.dart';
+import 'package:guidix/features/help/help_screen.dart';
 import 'package:guidix/features/orders/controller/orders_bindings.dart';
 import 'package:guidix/features/orders/presentation/pages/orders_screen.dart';
+import 'package:guidix/features/payment_methods/presentation/screen/payment_methods_screen.dart';
 import 'package:guidix/features/settings/controller_repo/binding/settings_bindings.dart';
 import 'package:guidix/features/settings/presentation/screen/settings_screen.dart';
 import 'package:guidix/features/login/presentation/binding/login_binding.dart';
@@ -98,6 +101,21 @@ class AppPages {
       page: () => const OrdersScreen(),
       transition: Transition.cupertino,
       binding: OrdersBindings(),
+    ),
+    GetPage(
+      name: Routes.payments,
+      page: () => const PaymentMethodsScreen(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.myAdress,
+      page: () => const AdressesScreen(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: Routes.help,
+      page: () => const HelpScreen(),
+      transition: Transition.cupertino,
     ),
   ];
 }

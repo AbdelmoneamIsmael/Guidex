@@ -8,6 +8,7 @@ import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/features/profile_screen/controller_repo/controller/profile_controller.dart';
 import 'package:guidix/features/profile_screen/presentation/widget/profile_option_widget.dart';
 import 'package:guidix/gen/assets.gen.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProfileScreen extends GetView<ProfileController> {
   const ProfileScreen({super.key});
@@ -58,22 +59,35 @@ class ProfileScreen extends GetView<ProfileController> {
                       ProfileOptionWidget(
                         title: AppLocalizations.of(context).paymentMethod,
                         icon: Assets.icons.card,
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.payments);
+                        },
                       ),
                       ProfileOptionWidget(
                         title: AppLocalizations.of(context).myAddress,
                         icon: Assets.icons.marker,
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.myAdress);
+                        },
                       ),
                       ProfileOptionWidget(
                         title: AppLocalizations.of(context).inviteFriends,
                         icon: Assets.icons.inventFrinde,
-                        onTap: () {},
+                        onTap: () async {
+                          final result = await Share.share(
+                              'check out my website https://example.com');
+
+                          if (result.status == ShareResultStatus.success) {
+                            print('Thank you for sharing my website!');
+                          }
+                        },
                       ),
                       ProfileOptionWidget(
                         title: AppLocalizations.of(context).help,
                         icon: Assets.icons.help,
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(Routes.help);
+                        },
                       ),
                       ProfileOptionWidget(
                           title: AppLocalizations.of(context).settings,

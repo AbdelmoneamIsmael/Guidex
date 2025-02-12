@@ -99,35 +99,39 @@ class GuidixNaveItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Column(
-        children: [
-          SvgPicture.asset(
-            svg,
-            colorFilter: ColorFilter.mode(
-              isSelected
-                  ? Theme.of(context).primaryColor
-                  : Theme.of(context).iconTheme.color!,
-              BlendMode.srcIn,
-            ),
-            height: 24.h,
-            width: 24.w,
-          ),
-          4.verticalSpace,
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              title,
-              style: AppTextStyle.regular12(context).copyWith(
-                color: isSelected
+    return Semantics(
+      button: true,
+      label: title,
+      child: IconButton(
+        icon: Column(
+          children: [
+            SvgPicture.asset(
+              svg,
+              colorFilter: ColorFilter.mode(
+                isSelected
                     ? Theme.of(context).primaryColor
-                    : Theme.of(context).iconTheme.color,
+                    : Theme.of(context).iconTheme.color!,
+                BlendMode.srcIn,
               ),
+              height: 24.h,
+              width: 24.w,
             ),
-          )
-        ],
+            4.verticalSpace,
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                title,
+                style: AppTextStyle.regular12(context).copyWith(
+                  color: isSelected
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).iconTheme.color,
+                ),
+              ),
+            )
+          ],
+        ),
+        onPressed: onPressed,
       ),
-      onPressed: onPressed,
     );
   }
 }

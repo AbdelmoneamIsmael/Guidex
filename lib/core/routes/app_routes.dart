@@ -18,4 +18,7 @@ abstract class Routes {
   static const settingScreen = '/settingScreen';
   static const editProfile = '/editProfile';
   static const ordersPage = '/ordersPage';
+  static const payments = '/payments';
+  static const myAdress = '/myAdress';
+  static const help = '/help';
 }

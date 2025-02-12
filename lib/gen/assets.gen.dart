@@ -75,6 +75,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/help.svg
   String get help => 'assets/icons/help.svg';
 
+  /// File path: assets/icons/instapay.svg
+  String get instapay => 'assets/icons/instapay.svg';
+
   /// File path: assets/icons/invent frinde.svg
   String get inventFrinde => 'assets/icons/invent frinde.svg';
 
@@ -160,6 +163,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/user.svg
   String get user => 'assets/icons/user.svg';
 
+  /// File path: assets/icons/visa.svg
+  String get visa => 'assets/icons/visa.svg';
+
+  /// File path: assets/icons/vodafone_cash.svg
+  String get vodafoneCash => 'assets/icons/vodafone_cash.svg';
+
   /// List of all assets
   List<dynamic> get values => [
         delete,
@@ -183,6 +192,7 @@ class $AssetsIconsGen {
         flash,
         forwardIos,
         help,
+        instapay,
         inventFrinde,
         inverter,
         inverterSettingSvg,
@@ -210,7 +220,9 @@ class $AssetsIconsGen {
         thumbUp,
         unlockWindow,
         userProfile,
-        user
+        user,
+        visa,
+        vodafoneCash
       ];
 }
 
