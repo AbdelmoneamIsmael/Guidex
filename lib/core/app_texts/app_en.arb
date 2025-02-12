@@ -5,7 +5,7 @@
     "signUp": "sign Up",
     "signIn": "Sign In",
     "creatAnAccount": "}reat An Account",
-    "fullName": "Full Name",
+    "fullName": "Full ىame",
     "fullNameHint": "Please type ypur name",
     "email": "Email",
     "emailHint": "Please typr your email",
@@ -98,10 +98,10 @@
     "cardNumber": "Card number",
     "ccv": "CVV",
     "expires": "Expires",
+    "language": "Language",
     "lightMode": "Light mode",
     "darkMode": "Dark mode",
     "inverterTheme": "Invert mode",
-    "language": "Language",
     "otp": "OTP",
     "linkAccount": "Link account",
     "defaultCard": "Make this my default card",
@@ -164,7 +164,6 @@
     "emptyWallet": "Your wallet is empty.\n Please add payment methods first",
     "connectionError": "No internet connection",
     "checkyourInternet": "please check your internet connection",
-   
     "scanQrCodeWithFlash": "Scan QR code with flash",
     "scanQrCodeWithoutFlash": "Scan QR code without flash",
     "scanQrCodeWithCamera": "Scan QR code with camera",
@@ -173,6 +172,6 @@
     "enter": "Enter",
     "qrcode": "QR code",
     "deleteCategory": "Delete category",
-    "backLabel":"Back To Previouse Screen"
-
+        "backLabel":"Back To Previouse Screen"
+    
 }

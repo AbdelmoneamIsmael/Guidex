@@ -50,7 +50,14 @@ dependencies:
   simple_barcode_scanner: ^0.2.5
   syncfusion_flutter_barcodes: ^28.1.37
   timeline_tile: ^2.0.0
+  flutter_native_splash: ^2.4.4
 
+flutter_native_splash:
+  color: "#EFEFEF"
+  image: assets/images/Splash.png
+  android_12:
+    image: assets/images/splash12.png
+    color: "#EFEFEF"
 dev_dependencies:
   build_runner: null
   flutter_gen_runner: null

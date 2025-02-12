@@ -134,7 +134,7 @@ abstract class AppLocalizations {
   /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
-  /// **'Full Name'**
+  /// **'Full ىame'**
   String get fullName;
 
   /// No description provided for @fullNameHint.
@@ -689,6 +689,12 @@ abstract class AppLocalizations {
   /// **'Expires'**
   String get expires;
 
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
   /// No description provided for @lightMode.
   ///
   /// In en, this message translates to:
@@ -706,12 +712,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invert mode'**
   String get inverterTheme;
-
-  /// No description provided for @language.
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
 
   /// No description provided for @otp.
   ///

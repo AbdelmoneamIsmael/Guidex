@@ -187,7 +187,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'السلة';
 
   @override
-  String get qrCode => 'My QR';
+  String get qrCode => 'الكود الخاص بي';
 
   @override
   String get myAccount => 'حسابي';
@@ -304,6 +304,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get expires => 'تاريخ الإنتهاء';
 
   @override
+  String get language => 'اللغة';
+
+  @override
   String get lightMode => 'الوضع الفاتح';
 
   @override
@@ -311,9 +314,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get inverterTheme => 'عكس اللون';
-
-  @override
-  String get language => 'اللغة';
 
   @override
   String get otp => 'OTP';
@@ -451,22 +451,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deliveredSuccessfully => 'تم التوصيل';
 
   @override
-  String get howToScan => 'كيف يمكنني مسح الكود؟';
+  String get howToScan => 'كيف يمكنني مسح الكود ؟';
 
   @override
-  String get howToScanHint => '';
+  String get howToScanHint => '1. افتح التطبيق ووجّه الكاميرا نحو رمز الـQR./n2. سيقوم التطبيق بمسح الرمز ويعرض لك خيارات: (إضافة جديد) أو (عرض التفاصيل)/n3. إذا اخترت (إضافة جديد)، يمكنك إدخال المعلومات: الاسم، الفئة، والوصف. يمكنك اختيار فئة موجودة أو إنشاء فئة جديدة./n4. إذا اخترت (عرض التفاصي)، ستظهر التفاصيل الحالية: الاسم، الفئة، والوصف، مع إمكانية تعديلها.';
 
   @override
   String get howToBuy => 'كيف يمكنني شراء الأكواد اونلاين؟';
 
   @override
-  String get howToBuyHint => '';
+  String get howToBuyHint => '1. افتح التطبيق./n2. اختار عربة التسوق./n3. حدد الخامة والكمية/n المطلوبة.4. أدخل بياناتك: الاسم والعنوان./n5. اختار وسيلة الدفع: كاش أو فيزا أو فودافون كاش./n6. لو اخترت فيزا، أدخل بيانات البطاقة: رقم البطاقة، تاريخ الانتهاء، ورمز الأمان./n7. اضغط على تأكيد الطلب.';
 
   @override
   String get howToEdit => 'كيف يمكنني تعديل المعلومات على الأكواد؟';
 
   @override
-  String get howToEditHint => '';
+  String get howToEditHint => '1.افتح التطبيق./n2.اضغط على زر (مسح)./n3.وجّه الكاميرا نحو الكيو ار./n4. اضغط على زر (عرض التفاصيل)./n5. انتقل الى الاسفل و اضغط على (تعديل)./n6.قم بتعديل المعلومات حسب الحاجة';
 
   @override
   String get refresh => 'تحديث';

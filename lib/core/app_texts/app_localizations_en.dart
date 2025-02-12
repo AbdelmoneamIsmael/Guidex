@@ -25,7 +25,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get creatAnAccount => '';
 
   @override
-  String get fullName => 'Full Name';
+  String get fullName => 'Full ىame';
 
   @override
   String get fullNameHint => 'Please type ypur name';
@@ -304,6 +304,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get expires => 'Expires';
 
   @override
+  String get language => 'Language';
+
+  @override
   String get lightMode => 'Light mode';
 
   @override
@@ -311,9 +314,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get inverterTheme => 'Invert mode';
-
-  @override
-  String get language => 'Language';
 
   @override
   String get otp => 'OTP';
