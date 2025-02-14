@@ -10,24 +10,34 @@ class OrderInfoWidget extends StatelessWidget {
   final String title, value;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          style: AppTextStyle.regular16(context),
-        ),
-        Text(
-          " : ",
-          style: AppTextStyle.regular16(context),
-        ),
-        Text(
-          value,
-          style: AppTextStyle.medium16(context),
-        ),
-      ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        children: [
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              style: AppTextStyle.regular16(context),
+            ),
+          ),
+          Text(
+            " : ",
+            style: AppTextStyle.regular16(context),
+          ),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              value,
+              style: AppTextStyle.medium16(context),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
 class OrderInfoWidget2 extends StatelessWidget {
   const OrderInfoWidget2({
     super.key,
