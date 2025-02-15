@@ -24,10 +24,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signIn => 'Sign In';
 
   @override
-  String get creatAnAccount => '';
+  String get creatAnAccount => 'Creat An Account';
 
   @override
-  String get fullName => 'Full ىame';
+  String get fullName => 'Full Name';
 
   @override
   String get fullNameHint => 'Please type ypur name';

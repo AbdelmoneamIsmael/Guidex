@@ -128,13 +128,13 @@ abstract class AppLocalizations {
   /// No description provided for @creatAnAccount.
   ///
   /// In en, this message translates to:
-  /// **'}reat An Account'**
+  /// **'Creat An Account'**
   String get creatAnAccount;
 
   /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
-  /// **'Full ىame'**
+  /// **'Full Name'**
   String get fullName;
 
   /// No description provided for @fullNameHint.
