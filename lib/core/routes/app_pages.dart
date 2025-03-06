@@ -113,6 +113,7 @@ class AppPages {
       transition: Transition.cupertino,
     ),
     GetPage(
+      
       name: Routes.help,
       page: () => const HelpScreen(),
       transition: Transition.cupertino,

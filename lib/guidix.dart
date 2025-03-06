@@ -34,7 +34,6 @@ class GuiDixApplication extends StatelessWidget {
         return GetBuilder<AppController>(
           init: AppController(),
           builder: (controller) {
-
             return GetMaterialApp(
               title: "Guidix Application",
               initialBinding: AppBindings(),
@@ -42,13 +41,12 @@ class GuiDixApplication extends StatelessWidget {
               supportedLocales: AppLocalizations.supportedLocales,
               locale: Locale(controller.appModel.language.name),
               builder: (context, child) {
-              
                 return child!;
               },
               smartManagement: SmartManagement.full,
               debugShowCheckedModeBanner: false,
               getPages: AppPages.routes,
-              initialRoute: Routes.onBoarding,
+              initialRoute: Routes.mainGuidixScreen,
               theme: controller.getTheme(),
             );
           },
