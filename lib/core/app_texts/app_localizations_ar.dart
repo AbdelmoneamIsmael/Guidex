@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -130,10 +132,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get name => 'الاسم';
 
   @override
+  String get nameAR => 'الاسم بالعربية';
+
+  @override
+  String get nameEn => 'الاسم بالانجليزية';
+
+  @override
   String get nameHint => 'اكتب اسم المنتج';
 
   @override
   String get description => 'الوصف';
+
+  @override
+  String get descriptionAR => 'الوصف بالعربية';
+
+  @override
+  String get descriptionEn => 'الوصف بالانجليزية';
 
   @override
   String get descriptionHint => 'اكتب الوصف الخاص بالمنتج';
@@ -527,4 +541,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get backLabel => 'Back To Previouse Screen';
+
+  @override
+  String get notfoundQrCode => 'هذا الرمز لا ينتمي ل Guidix حتي الان .حاول المسح الرمز الصحيح إذا استمرت المشكلة، يرجى الاتصال بفريق الدعم لدينا';
+
+  @override
+  String get saveUpdates => 'حفظ التحديثات';
 }

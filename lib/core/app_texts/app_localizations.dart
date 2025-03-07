@@ -341,6 +341,18 @@ abstract class AppLocalizations {
   /// **'Name'**
   String get name;
 
+  /// No description provided for @nameAR.
+  ///
+  /// In en, this message translates to:
+  /// **'Name in Arabic'**
+  String get nameAR;
+
+  /// No description provided for @nameEn.
+  ///
+  /// In en, this message translates to:
+  /// **'Name in English'**
+  String get nameEn;
+
   /// No description provided for @nameHint.
   ///
   /// In en, this message translates to:
@@ -352,6 +364,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Description'**
   String get description;
+
+  /// No description provided for @descriptionAR.
+  ///
+  /// In en, this message translates to:
+  /// **'Description in Arabic'**
+  String get descriptionAR;
+
+  /// No description provided for @descriptionEn.
+  ///
+  /// In en, this message translates to:
+  /// **'Description in English'**
+  String get descriptionEn;
 
   /// No description provided for @descriptionHint.
   ///
@@ -1138,6 +1162,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back To Previouse Screen'**
   String get backLabel;
+
+  /// No description provided for @notfoundQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team'**
+  String get notfoundQrCode;
+
+  /// No description provided for @saveUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Save updates'**
+  String get saveUpdates;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

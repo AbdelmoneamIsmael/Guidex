@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -130,10 +132,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get name => 'Name';
 
   @override
+  String get nameAR => 'Name in Arabic';
+
+  @override
+  String get nameEn => 'Name in English';
+
+  @override
   String get nameHint => 'Enter the product name';
 
   @override
   String get description => 'Description';
+
+  @override
+  String get descriptionAR => 'Description in Arabic';
+
+  @override
+  String get descriptionEn => 'Description in English';
 
   @override
   String get descriptionHint => 'Enter your description';
@@ -527,4 +541,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get backLabel => 'Back To Previouse Screen';
+
+  @override
+  String get notfoundQrCode => 'This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team';
+
+  @override
+  String get saveUpdates => 'Save updates';
 }
