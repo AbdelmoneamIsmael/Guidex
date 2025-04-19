@@ -177,5 +177,13 @@
     "qrcode": "QR code",
     "deleteCategory": "حذف القسم",
     "notfoundQrCode": "هذا الرمز لا ينتمي ل Guidix حتي الان .حاول المسح الرمز الصحيح إذا استمرت المشكلة، يرجى الاتصال بفريق الدعم لدينا",
-    "saveUpdates": "حفظ التحديثات"
+    "saveUpdates": "حفظ التحديثات",
+    "wrongHappened": "حدث خطأ",
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "loginFailed": "فشل تسجيل الدخول",
+    "registerSuccess": "تم التسجيل بنجاح",
+    "registerFailed": "فشل التسجيل",
+    "logout": "تسجيل الخروج",
+    "logoutSuccess": "تم تسجيل الخروج بنجاح",
+    "logoutFailed": "فشل تسجيل الخروج"
 }

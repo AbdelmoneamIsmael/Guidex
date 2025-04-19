@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:guidix/core/utils/functions/init_hive/init_hive.dart';
+import 'package:guidix/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'package:guidix/guidix.dart';
 
 void main() async {
@@ -12,6 +14,7 @@ void main() async {
   //   FlutterError.dumpErrorToConsole(details);
   //   runApp(MainErrorScreen(details: details));
   // };
+  await initializeApplication();
   await GetStorage.init();
 
   runApp(DevicePreview(
@@ -19,6 +22,11 @@ void main() async {
     enabled: false,
     builder: (context) => const GuiDixApplication(),
   ));
+}
+
+initializeApplication() async {
+  await hiveInitialization();
+  initializeGetIt();
 }
 
 class MainErrorScreen extends StatelessWidget {

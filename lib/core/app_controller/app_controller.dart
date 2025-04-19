@@ -74,7 +74,7 @@ class AppController extends GetxController {
     },
     {
       "id": "e6la612224m715mdo2nbA10499e",
-      "value": false,
+      "value": true,
     },
     {
       "id": "A13d09aem22216e94m7581nb9lo",

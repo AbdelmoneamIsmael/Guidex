@@ -547,4 +547,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saveUpdates => 'Save updates';
+
+  @override
+  String get wrongHappened => 'Something went wrong';
+
+  @override
+  String get loginSuccess => 'Login successfully';
+
+  @override
+  String get loginFailed => 'Login failed';
+
+  @override
+  String get registerSuccess => 'Register successfully';
+
+  @override
+  String get registerFailed => 'Register failed';
+
+  @override
+  String get logout => 'Logout ';
+
+  @override
+  String get logoutSuccess => 'Logout successfully';
+
+  @override
+  String get logoutFailed => 'Logout failed';
 }

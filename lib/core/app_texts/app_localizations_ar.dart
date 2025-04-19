@@ -547,4 +547,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get saveUpdates => 'حفظ التحديثات';
+
+  @override
+  String get wrongHappened => 'حدث خطأ';
+
+  @override
+  String get loginSuccess => 'تم تسجيل الدخول بنجاح';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get registerSuccess => 'تم التسجيل بنجاح';
+
+  @override
+  String get registerFailed => 'فشل التسجيل';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get logoutSuccess => 'تم تسجيل الخروج بنجاح';
+
+  @override
+  String get logoutFailed => 'فشل تسجيل الخروج';
 }

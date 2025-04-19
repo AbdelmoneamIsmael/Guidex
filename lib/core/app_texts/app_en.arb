@@ -179,5 +179,13 @@
         "backLabel":"Back To Previouse Screen",
     "notfoundQrCode": "This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team",
 
-    "saveUpdates": "Save updates"
+    "saveUpdates": "Save updates",
+    "wrongHappened": "Something went wrong",
+        "loginSuccess": "Login successfully",
+    "loginFailed": "Login failed",
+    "registerSuccess":"Register successfully",
+    "registerFailed": "Register failed",
+    "logout": "Logout ",
+    "logoutSuccess": "Logout successfully",
+    "logoutFailed": "Logout failed"
 }

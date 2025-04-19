@@ -17,8 +17,10 @@ class AppTextField extends StatelessWidget {
     this.inputFormatters,
     this.maxLines = 1,
     this.textAlign,
+    this.validator,
   });
   final TextAlign? textAlign;
+
   final String hintText, semanticLabel;
   final Widget? suffixIcon, prefixIcon;
   final TextEditingController? controller;
@@ -26,6 +28,8 @@ class AppTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final int maxLines;
+  final String? Function(String?)? validator;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,6 +42,7 @@ class AppTextField extends StatelessWidget {
         ),
         4.verticalSpace,
         GuidixFormField(
+            validator: validator,
             controller: controller,
             obscureText: obscureText,
             prefixIcon: prefixIcon,
@@ -65,6 +70,7 @@ class GuidixFormField extends StatelessWidget {
     this.keyboardType,
     this.inputFormatters,
     this.textAlign,
+    this.validator,
   });
 
   final bool? obscureText;
@@ -77,12 +83,15 @@ class GuidixFormField extends StatelessWidget {
   final int maxLines;
   final TextAlign? textAlign;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Semantics(
       // label: semanticLabel,
 
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: validator,
         controller: controller,
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,
