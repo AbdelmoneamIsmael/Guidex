@@ -17,7 +17,7 @@ class SignWithEmail extends SigninRepo with PerfumeSignIn {
     try {
       var result = await super.perfumeSignIn(
         data: signInModel.toJson(),
-        endPoint: '/api/Authentication/token',
+        endPoint: '/api/Authentication/login',
       );
 
       return result;

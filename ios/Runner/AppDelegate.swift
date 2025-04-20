@@ -3,6 +3,8 @@ import UIKit
 import flutter_local_notifications
 import FirebaseCore
 import FirebaseMessaging  
+import FirebaseAuth
+import GoogleSignIn
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -29,5 +31,6 @@ import FirebaseMessaging
       super.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
       
   }
+  
 }
 
