@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44485603355",
+    "project_id": "guidix-32dc6",
+    "storage_bucket": "guidix-32dc6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44485603355:android:4092bb1c18fe73f4c8c8be",
+        "android_client_info": {
+          "package_name": "com.abdelmoneam.guidix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEQtOFD7PZVvOhqhYNwzA8TvtR7lmXSS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
