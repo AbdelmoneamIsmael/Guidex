@@ -5,6 +5,7 @@ import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
+import 'package:guidix/core/utils/notification/notification_handeler.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/loading_over_lay.dart';
@@ -138,13 +139,13 @@ class LoginScreen extends GetView<LoginController> {
                       hint:
                           "by clicking on this button you can sign up with google",
                       onPressed: () {
-                         controller.login(
-                                context: context,
-                                getUserInfo: getIt.get<GetUserInfoRepo>(),
-                                signinRepo: SignWithGoogleRepo(
-                                  googleLogin: GoogleLogin(),
-                                ),
-                              );
+                        controller.login(
+                          context: context,
+                          getUserInfo: getIt.get<GetUserInfoRepo>(),
+                          signinRepo: SignWithGoogleRepo(
+                            googleLogin: GoogleLogin(),
+                          ),
+                        );
                       },
                       icon: Assets.icons.google,
                     ),
@@ -156,6 +157,21 @@ class LoginScreen extends GetView<LoginController> {
                     //   icon: Assets.icons.facebook,
                     // ),
                     32.verticalSpace,
+                    GestureDetector(
+                      onTap: () {
+                        NotificationHelper.showNotification(
+                          title: "Test Notification",
+                          body: "This is a test notification",
+                          id: 1,
+                        );
+                      },
+                      child: Text(
+                        "Test Notification",
+                        style: AppTextStyle.regular16(context),
+                      ),
+                    ),
+                    32.verticalSpace,
+
                     RichText(
                       text: TextSpan(
                         style: AppTextStyle.medium16(context),
