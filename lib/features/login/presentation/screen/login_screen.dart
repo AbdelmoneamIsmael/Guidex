@@ -6,6 +6,7 @@ import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
+import 'package:guidix/core/widgets/loading_over_lay.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/login/presentation/controller/login_controller.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -15,128 +16,158 @@ class LoginScreen extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: GuidixAppBar(
-        title: AppLocalizations.of(context).welcomeBack,
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
-        child: Column(
-          children: [
-            AppTextField(
-              controller: controller.emailController,
-              hintText: AppLocalizations.of(context).email,
-              semanticLabel: "Enter your Email Adress",
-              prefixIcon: const Icon(Icons.person),
+    return GetBuilder<LoginController>(builder: (controller) {
+      return Stack(
+        children: [
+          Scaffold(
+            appBar: GuidixAppBar(
+              title: AppLocalizations.of(context).welcomeBack,
             ),
-            16.verticalSpace,
-            GetBuilder<LoginController>(
-              builder: (controller) {
-                return AppTextField(
-                  controller: controller.passwordController,
-                  hintText: AppLocalizations.of(context).password,
-                  obscureText: controller.passwordSecure,
-                  semanticLabel: "Enter your Passowrd",
-                  prefixIcon: const Icon(Icons.lock),
-                  suffixIcon: Semantics(
-                    label: " Password",
-                    hint: "change  password visibility",
-                    button: true,
-                    value: controller.passwordSecure.toString(),
-                    checked: controller.passwordSecure,
-                    obscured: controller.passwordSecure,
-                    child: GestureDetector(
-                      onTap: () {
-                        controller.changePasswordSecure();
+            body: SingleChildScrollView(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
+              child: Form(
+                key: controller.formKey,
+                child: Column(
+                  children: [
+                    AppTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return AppLocalizations.of(context).emailHint;
+                        }
+                        return null;
                       },
-                      child: controller.passwordSecure
-                          ? const Icon(Icons.visibility)
-                          : const Icon(Icons.visibility_off),
+                      controller: controller.emailController,
+                      hintText: AppLocalizations.of(context).email,
+                      semanticLabel: "Enter your Email Adress",
+                      prefixIcon: const Icon(Icons.person),
                     ),
-                  ),
-                );
-              },
-            ),
-            8.verticalSpace,
-            Align(
-              alignment: Alignment.centerRight,
-              child: GestureDetector(
-                onTap: () {
-                  Get.toNamed(Routes.forgetPassScreen);
-                },
-                child: Text(
-                  AppLocalizations.of(context).forgotPassword,
-                  style: AppTextStyle.medium14(context),
-                ),
-              ),
-            ),
-            32.verticalSpace,
-            PrimaryButton(
-              onPressed: () {
-                Get.offAllNamed(Routes.mainGuidixScreen);
-              },
-              title: AppLocalizations.of(context).signIn,
-            ),
-            32.verticalSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Expanded(
-                  child: Divider(thickness: 1),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  AppLocalizations.of(context).or,
-                  style: AppTextStyle.medium16(context),
-                ),
-                const SizedBox(width: 12),
-                const Expanded(
-                  child: Divider(thickness: 1),
-                ),
-              ],
-            ),
-            24.verticalSpace,
-            SocialButton(
-              label: AppLocalizations.of(context).continueWithGoogle,
-              hint: "by clicking on this button you can sign up with google",
-              onPressed: () {},
-              icon: Assets.icons.google,
-            ),
-            16.verticalSpace,
-            SocialButton(
-              label: AppLocalizations.of(context).continueWithFacebook,
-              hint: "by clicking on this button you can sign up with Facebook",
-              onPressed: () {},
-              icon: Assets.icons.facebook,
-            ),
-            32.verticalSpace,
-            RichText(
-              text: TextSpan(
-                style: AppTextStyle.medium16(context),
-                children: [
-                  TextSpan(
-                    text: AppLocalizations.of(context).donotHaveAnAccount,
-                    style: AppTextStyle.medium16(context),
-                  ),
-                  WidgetSpan(
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed(Routes.registerScreen);
+                    16.verticalSpace,
+                    GetBuilder<LoginController>(
+                      builder: (controller) {
+                        return AppTextField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return AppLocalizations.of(context).password;
+                            }
+                            return null;
+                          },
+                          controller: controller.passwordController,
+                          hintText: AppLocalizations.of(context).password,
+                          obscureText: controller.passwordSecure,
+                          semanticLabel: "Enter your Passowrd",
+                          prefixIcon: const Icon(Icons.lock),
+                          suffixIcon: Semantics(
+                            label: " Password",
+                            hint: "change  password visibility",
+                            button: true,
+                            value: controller.passwordSecure.toString(),
+                            checked: controller.passwordSecure,
+                            obscured: controller.passwordSecure,
+                            child: GestureDetector(
+                              onTap: () {
+                                controller.changePasswordSecure();
+                              },
+                              child: controller.passwordSecure
+                                  ? const Icon(Icons.visibility_off)
+                                  : const Icon(Icons.visibility),
+                            ),
+                          ),
+                        );
                       },
-                      child: Text(
-                        " ${AppLocalizations.of(context).signUp}",
-                        style: AppTextStyle.bold16(context).copyWith(
-                          color: Theme.of(context).primaryColor,
+                    ),
+                    8.verticalSpace,
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.forgetPassScreen);
+                        },
+                        child: Text(
+                          AppLocalizations.of(context).forgotPassword,
+                          style: AppTextStyle.medium14(context),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    32.verticalSpace,
+                    PrimaryButton(
+                      onPressed: () {
+                        controller.login(
+                          context: context,
+                        );
+                      },
+                      title: AppLocalizations.of(context).signIn,
+                    ),
+                    32.verticalSpace,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Expanded(
+                          child: Divider(thickness: 1),
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          AppLocalizations.of(context).or,
+                          style: AppTextStyle.medium16(context),
+                        ),
+                        const SizedBox(width: 12),
+                        const Expanded(
+                          child: Divider(thickness: 1),
+                        ),
+                      ],
+                    ),
+                    24.verticalSpace,
+                    SocialButton(
+                      label: AppLocalizations.of(context).continueWithGoogle,
+                      hint:
+                          "by clicking on this button you can sign up with google",
+                      onPressed: () {},
+                      icon: Assets.icons.google,
+                    ),
+                    // 16.verticalSpace,
+                    // SocialButton(
+                    //   label: AppLocalizations.of(context).continueWithFacebook,
+                    //   hint: "by clicking on this button you can sign up with Facebook",
+                    //   onPressed: () {},
+                    //   icon: Assets.icons.facebook,
+                    // ),
+                    32.verticalSpace,
+                    RichText(
+                      text: TextSpan(
+                        style: AppTextStyle.medium16(context),
+                        children: [
+                          TextSpan(
+                            text:
+                                AppLocalizations.of(context).donotHaveAnAccount,
+                            style: AppTextStyle.medium16(context),
+                          ),
+                          WidgetSpan(
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed(Routes.registerScreen);
+                              },
+                              child: Text(
+                                " ${AppLocalizations.of(context).signUp}",
+                                style: AppTextStyle.bold16(context).copyWith(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            )
-          ],
-        ),
-      ),
-    );
+            ),
+          ),
+          Visibility(
+            visible: controller.isLoading,
+            child: const LoadingOverlay(),
+          ),
+        ],
+      );
+    });
   }
 }

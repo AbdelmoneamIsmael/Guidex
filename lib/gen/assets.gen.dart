@@ -229,6 +229,13 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Splash.png
+  AssetGenImage get splash => const AssetGenImage('assets/images/Splash.png');
+
+  /// File path: assets/images/app_logo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/app_logo.png');
+
   /// File path: assets/images/onBoarding2.png
   AssetGenImage get onBoarding2 =>
       const AssetGenImage('assets/images/onBoarding2.png');
@@ -248,13 +255,25 @@ class $AssetsImagesGen {
   /// File path: assets/images/qrcode.png
   AssetGenImage get qrcode => const AssetGenImage('assets/images/qrcode.png');
 
+  /// File path: assets/images/splash12.png
+  AssetGenImage get splash12 =>
+      const AssetGenImage('assets/images/splash12.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [onBoarding2, onboarding, productCart, profileImage, qrcode];
+  List<AssetGenImage> get values => [
+        splash,
+        appLogo,
+        onBoarding2,
+        onboarding,
+        productCart,
+        profileImage,
+        qrcode,
+        splash12
+      ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
@@ -293,7 +312,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {

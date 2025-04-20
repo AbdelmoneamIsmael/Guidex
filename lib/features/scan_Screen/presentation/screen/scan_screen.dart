@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
-import 'package:guidix/core/models/category_model.dart';
-import 'package:guidix/core/models/qr_code_model.dart';
+import 'package:guidix/core/models/qrcode_generation.dart';
 import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
@@ -80,70 +80,216 @@ class ScanScreen extends GetView<ScnnerController> {
                 ),
                 59.verticalSpace,
                 controller.scannerState == ScannerState.initial
-                    ? AspectRatio(
-                        aspectRatio: 1,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            SvgPicture.asset(Assets.icons.scanCodeBorder),
-                            Padding(
-                              padding: const EdgeInsets.all(48).w,
-                              child: SfBarcodeGenerator(
-                                value: 'Abdelmoneam',
-                                symbology: QRCode(),
+                    ? const InitialSCreen()
+                    : controller.scannerState == ScannerState.success
+                        ? const SuccessScanScreen()
+                        : controller.scannerState == ScannerState.notEmplemented
+                            ? const SuccessScanNoValueScreen()
+                            : Center(
+                                child: Text(
+                                  AppLocalizations.of(context).notfoundQrCode,
+                                  textAlign: TextAlign.center,
+                                  style: AppTextStyle.medium20(context)
+                                      .copyWith(fontWeight: FontWeight.w600),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      )
-                    : Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 200,
-                            width: 200,
-                            child: QrcodeWidget(
-                              qrCodeID: controller.barCodeValue,
-                            ),
-                          ),
-                          42.verticalSpace,
-                          PrimaryButton(
-                            title: AppLocalizations.of(context).addNew,
-                            onPressed: () {
-                              Get.toNamed(
-                                Routes.addNewQr,
-                                arguments: controller.barCodeValue,
-                              );
-                            },
-                          ),
-                          16.verticalSpace,
-                          PrimaryButton(
-                            backgroundColor:
-                                Theme.of(context).scaffoldBackgroundColor,
-                            forGroundColor: Theme.of(context).primaryColor,
-                            title: AppLocalizations.of(context).viewDetails,
-                            onPressed: () {
-                              Get.toNamed(Routes.qrCodeDetails, arguments: {
-                                "qrCodeModel": QrModel(
-                                  id: "abdelmoneam",
-                                  title: "Scarf",
-                                  category: Category(
-                                      categoryId: "2", categoryName: "Clothes"),
-                                  describtion:
-                                      "an in-line joint made by chamfering, halving, or notching two pieces to correspond and lapping them",
-                                )
-                              });
-                            },
-                          )
-                        ],
-                      ),
                 59.verticalSpace,
               ],
             ),
           ),
         );
       },
+    );
+  }
+}
+
+class SuccessScanNoValueScreen extends GetView<ScnnerController> {
+  const SuccessScanNoValueScreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<ScnnerController>(builder: (controller) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 200,
+            width: 200,
+            child: Stack(
+              children: [
+                QrcodeWidget(
+                  qrCodeID: controller.barCodeValue,
+                ),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: UnconstrainedBox(
+                    child: Container(
+                      color: Colors.white,
+                      width: 50.w,
+                      height: 15.h,
+                      child: SvgPicture.asset(
+                        width: 50.w,
+                        Assets.icons.appLogo,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          42.verticalSpace,
+          Text(
+            AppLocalizations.of(context).newQrCode,
+            style: AppTextStyle.medium20(context).copyWith(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          16.verticalSpace,
+          PrimaryButton(
+            title: AppLocalizations.of(context).addNew,
+            onPressed: () {
+              Get.toNamed(
+                Routes.qrCodeDetails,
+                arguments: {
+                  "qrCodeModel": QrCodeGeenerationModel(
+                    qrCodeId: controller.barCodeValue,
+                    nameEn: "",
+                    nameAr: "",
+                    describtonEn: "",
+                    descriptionAr: "",
+                  ),
+                },
+              )!
+                  .then((value) =>
+                      controller.setBarCode(controller.barCodeValue));
+            },
+          ),
+        ],
+      );
+    });
+  }
+}
+
+class SuccessScanScreen extends GetView<ScnnerController> {
+  const SuccessScanScreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<ScnnerController>(builder: (controller) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 200,
+            width: 200,
+            child: Stack(
+              children: [
+                QrcodeWidget(
+                  qrCodeID: controller.barCodeValue,
+                ),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: UnconstrainedBox(
+                    child: Container(
+                      color: Colors.white,
+                      width: 50.w,
+                      height: 15.h,
+                      child: SvgPicture.asset(
+                        width: 50.w,
+                        Assets.icons.appLogo,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          42.verticalSpace,
+          Text(
+            Get.locale == const Locale("en")
+                ? controller.selectedQrcode!.nameAr!
+                : controller.selectedQrcode!.nameEn!,
+            style: AppTextStyle.medium20(context).copyWith(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          16.verticalSpace,
+          PrimaryButton(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            forGroundColor: Theme.of(context).primaryColor,
+            title: AppLocalizations.of(context).viewDetails,
+            onPressed: () {
+              Get.toNamed(Routes.qrCodeDetails, arguments: {
+                "qrCodeModel": controller.selectedQrcode,
+              })!
+                  .then(
+                (value) => controller.setBarCode(
+                  controller.barCodeValue,
+                ),
+              );
+            },
+          )
+        ],
+      );
+    });
+  }
+}
+
+class InitialSCreen extends GetView<ScnnerController> {
+  const InitialSCreen({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 1,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SvgPicture.asset(Assets.icons.scanCodeBorder),
+          Padding(
+            padding: const EdgeInsets.all(48).w,
+            child: Stack(
+              children: [
+                SfBarcodeGenerator(
+                  value: 'Abdelmoneam',
+                  symbology: QRCode(),
+                ),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: UnconstrainedBox(
+                    child: Container(
+                      color: Colors.white,
+                      width: 100.w,
+                      height: 30.h,
+                      child: SvgPicture.asset(
+                        width: 100.w,
+                        Assets.icons.appLogo,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -180,8 +326,9 @@ class CircleOption extends StatelessWidget {
             width: 24.w,
             fit: BoxFit.scaleDown,
             colorFilter: ColorFilter.mode(
-                color ?? Theme.of(context).textTheme.bodyMedium!.color!,
-                BlendMode.srcIn),
+              color ?? Theme.of(context).textTheme.bodyMedium!.color!,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ),

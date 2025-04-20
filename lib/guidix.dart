@@ -46,7 +46,7 @@ class GuiDixApplication extends StatelessWidget {
               smartManagement: SmartManagement.full,
               debugShowCheckedModeBanner: false,
               getPages: AppPages.routes,
-              initialRoute: Routes.mainGuidixScreen,
+              initialRoute: Routes.loginScreen,
               theme: controller.getTheme(),
             );
           },

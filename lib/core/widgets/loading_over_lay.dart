@@ -18,11 +18,11 @@ class LoadingOverlay extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         color: Colors.black.withValues(alpha: 0.65),
-        child: const Center(
+        child: Center(
           child: CircularProgressIndicator.adaptive(
             // color: Colors.white,
             strokeWidth: 1,
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).textTheme.bodyMedium!.color,
           ),
         ),
       ),

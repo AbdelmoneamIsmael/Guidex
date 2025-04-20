@@ -40,8 +40,12 @@
     "categoryHint": "Type a name of category",
     "qrCodeDetails": "QR code details",
     "name": "Name",
+    "nameAR": "Name in Arabic",
+    "nameEn": "Name in English",
     "nameHint": "Enter the product name",
     "description": "Description",
+    "descriptionAR": "Description in Arabic",
+    "descriptionEn": "Description in English",
     "descriptionHint": "Enter your description",
     "edit": "Edit",
     "myQrCode": "My QR Code",
@@ -172,6 +176,16 @@
     "enter": "Enter",
     "qrcode": "QR code",
     "deleteCategory": "Delete category",
-        "backLabel":"Back To Previouse Screen"
-    
+        "backLabel":"Back To Previouse Screen",
+    "notfoundQrCode": "This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team",
+
+    "saveUpdates": "Save updates",
+    "wrongHappened": "Something went wrong",
+        "loginSuccess": "Login successfully",
+    "loginFailed": "Login failed",
+    "registerSuccess":"Register successfully",
+    "registerFailed": "Register failed",
+    "logout": "Logout ",
+    "logoutSuccess": "Logout successfully",
+    "logoutFailed": "Logout failed"
 }

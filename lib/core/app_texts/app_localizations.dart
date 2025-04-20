@@ -341,6 +341,18 @@ abstract class AppLocalizations {
   /// **'Name'**
   String get name;
 
+  /// No description provided for @nameAR.
+  ///
+  /// In en, this message translates to:
+  /// **'Name in Arabic'**
+  String get nameAR;
+
+  /// No description provided for @nameEn.
+  ///
+  /// In en, this message translates to:
+  /// **'Name in English'**
+  String get nameEn;
+
   /// No description provided for @nameHint.
   ///
   /// In en, this message translates to:
@@ -352,6 +364,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Description'**
   String get description;
+
+  /// No description provided for @descriptionAR.
+  ///
+  /// In en, this message translates to:
+  /// **'Description in Arabic'**
+  String get descriptionAR;
+
+  /// No description provided for @descriptionEn.
+  ///
+  /// In en, this message translates to:
+  /// **'Description in English'**
+  String get descriptionEn;
 
   /// No description provided for @descriptionHint.
   ///
@@ -1138,6 +1162,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back To Previouse Screen'**
   String get backLabel;
+
+  /// No description provided for @notfoundQrCode.
+  ///
+  /// In en, this message translates to:
+  /// **'This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team'**
+  String get notfoundQrCode;
+
+  /// No description provided for @saveUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Save updates'**
+  String get saveUpdates;
+
+  /// No description provided for @wrongHappened.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get wrongHappened;
+
+  /// No description provided for @loginSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Login successfully'**
+  String get loginSuccess;
+
+  /// No description provided for @loginFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed'**
+  String get loginFailed;
+
+  /// No description provided for @registerSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Register successfully'**
+  String get registerSuccess;
+
+  /// No description provided for @registerFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Register failed'**
+  String get registerFailed;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout '**
+  String get logout;
+
+  /// No description provided for @logoutSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout successfully'**
+  String get logoutSuccess;
+
+  /// No description provided for @logoutFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout failed'**
+  String get logoutFailed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

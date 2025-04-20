@@ -132,10 +132,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get name => 'الاسم';
 
   @override
+  String get nameAR => 'الاسم بالعربية';
+
+  @override
+  String get nameEn => 'الاسم بالانجليزية';
+
+  @override
   String get nameHint => 'اكتب اسم المنتج';
 
   @override
   String get description => 'الوصف';
+
+  @override
+  String get descriptionAR => 'الوصف بالعربية';
+
+  @override
+  String get descriptionEn => 'الوصف بالانجليزية';
 
   @override
   String get descriptionHint => 'اكتب الوصف الخاص بالمنتج';
@@ -529,4 +541,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get backLabel => 'Back To Previouse Screen';
+
+  @override
+  String get notfoundQrCode => 'هذا الرمز لا ينتمي ل Guidix حتي الان .حاول المسح الرمز الصحيح إذا استمرت المشكلة، يرجى الاتصال بفريق الدعم لدينا';
+
+  @override
+  String get saveUpdates => 'حفظ التحديثات';
+
+  @override
+  String get wrongHappened => 'حدث خطأ';
+
+  @override
+  String get loginSuccess => 'تم تسجيل الدخول بنجاح';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get registerSuccess => 'تم التسجيل بنجاح';
+
+  @override
+  String get registerFailed => 'فشل التسجيل';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get logoutSuccess => 'تم تسجيل الخروج بنجاح';
+
+  @override
+  String get logoutFailed => 'فشل تسجيل الخروج';
 }

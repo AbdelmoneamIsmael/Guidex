@@ -19,6 +19,17 @@ class QrCodeDetails extends GetView<QrCodeDetailsController> {
         builder: (controller) {
       return Scaffold(
         appBar: GuidixAppBar(
+          actions: [
+            Semantics(
+              label: AppLocalizations.of(context).saveUpdates,
+              child: IconButton(
+                icon: const Icon(Icons.check),
+                onPressed: () {
+                  controller.applyChanges();
+                },
+              ),
+            ),
+          ],
           title: AppLocalizations.of(context).qrCodeDetails,
         ),
         // bottomNavigationBar: Container(
@@ -51,7 +62,7 @@ class QrCodeDetails extends GetView<QrCodeDetailsController> {
                 height: 237.h - 32.h,
                 width: 237.w - 32.w,
                 child: QrcodeWidget(
-                  qrCodeID: controller.qrCodeModel.id!,
+                  qrCodeID: controller.qrCodeModel.qrCodeId ?? "",
                   borderRadius: BorderRadius.circular(8.r),
                 ),
               ),
@@ -63,16 +74,29 @@ class QrCodeDetails extends GetView<QrCodeDetailsController> {
               ),
               24.verticalSpace,
               AppTextField(
-                controller: controller.nameController,
-                hintText: AppLocalizations.of(context).name,
-                semanticLabel: AppLocalizations.of(context).name,
+                controller: controller.nameArController,
+                hintText: AppLocalizations.of(context).nameAR,
+                semanticLabel: AppLocalizations.of(context).nameAR,
               ),
               24.verticalSpace,
               AppTextField(
-                controller: controller.describtionController,
+                controller: controller.describtionArController,
                 maxLines: 5,
-                hintText: AppLocalizations.of(context).description,
-                semanticLabel: AppLocalizations.of(context).description,
+                hintText: AppLocalizations.of(context).descriptionAR,
+                semanticLabel: AppLocalizations.of(context).descriptionAR,
+              ),
+              24.verticalSpace,
+              AppTextField(
+                controller: controller.nameEnController,
+                hintText: AppLocalizations.of(context).nameEn,
+                semanticLabel: AppLocalizations.of(context).nameEn,
+              ),
+              24.verticalSpace,
+              AppTextField(
+                controller: controller.describtionEnController,
+                maxLines: 5,
+                hintText: AppLocalizations.of(context).descriptionAR,
+                semanticLabel: AppLocalizations.of(context).descriptionEn,
               ),
             ],
           ),
