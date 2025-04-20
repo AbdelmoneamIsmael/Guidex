@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/const/enum.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/widgets/ui_helper.dart';
-import 'package:guidix/features/login/data/model/login_prameters.dart';
+import 'package:guidix/features/login/data/model/sign_in_model.dart';
+import 'package:guidix/features/login/data/repo/signin_repo.dart';
 import 'package:guidix/features/login/repo/login_repo.dart';
 
 class LoginController extends GetxController {
@@ -12,10 +14,10 @@ class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool passwordSecure = true;
-  final LoginRepo loginRepo;
+  
   bool isLoading = false;
 
-  LoginController({required this.loginRepo});
+  LoginController();
   @override
   void dispose() {
     emailController.dispose();
@@ -28,39 +30,39 @@ class LoginController extends GetxController {
     update();
   }
 
-  void login({
+  Future<void> login({
+    required SigninRepo signinRepo,
+    required GetUserInfoRepo getUserInfo,
     required BuildContext context,
   }) async {
-    if (formKey.currentState!.validate()) {
-      try {
-        isLoading = true;
-        var result = await loginRepo.login(
-          params: LoginPrameters(
-            email: emailController.text,
-            password: passwordController.text,
-            fcmToken: "",
-          ),
-        );
-        result.fold((l) {
+    try {
+      isLoading = true;
+      var result = await signinRepo.login();
+      result.fold(
+        (l) {
           isLoading = false;
-          UIHelper.showSnackbar(
-              message: l.message,
-              context: context,
-              title: AppLocalizations.of(context).wrongHappened);
-        }, (r) {
-          isLoading = false;
-          UIHelper.showToast(
-            AppLocalizations.of(context).loginSuccess,
-            SnackBarType.success,
+          UIHelper.showSnackbar(context: context, message: l.message);
+          update();
+        },
+        (r) async {
+          print(r);
+          var userInfo = await getUserInfo.getUserInfo();
+          userInfo.fold(
+            (l) => UIHelper.showSnackbar(context: context, message: l.message),
+            (info) {
+              Get.find<AppController>().cacheUSer(userInfo: info, user: r);
+              isLoading = false;
+              update();
+              Get.offAllNamed(Routes.homeScreen);
+            },
           );
-          Get.offAllNamed(Routes.mainGuidixScreen);
-        });
-      } on Exception catch (e) {
-        isLoading = false;
-        UIHelper.showToast(
-          "${AppLocalizations.of(context).wrongHappened} $e",
-          SnackBarType.error,
-        );
+        },
+      );
+    } on Exception catch (e) {
+      isLoading = false;
+      if (context.mounted) {
+        UIHelper.showSnackbar(context: context, message: e.toString());
+        update();
       }
     }
   }

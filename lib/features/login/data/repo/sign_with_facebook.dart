@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:perfume_ecommerce/core/error/failure.dart';
-import 'package:perfume_ecommerce/core/global_repo/repo/sign_in/signin_repo.dart';
-import 'package:perfume_ecommerce/core/models/user/user_model.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/model/sign_in_social_model.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/remote/facebook_login.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/repo/sign_with_email.dart';
+import 'package:guidix/core/error/error.dart';
+import 'package:guidix/core/models/user/user_model.dart';
+import 'package:guidix/features/login/data/model/sign_in_social_model.dart';
+import 'package:guidix/features/login/data/remote/facebook_login.dart';
+import 'package:guidix/features/login/data/repo/sign_with_email.dart';
+import 'package:guidix/features/login/data/repo/signin_repo.dart';
 
 class SignWithFacebook extends SigninRepo with PerfumeSignIn {
   final FacebookLoginAuthRepo facebookLoginAuthRepo;

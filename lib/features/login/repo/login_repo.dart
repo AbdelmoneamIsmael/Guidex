@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:guidix/core/error/error.dart';
-import 'package:guidix/features/login/data/model/login_prameters.dart';
-import 'package:guidix/features/login/data/model/login_response.dart';
+import 'package:guidix/core/models/user/user_info.dart';
 
-abstract class LoginRepo {
-  Future<Either<Failure, LoginResponse>> login(
-      {required LoginPrameters params});
+
+abstract class GetUserInfoRepo {
+  Future<Either<Failure, UserInfoModel>> getUserInfo();
 }

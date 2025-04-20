@@ -18,18 +18,17 @@ class UIHelper {
     );
   }
 
-  static void showSnackbar(
-    {
-     required  String title,
-  required  BuildContext context,
- required   String message,
+  static void showSnackbar({
+    String? title,
+    required BuildContext context,
+    required String message,
     Color? backgroundColor,
     Color? colorText,
     Function? onTap,
   }) {
     Get.snackbar(
       duration: const Duration(seconds: 3),
-      title,
+      title ?? "",
       message,
       backgroundColor: backgroundColor ??
           Theme.of(context).primaryColor.withValues(alpha: .5),
@@ -40,7 +39,7 @@ class UIHelper {
         data: MediaQuery.of(Get.context!)
             .copyWith(textScaler: const TextScaler.linear(1)),
         child: Text(
-          title,
+          title ?? "",
           style: AppTextStyle.simiBold16(context).copyWith(
             color: colorText,
           ),
@@ -61,7 +60,7 @@ class UIHelper {
     );
   }
 
- static void showToast(
+  static void showToast(
     String message,
     SnackBarType type,
   ) {
@@ -76,7 +75,7 @@ class UIHelper {
     );
   }
 
- static Color _getColor(SnackBarType type) {
+  static Color _getColor(SnackBarType type) {
     switch (type) {
       case SnackBarType.success:
         return Colors.green;

@@ -1,5 +1,5 @@
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/model/facebook_response_model.dart';
+import 'package:guidix/features/login/data/model/facebook_response_model.dart';
 
 class FacebookLoginAuthRepo {
   Future<FaceBookLoginResponseModel> loginWithFacebook() async {

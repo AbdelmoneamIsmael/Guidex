@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:perfume_ecommerce/core/const/cache_keys.dart';
-import 'package:perfume_ecommerce/core/error/failure.dart';
-import 'package:perfume_ecommerce/core/global_repo/repo/sign_in/signin_repo.dart';
-import 'package:perfume_ecommerce/core/models/user/user_model.dart';
-import 'package:perfume_ecommerce/core/utils/api/api_server.dart';
-import 'package:perfume_ecommerce/core/utils/cache_helper.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/model/sign_in_model.dart';
+import 'package:guidix/core/const/app_const.dart';
+import 'package:guidix/core/error/error.dart';
+import 'package:guidix/core/models/user/user_model.dart';
+import 'package:guidix/core/utils/api/api_server.dart';
+import 'package:guidix/core/utils/cache_helper.dart';
+import 'package:guidix/features/login/data/model/sign_in_model.dart';
+import 'package:guidix/features/login/data/repo/signin_repo.dart';
 
 class SignWithEmail extends SigninRepo with PerfumeSignIn {
-  final SignInModel signInModel;
+  final LoginPrameters signInModel;
 
   SignWithEmail({required this.signInModel});
   @override
@@ -44,11 +44,11 @@ mixin class PerfumeSignIn {
         endPoint: endPoint,
       );
       await CacheHelper.setSecuerString(
-        key: CacheKeys.accessToken,
+        key: GetStoreageKey.accessToken,
         value: result["data"]["token"],
       );
       await CacheHelper.setSecuerString(
-        key: CacheKeys.refreshToken,
+        key: GetStoreageKey.refreshToken,
         value: result["data"]["refreshToken"],
       );
       UserModel userModel = UserModel.fromJson(result["data"]);

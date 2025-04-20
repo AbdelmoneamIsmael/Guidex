@@ -1,5 +1,6 @@
-import 'package:perfume_ecommerce/core/const/enum.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/model/sign_in_social_model.dart';
+
+import 'package:guidix/core/const/enum.dart';
+import 'package:guidix/features/login/data/model/sign_in_social_model.dart';
 
 class FaceBookLoginResponseModel extends SocialSignIn {
   FaceBookLoginResponseModel({

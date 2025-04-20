@@ -24,3 +24,8 @@ enum PaymentMethod {
   visa,
   vodafoneCash,
 }
+
+enum SocialLogin {
+  facebook,
+  google,
+}

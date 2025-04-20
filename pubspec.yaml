@@ -32,13 +32,13 @@ dependencies:
   dartz: ^0.10.1
   device_preview: ^1.2.0
   dio: ^5.7.0
-<<<<<<< HEAD
-  firebase_core: ^3.13.0
-=======
   firebase_auth: ^5.5.2
->>>>>>> 8c497dfe8eee8c355c658163c525463aa08c2c87
+  firebase_core: ^3.13.0
+  firebase_messaging: ^15.2.5
   flutter:
     sdk: flutter
+  flutter_facebook_auth: ^7.1.1
+  flutter_local_notifications: ^19.1.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.4

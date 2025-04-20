@@ -1,5 +1,7 @@
-import 'package:perfume_ecommerce/core/const/app_const.dart';
-import 'package:perfume_ecommerce/core/const/enum.dart';
+
+
+import 'package:guidix/core/const/app_const.dart';
+import 'package:guidix/core/const/enum.dart';
 
 class SocialSignIn {
   SocialSignIn({

@@ -6,7 +6,10 @@ import 'package:get_storage/get_storage.dart';
 import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/models/qrcode_generation.dart';
+import 'package:guidix/core/models/user/user_info.dart';
+import 'package:guidix/core/models/user/user_model.dart';
 import 'package:guidix/core/themes/theme/custom_theme.dart';
+import 'package:hive/hive.dart';
 
 class AppController extends GetxController {
   final box = GetStorage();
@@ -16,6 +19,8 @@ class AppController extends GetxController {
     applicationName: kEnglishFontFamily,
     fontFamily: kEnglishFontFamily,
   );
+    UserModel? userModel;
+  UserInfoModel? userInfoModel;
 
   @override
   void onInit() {
@@ -154,5 +159,25 @@ class AppController extends GetxController {
       case ApplicationTheme.inverter:
         return inverterTheme;
     }
+  }
+
+  Future<void> cacheUSer({required UserInfoModel userInfo, required UserModel user}) async {
+    await setUSer(user: user);
+    await setUSerInfo(userInfo: userInfo);
+  }
+   Future<void> setUSer({required UserModel? user}) async {
+    userModel = user;
+    var box = Hive.box<UserModel>(GetStoreageKey.userBox);
+    await box.clear();
+    await box.add(user!);
+    
+  }
+
+  Future<void> setUSerInfo({required UserInfoModel? userInfo}) async {
+    userInfoModel = userInfo;
+    var box = Hive.box<UserInfoModel>(GetStoreageKey.userInfoBox);
+    await box.clear();
+    await box.add(userInfo!);
+   
   }
 }

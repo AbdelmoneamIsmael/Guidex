@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:perfume_ecommerce/core/const/app_const.dart';
-import 'package:perfume_ecommerce/core/const/enum.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/data/model/sign_in_social_model.dart';
+import 'package:guidix/core/const/app_const.dart';
+import 'package:guidix/core/const/enum.dart';
+import 'package:guidix/features/login/data/model/sign_in_social_model.dart';
 
 class GoogleResponseModel extends SocialSignIn {
   GoogleResponseModel({

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:perfume_ecommerce/core/error/failure.dart';
-import 'package:perfume_ecommerce/core/models/user/user_info.dart';
-import 'package:perfume_ecommerce/core/utils/api/api_server.dart';
-import 'package:perfume_ecommerce/features/login_page.dart/controller/repository/get_user_info.dart';
+import 'package:guidix/core/error/error.dart';
+import 'package:guidix/core/models/user/user_info.dart';
+import 'package:guidix/core/utils/api/api_server.dart';
+import 'package:guidix/features/login/repo/login_repo.dart';
 
 class GetUserInfoImple extends GetUserInfoRepo {
   final ApiServer apiServer = ApiServer();

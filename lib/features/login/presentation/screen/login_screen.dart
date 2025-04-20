@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/loading_over_lay.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
+import 'package:guidix/features/login/data/model/sign_in_model.dart';
+import 'package:guidix/features/login/data/remote/google_login.dart';
+import 'package:guidix/features/login/data/repo/sign_with_email.dart';
+import 'package:guidix/features/login/data/repo/sign_with_google_repo.dart';
 import 'package:guidix/features/login/presentation/controller/login_controller.dart';
+import 'package:guidix/features/login/repo/login_repo.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
 class LoginScreen extends GetView<LoginController> {
@@ -92,9 +98,19 @@ class LoginScreen extends GetView<LoginController> {
                     32.verticalSpace,
                     PrimaryButton(
                       onPressed: () {
-                        controller.login(
-                          context: context,
-                        );
+                        if (controller.formKey.currentState!.validate()) {
+                          controller.login(
+                            context: context,
+                            signinRepo: SignWithEmail(
+                              signInModel: LoginPrameters(
+                                username: controller.emailController.text,
+                                password: controller.passwordController.text,
+                                fcmToken: kDeviceToken,
+                              ),
+                            ),
+                            getUserInfo: getIt.get<GetUserInfoRepo>(),
+                          );
+                        }
                       },
                       title: AppLocalizations.of(context).signIn,
                     ),
@@ -121,7 +137,15 @@ class LoginScreen extends GetView<LoginController> {
                       label: AppLocalizations.of(context).continueWithGoogle,
                       hint:
                           "by clicking on this button you can sign up with google",
-                      onPressed: () {},
+                      onPressed: () {
+                         controller.login(
+                                context: context,
+                                getUserInfo: getIt.get<GetUserInfoRepo>(),
+                                signinRepo: SignWithGoogleRepo(
+                                  googleLogin: GoogleLogin(),
+                                ),
+                              );
+                      },
                       icon: Assets.icons.google,
                     ),
                     // 16.verticalSpace,
