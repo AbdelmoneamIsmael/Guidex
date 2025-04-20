@@ -6,7 +6,6 @@ import 'package:guidix/core/utils/api/api_interceptors.dart';
 import 'package:guidix/core/utils/api/api_repo.dart';
 import 'package:guidix/core/utils/cache_helper.dart';
 
-
 class ApiServer extends ApiRepo {
   //singlton
   ApiServer._internal() {
@@ -61,7 +60,7 @@ class ApiServer extends ApiRepo {
 
   ///cheek internet connection
 
-
+  @override
   Future<bool> cheekInterentConnection() async {
     try {
       final foo = await InternetAddress.lookup('google.com');

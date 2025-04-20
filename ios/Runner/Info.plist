@@ -3,27 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>GIDClientID</key>
-	<string>44485603355-h0u7kfhmf3bp7a1ienldo87losn3n2ae.apps.googleusercontent.com</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.44485603355-h0u7kfhmf3bp7a1ienldo87losn3n2ae</string>
-			</array>
-		</dict>
-	</array>
+<!-- TODO Replace this value: -->
+<!-- Copied from GoogleService-Info.plist key CLIENT_ID -->
+<string>44485603355-h0u7kfhmf3bp7a1ienldo87losn3n2ae.apps.googleusercontent.com</string>
+<!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
+<!-- Google Sign-in Section -->
+<key>CFBundleURLTypes</key>
+<array>
+	<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<!-- TODO Replace this value: -->
+			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+			<string>com.googleusercontent.apps.44485603355-h0u7kfhmf3bp7a1ienldo87losn3n2ae</string>
+		</array>
+	</dict>
+</array>
+<!-- End of the Google Sign-in Section -->
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	
 	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>sms</string>
-		<string>tel</string>
-	</array>
+<array>
+  <string>sms</string>
+  <string>tel</string>
+</array>
 	<key>CFBundleDisplayName</key>
 	<string>Guidix</string>
 	<key>CFBundleExecutable</key>

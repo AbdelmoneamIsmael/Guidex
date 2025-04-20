@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 const String kAppName = "Guidix";
 const kArabicFontFamily = "Arial", kEnglishFontFamily = "Inter";
 const knotification = "notification";
-const baseUrl = "https://guidix.runasp.net/";
+const baseUrl = "https://guidix.runasp.net";
 
 String kDeviceToken = "";
 // const String baseURl = "https://generators.runasp.net";
