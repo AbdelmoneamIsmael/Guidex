@@ -193,4 +193,8 @@ class AppController extends GetxController {
     await box.clear();
     await box.add(userInfo!);
   }
+
+  bool languageAr() {
+    return appModel.language == ApplicationLanguage.ar ? true : false;
+  }
 }

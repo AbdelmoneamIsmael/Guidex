@@ -42,6 +42,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart_bag.svg
   String get cartBag => 'assets/icons/cart_bag.svg';
 
+  /// File path: assets/icons/category.svg
+  String get category => 'assets/icons/category.svg';
+
   /// File path: assets/icons/chat.svg
   String get chat => 'assets/icons/chat.svg';
 
@@ -181,6 +184,7 @@ class $AssetsIconsGen {
         card,
         cart,
         cartBag,
+        category,
         chat,
         communityInfo,
         community,

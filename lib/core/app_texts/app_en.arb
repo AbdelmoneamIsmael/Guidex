@@ -202,5 +202,9 @@
     "updateCategory": "Update category",
     "deleteCategory": "Delete category",
     "atLeastOneRequered": "At least one field is required",
-    "addCategoryHint": "Not required to fill both Arabic and English names atleast one"
+    "addCategoryHint": "Not required to fill both Arabic and English names atleast one",
+    "editCategory": "Edit category",
+        "noCategory": "No category",
+    "noCategoryYet": "No category yet",
+    "noCategoryDescription": "No categories yet, add a new category to see them"
 }

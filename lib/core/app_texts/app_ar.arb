@@ -200,5 +200,9 @@
     "updateCategory": "تحديث القسم",
     "deleteCategory": "حذف القسم",
     "atLeastOneRequered": "مطلوب على الاقل حقل واحد",
-    "addCategoryHint": "لا يشترط تعبئة اسم عربي و انجليزي على الاقل حقل واحد"
+    "addCategoryHint": "لا يشترط تعبئة اسم عربي و انجليزي على الاقل حقل واحد",
+    "editCategory": "تعديل القسم",
+    "noCategory": "لا يوجد قسم",
+    "noCategoryYet": "لا يوجد قسم حتى الان",
+    "noCategoryDescription": "لا يوجد اقسام قم باضافة قسم جديد ليتم عرضة"
 }

@@ -613,4 +613,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addCategoryHint => 'Not required to fill both Arabic and English names atleast one';
+
+  @override
+  String get editCategory => 'Edit category';
+
+  @override
+  String get noCategory => 'No category';
+
+  @override
+  String get noCategoryYet => 'No category yet';
+
+  @override
+  String get noCategoryDescription => 'No categories yet, add a new category to see them';
 }

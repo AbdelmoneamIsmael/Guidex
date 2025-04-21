@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/colors/colors.dart';
@@ -50,43 +51,55 @@ class MyQrCodesScreen extends GetView<MyQrController> {
                 ),
               ),
             ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 32, bottom: 24).h,
-                child: Row(
-                  children: [
-                    Text(
-                      AppLocalizations.of(context).category,
-                      style: AppTextStyle.medium16(context),
-                    ),
-                    Text(
-                      " : ",
-                      style: AppTextStyle.medium16(context),
-                    ),
-                    Text(
-                      "Clothes",
-                      style: AppTextStyle.regular16(context),
-                    ),
-                    const Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        Get.toNamed(Routes.allCategories);
-                      },
-                      child: Text(
-                        AppLocalizations.of(context).seeAll,
-                        style: AppTextStyle.regular16(context).copyWith(
-                          color: Theme.of(context).primaryColor,
+            GetBuilder<MyQrController>(builder: (controller) {
+              return SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 32, bottom: 24).h,
+                  child: Row(
+                    children: [
+                      Text(
+                        AppLocalizations.of(context).category,
+                        style: AppTextStyle.medium16(context),
+                      ),
+                      Text(
+                        " : ",
+                        style: AppTextStyle.medium16(context),
+                      ),
+                      Text(
+                        Get.find<AppController>().languageAr()
+                            ? controller.selectedCategory.nameAr ?? ""
+                            : controller.selectedCategory.nameEn ?? "",
+                        style: AppTextStyle.regular16(context),
+                      ),
+                      const Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(
+                            Routes.allCategories,
+                            arguments: {
+                              "category": controller.selectedCategory
+                            },
+                          )?.then(
+                            (value) => controller.getAllqrCodes(),
+                          );
+                        },
+                        child: Text(
+                          AppLocalizations.of(context).seeAll,
+                          style: AppTextStyle.regular16(context).copyWith(
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ),
+              );
+            }),
             SliverList.separated(
-                itemBuilder: (context, index) => const QrCodeItem(),
-                separatorBuilder: (_, __) => const SizedBox(height: 16),
-                itemCount: 10),
+              itemBuilder: (context, index) => const QrCodeItem(),
+              separatorBuilder: (_, __) => const SizedBox(height: 16),
+              itemCount: 10,
+            ),
           ],
         ),
       ),

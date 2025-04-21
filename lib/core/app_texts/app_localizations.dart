@@ -1306,6 +1306,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not required to fill both Arabic and English names atleast one'**
   String get addCategoryHint;
+
+  /// No description provided for @editCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit category'**
+  String get editCategory;
+
+  /// No description provided for @noCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'No category'**
+  String get noCategory;
+
+  /// No description provided for @noCategoryYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No category yet'**
+  String get noCategoryYet;
+
+  /// No description provided for @noCategoryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'No categories yet, add a new category to see them'**
+  String get noCategoryDescription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -11,7 +11,7 @@ class MyQrController extends GetxController {
   final CategoryRepo categoryRepo;
   bool isLoading = false;
   List<CategoryModel> categories = [];
-  CategoryModel? selectedCategory;
+  CategoryModel selectedCategory = CategoryModel.empty();
 
   void getAllCategories({
     required BuildContext context,
@@ -37,5 +37,9 @@ class MyQrController extends GetxController {
       isLoading = false;
       update();
     }
+  }
+
+  getAllqrCodes() {
+    update();
   }
 }

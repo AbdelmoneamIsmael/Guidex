@@ -16,6 +16,7 @@ class AllCategoriesController extends GetxController {
   AllCategoriesController({required this.categoryRepo});
   @override
   void onInit() {
+    selectedCategory = Get.arguments["category"];
     getAllCategories(context: Get.context!);
     super.onInit();
   }
@@ -99,6 +100,8 @@ class AllCategoriesController extends GetxController {
           UIHelper.showSnackbar(context: context, message: r.message!);
           categories.clear();
           getAllCategories(context: context);
+          arabicNameController.clear();
+          englishNameController.clear();
         });
       });
     } else {
@@ -106,5 +109,51 @@ class AllCategoriesController extends GetxController {
           context: context,
           message: AppLocalizations.of(context).atLeastOneRequered);
     }
+  }
+
+  void prepareCategoryForUpdate({required CategoryModel category}) {
+    arabicNameController.text = category.nameAr!;
+    englishNameController.text = category.nameEn!;
+  }
+
+  void updateCategory(
+      {required BuildContext context, required CategoryModel category}) {
+    if (arabicNameController.text.isNotEmpty ||
+        englishNameController.text.isNotEmpty) {
+      if (arabicNameController.text.isEmpty) {
+        arabicNameController.text = englishNameController.text;
+      }
+      if (englishNameController.text.isEmpty) {
+        englishNameController.text = arabicNameController.text;
+      }
+      isLoading = true;
+      update();
+      categoryRepo.updateCategory(category: category).then((value) {
+        value.fold((l) {
+          isLoading = false;
+          update();
+          UIHelper.showSnackbar(context: context, message: l.message);
+        }, (r) {
+          Get.back();
+          isLoading = false;
+          update();
+          UIHelper.showSnackbar(context: context, message: r.message!);
+          categories.clear();
+          getAllCategories(context: context);
+        });
+      });
+    } else {
+      UIHelper.showSnackbar(
+          context: context,
+          message: AppLocalizations.of(context).atLeastOneRequered);
+    }
+  }
+
+  void pickCategory({required CategoryModel category}) {
+    selectedCategory?.id = category.id;
+    selectedCategory?.nameAr = category.nameAr;
+    selectedCategory?.nameEn = category.nameEn;
+    update();
+    Get.back();
   }
 }

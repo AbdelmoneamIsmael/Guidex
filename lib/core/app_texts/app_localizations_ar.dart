@@ -613,4 +613,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addCategoryHint => 'لا يشترط تعبئة اسم عربي و انجليزي على الاقل حقل واحد';
+
+  @override
+  String get editCategory => 'تعديل القسم';
+
+  @override
+  String get noCategory => 'لا يوجد قسم';
+
+  @override
+  String get noCategoryYet => 'لا يوجد قسم حتى الان';
+
+  @override
+  String get noCategoryDescription => 'لا يوجد اقسام قم باضافة قسم جديد ليتم عرضة';
 }

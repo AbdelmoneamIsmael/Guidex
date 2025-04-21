@@ -5,9 +5,9 @@ class CategoryModel {
     required this.nameEn,
   });
 
-  final int? id;
-  final String? nameAr;
-  final String? nameEn;
+  int? id;
+  String? nameAr;
+  String? nameEn;
 
   CategoryModel copyWith({
     int? id,
@@ -26,6 +26,13 @@ class CategoryModel {
       id: json["id"],
       nameAr: json["nameAr"].isEmpty ? json["nameEn"] : json["nameAr"],
       nameEn: json["nameEn"].isEmpty ? json["nameAr"] : json["nameEn"],
+    );
+  }
+  factory CategoryModel.empty() {
+    return CategoryModel(
+      id: -1,
+      nameAr: "الجميع",
+      nameEn: "all",
     );
   }
 
