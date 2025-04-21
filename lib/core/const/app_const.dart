@@ -4,6 +4,7 @@ const String kAppName = "Guidix";
 const kArabicFontFamily = "Arial", kEnglishFontFamily = "Inter";
 const knotification = "notification";
 const baseUrl = "https://guidix.runasp.net";
+const internalLocalError = 700;
 
 String kDeviceToken = "";
 // const String baseURl = "https://generators.runasp.net";

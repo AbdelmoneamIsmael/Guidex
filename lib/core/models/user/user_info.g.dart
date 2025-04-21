@@ -17,14 +17,14 @@ class UserInfoModelAdapter extends TypeAdapter<UserInfoModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserInfoModel(
-      id: fields[0] as int,
-      name: fields[1] as String,
-      username: fields[2] as String,
-      email: fields[3] as String,
-      phoneNumber: fields[4] as String,
-      deviceToken: fields[5] as String,
-      roles: (fields[6] as List).cast<Role>(),
-      imageUrl: fields[8] as String?,
+      id: fields[0] as int?,
+      name: fields[1] as String?,
+      username: fields[2] as String?,
+      email: fields[3] as String?,
+      phoneNumber: fields[4] as String?,
+      deviceToken: fields[5] as String?,
+      imageUrl: fields[6] as String?,
+      roles: (fields[7] as List).cast<Role>(),
     );
   }
 
@@ -45,9 +45,9 @@ class UserInfoModelAdapter extends TypeAdapter<UserInfoModel> {
       ..writeByte(5)
       ..write(obj.deviceToken)
       ..writeByte(6)
-      ..write(obj.roles)
-      ..writeByte(8)
-      ..write(obj.imageUrl);
+      ..write(obj.imageUrl)
+      ..writeByte(7)
+      ..write(obj.roles);
   }
 
   @override

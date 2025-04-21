@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/error/error.dart';
 import 'package:guidix/core/models/user/user_info.dart';
 import 'package:guidix/core/utils/api/api_server.dart';
@@ -19,7 +20,12 @@ class GetUserInfoImple extends GetUserInfoRepo {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        return Left(ServerFailure(e.toString()));
+        return Left(
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
+        );
       }
     }
   }

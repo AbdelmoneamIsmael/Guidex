@@ -21,4 +21,5 @@ abstract class Routes {
   static const payments = '/payments';
   static const myAdress = '/myAdress';
   static const help = '/help';
+  static const verfyEmail = '/verfyEmail';
 }

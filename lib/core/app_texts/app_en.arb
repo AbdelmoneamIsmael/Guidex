@@ -187,5 +187,7 @@
     "registerFailed": "Register failed",
     "logout": "Logout ",
     "logoutSuccess": "Logout successfully",
-    "logoutFailed": "Logout failed"
+    "logoutFailed": "Logout failed",
+    "fieldRequired": "This field is required",
+    "retry": "Retry"
 }

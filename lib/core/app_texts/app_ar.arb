@@ -185,5 +185,7 @@
     "registerFailed": "فشل التسجيل",
     "logout": "تسجيل الخروج",
     "logoutSuccess": "تم تسجيل الخروج بنجاح",
-    "logoutFailed": "فشل تسجيل الخروج"
+    "logoutFailed": "فشل تسجيل الخروج",
+    "fieldRequired": "هذا الحقل مطلوب",
+    "retry": "اعد المحاولة"
 }

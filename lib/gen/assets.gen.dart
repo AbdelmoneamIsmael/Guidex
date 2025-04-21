@@ -236,6 +236,21 @@ class $AssetsImagesGen {
   AssetGenImage get appLogo =>
       const AssetGenImage('assets/images/app_logo.png');
 
+  /// File path: assets/images/error.png
+  AssetGenImage get error => const AssetGenImage('assets/images/error.png');
+
+  /// File path: assets/images/lostConnection.png
+  AssetGenImage get lostConnection =>
+      const AssetGenImage('assets/images/lostConnection.png');
+
+  /// File path: assets/images/noInternet.png
+  AssetGenImage get noInternet =>
+      const AssetGenImage('assets/images/noInternet.png');
+
+  /// File path: assets/images/notfound.png
+  AssetGenImage get notfound =>
+      const AssetGenImage('assets/images/notfound.png');
+
   /// File path: assets/images/onBoarding2.png
   AssetGenImage get onBoarding2 =>
       const AssetGenImage('assets/images/onBoarding2.png');
@@ -259,16 +274,24 @@ class $AssetsImagesGen {
   AssetGenImage get splash12 =>
       const AssetGenImage('assets/images/splash12.png');
 
+  /// File path: assets/images/timeout.png
+  AssetGenImage get timeout => const AssetGenImage('assets/images/timeout.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         splash,
         appLogo,
+        error,
+        lostConnection,
+        noInternet,
+        notfound,
         onBoarding2,
         onboarding,
         productCart,
         profileImage,
         qrcode,
-        splash12
+        splash12,
+        timeout
       ];
 }
 

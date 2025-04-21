@@ -571,4 +571,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get logoutFailed => 'فشل تسجيل الخروج';
+
+  @override
+  String get fieldRequired => 'هذا الحقل مطلوب';
+
+  @override
+  String get retry => 'اعد المحاولة';
 }

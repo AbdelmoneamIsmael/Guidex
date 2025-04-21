@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/error/error.dart';
 import 'package:guidix/core/models/user/user_model.dart';
 import 'package:guidix/features/login/data/model/sign_in_social_model.dart';
@@ -23,7 +24,7 @@ class SignWithFacebook extends SigninRepo with PerfumeSignIn {
       );
       return userModel.fold(
         (l) {
-          return Left(ServerFailure(l.message));
+          return Left(ServerFailure( code:  l.code, message: l.message));
         },
         (r) {
           return Right(r);
@@ -31,11 +32,14 @@ class SignWithFacebook extends SigninRepo with PerfumeSignIn {
       );
     } catch (e) {
       if (e is FirebaseAuthException) {
-        return Left(ServerFailure(e.code));
+        return Left(ServerFailure( code: e.hashCode, message: e.code));
       } else {
-        return Left(ServerFailure(
-          e.toString(),
-        ));
+        return Left(
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
+        );
       }
     }
   }

@@ -37,7 +37,9 @@ class ApiServer extends ApiRepo {
   ///add interceptors
   void addInterceptors() {
     _dio!.interceptors.add(
-      LoggerInterceptor(),
+      LoggerInterceptor(
+        dio: _dio!,
+      ),
     );
   }
 

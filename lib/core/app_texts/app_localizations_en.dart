@@ -571,4 +571,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logoutFailed => 'Logout failed';
+
+  @override
+  String get fieldRequired => 'This field is required';
+
+  @override
+  String get retry => 'Retry';
 }

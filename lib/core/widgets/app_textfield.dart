@@ -92,6 +92,7 @@ class GuidixFormField extends StatelessWidget {
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
+        autocorrect: false,
         controller: controller,
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,

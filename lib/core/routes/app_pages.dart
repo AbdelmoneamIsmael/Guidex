@@ -4,6 +4,8 @@ import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
 import 'package:guidix/features/adresses/screen/adrsess.dart';
 import 'package:guidix/features/all_categories/controller_repo/binding/all_categories_bindings.dart';
 import 'package:guidix/features/all_categories/presentation/screen/all_category_page.dart';
+import 'package:guidix/features/confirm_otp/presentation/controller/confirm_otp_bindings.dart';
+import 'package:guidix/features/confirm_otp/presentation/pages/confirm_otp_screen.dart';
 import 'package:guidix/features/edit_profile/controller/controller/binndings/edit_profile_bindings.dart';
 import 'package:guidix/features/edit_profile/presentation/edit_profile.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
@@ -116,6 +118,15 @@ class AppPages {
       
       name: Routes.help,
       page: () => const HelpScreen(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      
+      name: Routes.verfyEmail,
+      binding:  ConfirmOtpBindings(
+
+      ),
+      page: () => const ConfirmOtpScreen(),
       transition: Transition.cupertino,
     ),
   ];

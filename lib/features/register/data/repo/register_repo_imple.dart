@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/error/error.dart';
 import 'package:guidix/features/register/data/remote/register_user.dart';
 import 'package:guidix/features/register/domain/entity/register_response.dart';
@@ -22,7 +23,8 @@ class RegisterRepoImple extends RegisterUserRepo {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        return Left(ServerFailure(e.toString()));
+        return Left(
+            ServerFailure(code: internalLocalError, message: e.toString()));
       }
     }
   }

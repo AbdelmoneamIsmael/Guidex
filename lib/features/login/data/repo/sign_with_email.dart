@@ -25,7 +25,12 @@ class SignWithEmail extends SigninRepo with PerfumeSignIn {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        return Left(ServerFailure(e.toString()));
+         return Left(
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
+        );
       }
     }
   }
@@ -57,7 +62,7 @@ mixin class PerfumeSignIn {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        return Left(ServerFailure(e.toString()));
+        return Left(ServerFailure( code: internalLocalError, message: e.toString()));
       }
     }
   }
