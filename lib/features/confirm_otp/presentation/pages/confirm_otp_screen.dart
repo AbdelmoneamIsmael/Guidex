@@ -57,9 +57,12 @@ class ConfirmOtpScreen extends GetView<ConfirmOtpController> {
                     ),
                   ),
                   16.verticalSpace,
-                  Text(
-                    AppLocalizations.of(context).resendCode,
-                    style: AppTextStyle.simiBold16(context),
+                  GestureDetector(
+                    onTap: () => controller.resendOtp(),
+                    child: Text(
+                      AppLocalizations.of(context).resendCode,
+                      style: AppTextStyle.simiBold16(context),
+                    ),
                   ),
                   44.07.verticalSpace,
                   PrimaryButton(

@@ -88,4 +88,32 @@ class ConfirmOtpController extends GetxController {
       });
     }
   }
+
+  resendOtp() async {
+    try {
+      isLoading = true;
+      update();
+
+      var result = await confirmOtpRepo.sendOtp(email: email);
+      result.fold((l) {
+        isLoading = false;
+
+        update();
+
+        UIHelper.showSnackbar(context: Get.context!, message: l.message);
+      }, (r) {
+        isLoading = false;
+
+        update();
+
+        UIHelper.showSnackbar(context: Get.context!, message: r.message!);
+      });
+    } on Exception catch (e) {
+      isLoading = false;
+
+      update();
+
+      UIHelper.showSnackbar(context: Get.context!, message: e.toString());
+    }
+  }
 }
