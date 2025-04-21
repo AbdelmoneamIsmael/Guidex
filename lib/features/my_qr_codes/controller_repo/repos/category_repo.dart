@@ -15,7 +15,8 @@ abstract class CategoryRepo {
     required int id,
   });
   Future<Either<Failure, BasicResponseModel>> addCategory({
-    required Map<String, dynamic> data,
+    required String arName,
+    required String enName,
   });
   Future<Either<Failure, BasicResponseModel>> updateCategory({
     required CategoryModel category,

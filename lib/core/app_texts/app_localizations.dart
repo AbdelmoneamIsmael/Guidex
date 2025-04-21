@@ -1240,6 +1240,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password not match'**
   String get passwordNotMatch;
+
+  /// No description provided for @deleteCategoryMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this category?'**
+  String get deleteCategoryMessage;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @deleteCategorySuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Category deleted successfully'**
+  String get deleteCategorySuccess;
+
+  /// No description provided for @arabicName.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic name'**
+  String get arabicName;
+
+  /// No description provided for @englishName.
+  ///
+  /// In en, this message translates to:
+  /// **'English name'**
+  String get englishName;
+
+  /// No description provided for @arabicDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic description'**
+  String get arabicDescription;
+
+  /// No description provided for @englishDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'English description'**
+  String get englishDescription;
+
+  /// No description provided for @addNewCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add new category'**
+  String get addNewCategory;
+
+  /// No description provided for @updateCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Update category'**
+  String get updateCategory;
+
+  /// No description provided for @atLeastOneRequered.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one field is required'**
+  String get atLeastOneRequered;
+
+  /// No description provided for @addCategoryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Not required to fill both Arabic and English names atleast one'**
+  String get addCategoryHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

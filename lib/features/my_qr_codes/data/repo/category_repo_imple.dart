@@ -28,10 +28,10 @@ class CategoryRepoImple extends CategoryRepo {
 
   @override
   Future<Either<Failure, BasicResponseModel>> addCategory(
-      {required Map<String, dynamic> data}) async {
+      {required String arName, required String enName}) async {
     try {
-      var result = await remoteAddCategory.addCategory(
-          arName: data["arName"], enName: data["enName"]);
+      var result =
+          await remoteAddCategory.addCategory(arName: arName, enName: enName);
       return Right(result);
     } on Exception catch (e) {
       if (e is DioException) {

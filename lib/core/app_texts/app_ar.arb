@@ -188,5 +188,17 @@
     "logoutFailed": "فشل تسجيل الخروج",
     "fieldRequired": "هذا الحقل مطلوب",
     "retry": "اعد المحاولة",
-    "passwordNotMatch": "كلمة المرور غير متطابقة"
+    "passwordNotMatch": "كلمة المرور غير متطابقة",
+    "deleteCategoryMessage": "هل تريد حذف هذا القسم؟",
+    "ok": "موافق",
+    "deleteCategorySuccess": "تم حذف القسم بنجاح",
+    "arabicName": "اسم عربي",
+    "englishName": "اسم انجليزي",
+    "arabicDescription": "وصف عربي",
+    "englishDescription": "وصف انجليزي",
+    "addNewCategory": "اضافة قسم جديد",
+    "updateCategory": "تحديث القسم",
+    "deleteCategory": "حذف القسم",
+    "atLeastOneRequered": "مطلوب على الاقل حقل واحد",
+    "addCategoryHint": "لا يشترط تعبئة اسم عربي و انجليزي على الاقل حقل واحد"
 }

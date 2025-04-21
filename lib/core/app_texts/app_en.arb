@@ -190,5 +190,17 @@
     "logoutFailed": "Logout failed",
     "fieldRequired": "This field is required",
     "retry": "Retry",
-    "passwordNotMatch": "Password not match"
+    "passwordNotMatch": "Password not match",
+    "deleteCategoryMessage": "Are you sure you want to delete this category?",
+    "ok": "OK",
+    "deleteCategorySuccess": "Category deleted successfully",
+    "arabicName": "Arabic name",
+    "englishName": "English name",
+    "arabicDescription": "Arabic description",
+    "englishDescription": "English description",
+    "addNewCategory": "Add new category",
+    "updateCategory": "Update category",
+    "deleteCategory": "Delete category",
+    "atLeastOneRequered": "At least one field is required",
+    "addCategoryHint": "Not required to fill both Arabic and English names atleast one"
 }

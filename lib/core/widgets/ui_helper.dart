@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:generator/core/themes/colors/colors.dart';
 // import 'package:generator/core/themes/text/test_style.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/const/enum.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 
@@ -86,6 +87,32 @@ class UIHelper {
       default:
         return Colors.red;
     }
+  }
+
+  static void showModal({
+    required String message,
+    required String title,
+    String? buttonText,
+    required void Function()? buttonAction,
+    required BuildContext context,
+  }) {
+    Get.dialog(
+      AlertDialog.adaptive(
+          title: Text(title, style: AppTextStyle.simiBold16(context)),
+          content: Text(message, style: AppTextStyle.medium14(context)),
+          actions: [
+            TextButton(
+              child: Text(AppLocalizations.of(context).cancel),
+              onPressed: () => Get.back(),
+            ),
+            TextButton(
+              onPressed: buttonAction,
+              child: Text(
+                buttonText ?? AppLocalizations.of(context).ok,
+              ),
+            ),
+          ]),
+    );
   }
 
   // static void showModel({

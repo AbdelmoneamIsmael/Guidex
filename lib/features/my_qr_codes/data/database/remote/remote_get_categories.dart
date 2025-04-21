@@ -9,9 +9,15 @@ class RemoteGetCategories {
     required int pageIndex,
     required int pageSize,
   }) async {
+    if (searchKey == null) {
+      searchKey = '';
+    } else {
+      searchKey = "&Search=$searchKey";
+    }
+
     var result = await apiServer.getRequest(
       uri:
-          '/api/Category/GetAllCategories?isPagingEnabled=true&pageIndex=$pageIndex&pageSize=$pageSize&Search=$searchKey',
+          '/api/Category/GetAllCategories?isPagingEnabled=true&pageIndex=$pageIndex&pageSize=$pageSize$searchKey',
     );
     CategoryResponceModel categoryResponceModel =
         CategoryResponceModel.fromJson(result);

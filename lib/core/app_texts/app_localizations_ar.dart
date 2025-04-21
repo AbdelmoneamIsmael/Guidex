@@ -580,4 +580,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordNotMatch => 'كلمة المرور غير متطابقة';
+
+  @override
+  String get deleteCategoryMessage => 'هل تريد حذف هذا القسم؟';
+
+  @override
+  String get ok => 'موافق';
+
+  @override
+  String get deleteCategorySuccess => 'تم حذف القسم بنجاح';
+
+  @override
+  String get arabicName => 'اسم عربي';
+
+  @override
+  String get englishName => 'اسم انجليزي';
+
+  @override
+  String get arabicDescription => 'وصف عربي';
+
+  @override
+  String get englishDescription => 'وصف انجليزي';
+
+  @override
+  String get addNewCategory => 'اضافة قسم جديد';
+
+  @override
+  String get updateCategory => 'تحديث القسم';
+
+  @override
+  String get atLeastOneRequered => 'مطلوب على الاقل حقل واحد';
+
+  @override
+  String get addCategoryHint => 'لا يشترط تعبئة اسم عربي و انجليزي على الاقل حقل واحد';
 }

@@ -580,4 +580,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordNotMatch => 'Password not match';
+
+  @override
+  String get deleteCategoryMessage => 'Are you sure you want to delete this category?';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get deleteCategorySuccess => 'Category deleted successfully';
+
+  @override
+  String get arabicName => 'Arabic name';
+
+  @override
+  String get englishName => 'English name';
+
+  @override
+  String get arabicDescription => 'Arabic description';
+
+  @override
+  String get englishDescription => 'English description';
+
+  @override
+  String get addNewCategory => 'Add new category';
+
+  @override
+  String get updateCategory => 'Update category';
+
+  @override
+  String get atLeastOneRequered => 'At least one field is required';
+
+  @override
+  String get addCategoryHint => 'Not required to fill both Arabic and English names atleast one';
 }
