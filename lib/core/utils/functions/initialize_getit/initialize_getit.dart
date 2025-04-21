@@ -3,6 +3,9 @@ import 'package:guidix/features/confirm_otp/data/datasources/remote/confirm_otp.
 import 'package:guidix/features/confirm_otp/data/datasources/remote/send_otp.dart';
 import 'package:guidix/features/confirm_otp/data/repositories/confirm_otp_repo_imple.dart';
 import 'package:guidix/features/confirm_otp/domain/repositories/confirm_otp_repo.dart';
+import 'package:guidix/features/forget_passord/data/remote/change_password.dart';
+import 'package:guidix/features/forget_passord/data/remote/remote_confirm_email.dart';
+import 'package:guidix/features/forget_passord/data/repo/forget_password_repo.dart';
 import 'package:guidix/features/login/data/repo/get_user_info_imple.dart';
 import 'package:guidix/features/login/repo/login_repo.dart';
 import 'package:guidix/features/register/data/remote/register_user.dart';
@@ -24,5 +27,11 @@ void initializeGetIt() {
       remoteSendOtp: RemoteSendOtp(),
       remoteConfirmOtp: RemoteConfirmOtp(),
     ),
+  );
+
+  getIt.registerSingleton<ForgetPasswordRepo>(
+    ForgetPasswordRepo(
+        remoteChangePassword: RemoteChangePassword(),
+        remoteConfirmEmail: RemoteConfirmEmail()),
   );
 }

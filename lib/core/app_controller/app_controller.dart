@@ -8,7 +8,9 @@ import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/models/qrcode_generation.dart';
 import 'package:guidix/core/models/user/user_info.dart';
 import 'package:guidix/core/models/user/user_model.dart';
+import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/theme/custom_theme.dart';
+import 'package:guidix/core/utils/cache_helper.dart';
 import 'package:hive/hive.dart';
 
 class AppController extends GetxController {
@@ -19,11 +21,10 @@ class AppController extends GetxController {
     applicationName: kEnglishFontFamily,
     fontFamily: kEnglishFontFamily,
   );
-    UserModel? userModel;
+  UserModel? userModel;
   UserInfoModel? userInfoModel;
-
   @override
-  void onInit() {
+  void onInit() async {
     box.read('applicationModel') != null
         ? appModel = appModel.fromJson(jsonDecode(box.read('applicationModel')))
         : appModel = ApplicationModel(
@@ -37,6 +38,11 @@ class AppController extends GetxController {
                     : kArabicFontFamily,
             fontFamily: kEnglishFontFamily,
           );
+    CacheHelper.setSecuerString(
+        key: GetStoreageKey.lang,
+        value: WidgetsBinding.instance.window.locale.languageCode == "en"
+            ? "en-US"
+            : "ar-EG");
 
     super.onInit();
   }
@@ -130,11 +136,13 @@ class AppController extends GetxController {
     switch (appModel.language) {
       case ApplicationLanguage.ar:
         appModel.language = ApplicationLanguage.en;
+        CacheHelper.setSecuerString(key: GetStoreageKey.lang, value: "en-US");
 
         appModel.fontFamily = kArabicFontFamily;
         break;
       case ApplicationLanguage.en:
         appModel.language = ApplicationLanguage.ar;
+        CacheHelper.setSecuerString(key: GetStoreageKey.lang, value: "ar-EG");
 
         appModel.fontFamily = kEnglishFontFamily;
         break;
@@ -161,16 +169,22 @@ class AppController extends GetxController {
     }
   }
 
-  Future<void> cacheUSer({required UserInfoModel userInfo, required UserModel user}) async {
+  Future<void> cacheUSer(
+      {required UserInfoModel userInfo, required UserModel user}) async {
     await setUSer(user: user);
     await setUSerInfo(userInfo: userInfo);
   }
-   Future<void> setUSer({required UserModel? user}) async {
+
+  Future<void> setUSer({required UserModel? user}) async {
     userModel = user;
+    await CacheHelper.saveData(
+      key: GetStoreageKey.initialRoute,
+      value: Routes.mainGuidixScreen,
+    );
     var box = Hive.box<UserModel>(GetStoreageKey.userBox);
+
     await box.clear();
     await box.add(user!);
-    
   }
 
   Future<void> setUSerInfo({required UserInfoModel? userInfo}) async {
@@ -178,6 +192,5 @@ class AppController extends GetxController {
     var box = Hive.box<UserInfoModel>(GetStoreageKey.userInfoBox);
     await box.clear();
     await box.add(userInfo!);
-   
   }
 }

@@ -13,41 +13,49 @@ class EnterCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        32.verticalSpace,
-        Text(
-          AppLocalizations.of(context).enteringTheCode,
-          style: AppTextStyle.regular16(context),
-          textAlign: TextAlign.center,
-        ),
-        24.verticalSpace,
-        GuidixFormField(
-          hintText: "Code",
-          semanticLabel: "Code Input Field",
-          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-          keyboardType: TextInputType.number,
-          textAlign: TextAlign.center,
-        ),
-        44.93.verticalSpace,
-        Text(
-          AppLocalizations.of(context).recevivingTheCode,
-          style: AppTextStyle.regular16(context).copyWith(
-            color: Theme.of(context).textTheme.bodySmall!.color,
+    return Form(
+      key: Get.find<ForgetPassController>().formKey2,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          32.verticalSpace,
+          Text(
+            AppLocalizations.of(context).enteringTheCode,
+            style: AppTextStyle.regular16(context),
+            textAlign: TextAlign.center,
           ),
-        ),
-        16.verticalSpace,
-        Text(
-          AppLocalizations.of(context).resendCode,
-          style: AppTextStyle.simiBold16(context),
-        ),
-        44.07.verticalSpace,
-        PrimaryButton(
-          title:  AppLocalizations.of(context).verify,
-          onPressed: () => Get.find<ForgetPassController>().nextStep(),
-        )
-      ],
+          24.verticalSpace,
+          GuidixFormField(
+            hintText: "Code",
+            semanticLabel: "Code Input Field",
+            
+            controller: Get.find<ForgetPassController>().otpController,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.center,
+          ),
+          44.93.verticalSpace,
+          Text(
+            AppLocalizations.of(context).recevivingTheCode,
+            style: AppTextStyle.regular16(context).copyWith(
+              color: Theme.of(context).textTheme.bodySmall!.color,
+            ),
+          ),
+          16.verticalSpace,
+          GestureDetector(
+            onTap: () => Get.find<ForgetPassController>().resendOtp(),
+            child: Text(
+              AppLocalizations.of(context).resendCode,
+              style: AppTextStyle.simiBold16(context),
+            ),
+          ),
+          44.07.verticalSpace,
+          PrimaryButton(
+            title: AppLocalizations.of(context).verify,
+            onPressed: () => Get.find<ForgetPassController>().confirmOtp(),
+          )
+        ],
+      ),
     );
   }
 }

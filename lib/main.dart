@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:guidix/core/const/app_const.dart';
+import 'package:guidix/core/routes/app_routes.dart';
+import 'package:guidix/core/utils/cache_helper.dart';
 import 'package:guidix/core/utils/functions/init_hive/init_hive.dart';
 import 'package:guidix/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'package:guidix/core/utils/notification/notification_handeler.dart';
@@ -37,6 +39,11 @@ initializeApplication() async {
 
   await hiveInitialization();
   initializeGetIt();
+  await CacheHelper.init();
+  initialRoute = await CacheHelper.getData(
+    key: GetStoreageKey.initialRoute,
+  )?? Routes.loginScreen;
+
   kDeviceToken = await NotificationHelper.init();
   log(kDeviceToken);
 }

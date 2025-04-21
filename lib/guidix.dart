@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:guidix/core/app_controller/app_bindings.dart';
 import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
+import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/routes/app_pages.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +47,7 @@ class GuiDixApplication extends StatelessWidget {
               smartManagement: SmartManagement.full,
               debugShowCheckedModeBanner: false,
               getPages: AppPages.routes,
-              initialRoute: Routes.loginScreen,
+              initialRoute: initialRoute,
               theme: controller.getTheme(),
             );
           },

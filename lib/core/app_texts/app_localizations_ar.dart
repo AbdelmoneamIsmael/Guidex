@@ -577,4 +577,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get retry => 'اعد المحاولة';
+
+  @override
+  String get passwordNotMatch => 'كلمة المرور غير متطابقة';
 }

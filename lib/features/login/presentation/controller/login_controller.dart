@@ -36,6 +36,7 @@ class LoginController extends GetxController {
   }) async {
     try {
       isLoading = true;
+      update();
       var result = await signinRepo.login();
       result.fold(
         (l) {
@@ -58,6 +59,8 @@ class LoginController extends GetxController {
           var userInfo = await getUserInfo.getUserInfo();
           userInfo.fold(
             (l) {
+              isLoading = false;
+              update();
               UIHelper.showSnackbar(context: context, message: l.message);
             },
             (info) async {

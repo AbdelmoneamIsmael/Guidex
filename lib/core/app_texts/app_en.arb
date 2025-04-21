@@ -189,5 +189,6 @@
     "logoutSuccess": "Logout successfully",
     "logoutFailed": "Logout failed",
     "fieldRequired": "This field is required",
-    "retry": "Retry"
+    "retry": "Retry",
+    "passwordNotMatch": "Password not match"
 }

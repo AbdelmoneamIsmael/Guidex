@@ -1,4 +1,3 @@
-import 'package:guidix/core/models/user/role.dart';
 import 'package:hive/hive.dart';
 
 part 'user_info.g.dart';
@@ -86,14 +85,16 @@ class UserInfoModel {
     return "$id, $name, $username, $email, $phoneNumber, $deviceToken, $imageUrl, $roles, ";
   }
 }
-
+  @HiveType(typeId: 3)
 class Role {
   Role({
     required this.id,
     required this.name,
   });
 
-  final int? id;
+  @HiveField(0)
+   final int? id;
+  @HiveField(1)
   final String? name;
 
   Role copyWith({
