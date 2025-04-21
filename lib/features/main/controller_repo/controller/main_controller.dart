@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/features/cart/presentation/screen/cart_screen.dart';
 import 'package:guidix/features/communityScreen/presentation/screen/community_screen.dart';
+import 'package:guidix/features/my_qr_codes/controller_repo/binding/my_qr_bindings.dart';
 import 'package:guidix/features/my_qr_codes/presentation/screen/my_qr_codes_screen.dart';
 import 'package:guidix/features/profile_screen/controller_repo/binding/profile_binding.dart';
 import 'package:guidix/features/profile_screen/presentation/screen/profile_screen.dart';
@@ -55,6 +56,7 @@ class MainController extends GetxController {
       case Routes.qrcoodsScreen:
         return GetPageRoute(
           routeName: Routes.qrcoodsScreen,
+          binding: MyQrBindings(),
           settings: settings,
           page: () => const MyQrCodesScreen(),
           // binding: SpecializationBindings(),

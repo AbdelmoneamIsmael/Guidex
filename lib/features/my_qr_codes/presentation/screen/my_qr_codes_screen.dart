@@ -9,10 +9,11 @@ import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/widgets/app_textfield.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
+import 'package:guidix/features/my_qr_codes/controller_repo/controller/my_qr_controller.dart';
 import 'package:guidix/features/scan_Screen/presentation/screen/scan_screen.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
-class MyQrCodesScreen extends StatelessWidget {
+class MyQrCodesScreen extends GetView<MyQrController> {
   const MyQrCodesScreen({super.key});
 
   @override
