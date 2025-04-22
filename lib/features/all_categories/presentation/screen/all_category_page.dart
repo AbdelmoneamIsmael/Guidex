@@ -22,6 +22,7 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
     return Stack(
       children: [
         Scaffold(
+          resizeToAvoidBottomInset: true,
           appBar: GuidixAppBar(
             title: AppLocalizations.of(context).category,
           ),
@@ -37,11 +38,13 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                     enableDrag: true,
                     showDragHandle: true,
                     constraints: BoxConstraints(
-                        maxHeight: MediaQuery.of(context).size.height * 0.6,
                         minWidth: MediaQuery.of(context).size.width),
                     builder: (context) {
                       return const AddCategorySheetView();
-                    });
+                    }).then((value) {
+                  controller.categories.clear();
+                  controller.getAllCategories(context: context);
+                });
               },
             ),
           ),
@@ -65,7 +68,6 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                             onTap: () {
                               controller.pickCategory(
                                   category: controller.categories[index]);
-                            
                             },
                             onEdit: () {
                               controller.prepareCategoryForUpdate(
@@ -77,16 +79,16 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                                   enableDrag: true,
                                   showDragHandle: true,
                                   constraints: BoxConstraints(
-                                      maxHeight:
-                                          MediaQuery.of(context).size.height *
-                                              0.6,
                                       minWidth:
                                           MediaQuery.of(context).size.width),
                                   builder: (context) {
                                     return EditCategorySheetView(
                                       category: controller.categories[index],
                                     );
-                                  });
+                                  }).then((value) {
+                                controller.categories.clear();
+                                controller.getAllCategories(context: context);
+                              }).catchError((e) {});
                             },
                             onDelete: () {
                               UIHelper.showModal(
@@ -132,40 +134,45 @@ class AddCategorySheetView extends GetView<AllCategoriesController> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            AppLocalizations.of(context).addNewCategory,
-            style: AppTextStyle.simiBold16(context),
-          ),
-          16.verticalSpace,
-          Text(
-            AppLocalizations.of(context).addCategoryHint,
-            textAlign: TextAlign.center,
-            style: AppTextStyle.regular12(context).copyWith(
-              color: Theme.of(context).textTheme.bodySmall!.color,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              AppLocalizations.of(context).addNewCategory,
+              style: AppTextStyle.simiBold16(context),
             ),
-          ).paddingAll(16),
-          AppTextField(
-            hintText: AppLocalizations.of(context).arabicName,
-            semanticLabel: AppLocalizations.of(context).arabicName,
-            controller: controller.arabicNameController,
-          ),
-          16.verticalSpace,
-          AppTextField(
-            hintText: AppLocalizations.of(context).englishName,
-            semanticLabel: AppLocalizations.of(context).englishName,
-            controller: controller.englishNameController,
-          ),
-          16.verticalSpace,
-          PrimaryButton(
-            title: AppLocalizations.of(context).add,
-            onPressed: () {
-              controller.addCategory(context: context);
-            },
-          )
-        ],
+            16.verticalSpace,
+            Text(
+              AppLocalizations.of(context).addCategoryHint,
+              textAlign: TextAlign.center,
+              style: AppTextStyle.regular12(context).copyWith(
+                color: Theme.of(context).textTheme.bodySmall!.color,
+              ),
+            ).paddingAll(16),
+            AppTextField(
+              hintText: AppLocalizations.of(context).arabicName,
+              semanticLabel: AppLocalizations.of(context).arabicName,
+              controller: controller.arabicNameController,
+            ),
+            16.verticalSpace,
+            AppTextField(
+              hintText: AppLocalizations.of(context).englishName,
+              semanticLabel: AppLocalizations.of(context).englishName,
+              controller: controller.englishNameController,
+            ),
+            16.verticalSpace,
+            PrimaryButton(
+              title: AppLocalizations.of(context).add,
+              onPressed: () {
+                controller.addCategory(context: context);
+              },
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
       ),
     );
   }
@@ -182,40 +189,45 @@ class EditCategorySheetView extends GetView<AllCategoriesController> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            AppLocalizations.of(context).editCategory,
-            style: AppTextStyle.simiBold16(context),
-          ),
-          16.verticalSpace,
-          Text(
-            AppLocalizations.of(context).addCategoryHint,
-            textAlign: TextAlign.center,
-            style: AppTextStyle.regular12(context).copyWith(
-              color: Theme.of(context).textTheme.bodySmall!.color,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              AppLocalizations.of(context).editCategory,
+              style: AppTextStyle.simiBold16(context),
             ),
-          ).paddingAll(16),
-          AppTextField(
-            hintText: AppLocalizations.of(context).arabicName,
-            semanticLabel: AppLocalizations.of(context).arabicName,
-            controller: controller.arabicNameController,
-          ),
-          16.verticalSpace,
-          AppTextField(
-            hintText: AppLocalizations.of(context).englishName,
-            semanticLabel: AppLocalizations.of(context).englishName,
-            controller: controller.englishNameController,
-          ),
-          16.verticalSpace,
-          PrimaryButton(
-            title: AppLocalizations.of(context).edit,
-            onPressed: () {
-              controller.updateCategory(context: context, category: category);
-            },
-          )
-        ],
+            16.verticalSpace,
+            Text(
+              AppLocalizations.of(context).addCategoryHint,
+              textAlign: TextAlign.center,
+              style: AppTextStyle.regular12(context).copyWith(
+                color: Theme.of(context).textTheme.bodySmall!.color,
+              ),
+            ).paddingAll(16),
+            AppTextField(
+              hintText: AppLocalizations.of(context).arabicName,
+              semanticLabel: AppLocalizations.of(context).arabicName,
+              controller: controller.arabicNameController,
+            ),
+            16.verticalSpace,
+            AppTextField(
+              hintText: AppLocalizations.of(context).englishName,
+              semanticLabel: AppLocalizations.of(context).englishName,
+              controller: controller.englishNameController,
+            ),
+            16.verticalSpace,
+            PrimaryButton(
+              title: AppLocalizations.of(context).edit,
+              onPressed: () {
+                controller.updateCategory(context: context, category: category);
+              },
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).viewInsets.bottom,
+            )
+          ],
+        ),
       ),
     );
   }

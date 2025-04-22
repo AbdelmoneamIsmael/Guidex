@@ -206,5 +206,6 @@
     "editCategory": "Edit category",
         "noCategory": "No category",
     "noCategoryYet": "No category yet",
-    "noCategoryDescription": "No categories yet, add a new category to see them"
+    "noCategoryDescription": "No categories yet, add a new category to see them",
+    "pleaseSelectCategory": "Please select a category and fill at least Arabic fields or English fields"
 }

@@ -22,7 +22,10 @@ class MainController extends GetxController {
   void changePage(int index) {
     if (index != currentIndex) {
       currentIndex = index;
-      Get.offAllNamed(screens[currentIndex], id: 1);
+      Get.offAllNamed(
+        screens[currentIndex],
+        id: 1,
+      );
       update();
     }
   }

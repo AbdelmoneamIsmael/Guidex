@@ -23,9 +23,8 @@ class _BarcodeScannerWithScanWindowState
     widget.controller.start();
     _subscription = widget.controller.barcodes.listen((barcodes) {
       if (barcodes.barcodes.isNotEmpty) {
-        Get.find<ScnnerController>().setBarCode(
-          barcodes.barcodes.first.displayValue ?? '',
-        );
+        Get.find<ScnnerController>().barCodeValue =
+            barcodes.barcodes.first.rawValue!;
         Get.back();
       }
     });
@@ -34,7 +33,7 @@ class _BarcodeScannerWithScanWindowState
 
   StreamSubscription? _subscription;
 
-  // 
+  //
   final boxFit = BoxFit.contain;
 
   @override
@@ -106,6 +105,5 @@ class _BarcodeScannerWithScanWindowState
     unawaited(widget.controller.stop());
     _subscription?.cancel();
     await widget.controller.dispose();
-    
   }
 }

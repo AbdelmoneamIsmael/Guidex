@@ -625,4 +625,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noCategoryDescription => 'لا يوجد اقسام قم باضافة قسم جديد ليتم عرضة';
+
+  @override
+  String get pleaseSelectCategory => 'يرجى تحديد قسم وتعبئة حقول عربية او انجليزية';
 }

@@ -45,7 +45,8 @@ class ServerFailure extends Failure {
   factory ServerFailure.fromResponse(Response response) {
     if (response.statusCode == 404) {
       return ServerFailure(
-          code: response.statusCode, message: 'Page Not Found');
+          code: response.statusCode,
+          message: response.data["message"] ?? 'Page Not Found');
     } else if (response.statusCode == 500) {
       return ServerFailure(
           code: response.statusCode, message: response.data["message"]);

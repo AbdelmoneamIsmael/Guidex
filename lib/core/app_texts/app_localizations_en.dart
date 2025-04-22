@@ -625,4 +625,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noCategoryDescription => 'No categories yet, add a new category to see them';
+
+  @override
+  String get pleaseSelectCategory => 'Please select a category and fill at least Arabic fields or English fields';
 }

@@ -98,8 +98,7 @@ class AllCategoriesController extends GetxController {
           isLoading = false;
           update();
           UIHelper.showSnackbar(context: context, message: r.message!);
-          categories.clear();
-          getAllCategories(context: context);
+
           arabicNameController.clear();
           englishNameController.clear();
         });
@@ -126,6 +125,8 @@ class AllCategoriesController extends GetxController {
       if (englishNameController.text.isEmpty) {
         englishNameController.text = arabicNameController.text;
       }
+      category.nameAr = arabicNameController.text;
+      category.nameEn = englishNameController.text;
       isLoading = true;
       update();
       categoryRepo.updateCategory(category: category).then((value) {
@@ -138,8 +139,9 @@ class AllCategoriesController extends GetxController {
           isLoading = false;
           update();
           UIHelper.showSnackbar(context: context, message: r.message!);
-          categories.clear();
-          getAllCategories(context: context);
+
+          // categories.clear();
+          // getAllCategories(context: context);
         });
       });
     } else {

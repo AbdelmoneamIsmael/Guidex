@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/models/qrcode_generation.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
+import 'package:guidix/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
+import 'package:guidix/features/my_qr_codes/controller_repo/repos/qrcode_repo.dart';
 import 'package:guidix/features/scan_Screen/controller_repo/controller/scnner_controller.dart';
 import 'package:guidix/features/scan_Screen/presentation/screen/scan_code.dart';
 import 'package:guidix/gen/assets.gen.dart';
@@ -21,7 +24,9 @@ class ScanScreen extends GetView<ScnnerController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ScnnerController>(
-      init: ScnnerController(),
+      init: ScnnerController(
+        qrcodeRepo: getIt.get<QrcodeRepo>(),
+      ),
       builder: (controller) {
         return Scaffold(
           appBar: GuidixAppBar(
@@ -50,7 +55,9 @@ class ScanScreen extends GetView<ScnnerController> {
                             controller: MobileScannerController(
                               torchEnabled: true,
                             ),
-                          ));
+                          ))?.then((value) {
+                            controller.setBarCode();
+                          });
                         },
                         svg: Assets.icons.flash,
                       ),
@@ -63,7 +70,9 @@ class ScanScreen extends GetView<ScnnerController> {
                             controller: MobileScannerController(
                               torchEnabled: false,
                             ),
-                          ));
+                          ))?.then((value) {
+                            controller.setBarCode();
+                          });
                         },
                         svg: Assets.icons.removeSlash,
                       ),
@@ -156,18 +165,9 @@ class SuccessScanNoValueScreen extends GetView<ScnnerController> {
             onPressed: () {
               Get.toNamed(
                 Routes.qrCodeDetails,
-                arguments: {
-                  "qrCodeModel": QrCodeGeenerationModel(
-                    qrCodeId: controller.barCodeValue,
-                    nameEn: "",
-                    nameAr: "",
-                    describtonEn: "",
-                    descriptionAr: "",
-                  ),
-                },
+                arguments: {"qrCodeModel": controller.selectedQrcode},
               )!
-                  .then((value) =>
-                      controller.setBarCode(controller.barCodeValue));
+                  .then((value) => controller.setBarCode());
             },
           ),
         ],
@@ -218,7 +218,7 @@ class SuccessScanScreen extends GetView<ScnnerController> {
           ),
           42.verticalSpace,
           Text(
-            Get.locale == const Locale("en")
+            Get.find<AppController>().languageAr()
                 ? controller.selectedQrcode!.nameAr!
                 : controller.selectedQrcode!.nameEn!,
             style: AppTextStyle.medium20(context).copyWith(
@@ -235,9 +235,7 @@ class SuccessScanScreen extends GetView<ScnnerController> {
                 "qrCodeModel": controller.selectedQrcode,
               })!
                   .then(
-                (value) => controller.setBarCode(
-                  controller.barCodeValue,
-                ),
+                (value) => controller.setBarCode(),
               );
             },
           )

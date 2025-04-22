@@ -1330,6 +1330,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No categories yet, add a new category to see them'**
   String get noCategoryDescription;
+
+  /// No description provided for @pleaseSelectCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a category and fill at least Arabic fields or English fields'**
+  String get pleaseSelectCategory;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
