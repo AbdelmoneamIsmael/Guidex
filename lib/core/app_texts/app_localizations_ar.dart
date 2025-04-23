@@ -643,4 +643,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get deleteQrcodeMessage => 'هل تريد حذف هذا ';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
 }

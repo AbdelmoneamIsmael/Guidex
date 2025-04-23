@@ -13,6 +13,7 @@ class AppTextField extends StatelessWidget {
     this.prefixIcon,
     this.controller,
     this.obscureText = false,
+    this.readOnly = false,
     this.keyboardType,
     this.inputFormatters,
     this.maxLines = 1,
@@ -25,7 +26,7 @@ class AppTextField extends StatelessWidget {
   final String hintText, semanticLabel;
   final Widget? suffixIcon, prefixIcon;
   final TextEditingController? controller;
-  final bool? obscureText;
+  final bool? obscureText, readOnly;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final int maxLines;
@@ -49,6 +50,8 @@ class AppTextField extends StatelessWidget {
             obscureText: obscureText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
+            readOnly: readOnly,
+            textAlign: textAlign,
             hintText: hintText,
             maxLines: maxLines,
             semanticLabel: semanticLabel,
@@ -64,6 +67,7 @@ class GuidixFormField extends StatelessWidget {
     super.key,
     this.controller,
     this.obscureText = false,
+    this.readOnly = false,
     this.prefixIcon,
     this.suffixIcon,
     this.maxLines = 1,
@@ -76,7 +80,7 @@ class GuidixFormField extends StatelessWidget {
     this.onChanged,
   });
 
-  final bool? obscureText;
+  final bool? obscureText, readOnly;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final String hintText;
@@ -99,6 +103,7 @@ class GuidixFormField extends StatelessWidget {
         validator: validator,
         onChanged: onChanged,
         autocorrect: false,
+        readOnly: readOnly!,
         controller: controller,
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,

@@ -643,4 +643,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteQrcodeMessage => 'Are you sure you want to delete  ';
+
+  @override
+  String get phoneNumber => 'Phone number';
 }

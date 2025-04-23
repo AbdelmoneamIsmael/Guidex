@@ -210,6 +210,7 @@
     "noQrcodeYet": "لا يوجد رمز حتى الان",
     "noQrcodeDescription": "لا يوجد رمز قم باضافة رمز جديد ليتم عرضة",
     "deleteQrcodeMessage": "هل تريد حذف هذا ",
-    "deleteQrcodeTitle": "حذف الرمز"
+    "deleteQrcodeTitle": "حذف الرمز",
+    "phoneNumber": "رقم الهاتف"
 
 }

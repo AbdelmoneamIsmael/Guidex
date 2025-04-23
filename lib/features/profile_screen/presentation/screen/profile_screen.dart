@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
+import 'package:guidix/core/widgets/cashed_images.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
-import 'package:guidix/features/profile_screen/controller_repo/controller/profile_controller.dart';
 import 'package:guidix/features/profile_screen/presentation/widget/profile_option_widget.dart';
 import 'package:guidix/gen/assets.gen.dart';
 import 'package:share_plus/share_plus.dart';
 
-class ProfileScreen extends GetView<ProfileController> {
+class ProfileScreen extends GetView<AppController> {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
-      init: ProfileController(context: context),
+    return GetBuilder<AppController>(
       builder: (controller) {
         return Scaffold(
           appBar: GuidixAppBar(title: AppLocalizations.of(context).myAccount),
@@ -25,13 +25,17 @@ class ProfileScreen extends GetView<ProfileController> {
             child: Column(
               children: [
                 ListTile(
-                  leading: CircleAvatar(
-                    radius: 25.r,
-                    backgroundImage:
-                        AssetImage(Assets.images.profileImage.path),
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(50.r),
+                    child: CachedImage(
+                      url: controller.userInfoModel?.imageUrl ?? "",
+                      width: 50.w,
+                      height: 50.h,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  title: const Text(
-                    "Hi, Abdelmoenam",
+                  title: Text(
+                    controller.userInfoModel?.name ?? "",
                   ),
                   titleTextStyle: AppTextStyle.medium16(context),
                   subtitle: const Text("Met you always be good"),
@@ -90,11 +94,12 @@ class ProfileScreen extends GetView<ProfileController> {
                       },
                     ),
                     ProfileOptionWidget(
-                        title: AppLocalizations.of(context).settings,
-                        icon: Assets.icons.sitting2,
-                        onTap: () {
-                          Get.toNamed(Routes.settingScreen);
-                        }),
+                      title: AppLocalizations.of(context).settings,
+                      icon: Assets.icons.sitting2,
+                      onTap: () {
+                        Get.toNamed(Routes.settingScreen);
+                      },
+                    ),
                   ],
                 ),
                 30.verticalSpace,

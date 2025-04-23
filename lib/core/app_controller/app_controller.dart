@@ -43,7 +43,7 @@ class AppController extends GetxController {
         value: WidgetsBinding.instance.window.locale.languageCode == "en"
             ? "en-US"
             : "ar-EG");
-
+    getCachedUser();
     super.onInit();
   }
 
@@ -196,5 +196,12 @@ class AppController extends GetxController {
 
   bool languageAr() {
     return appModel.language == ApplicationLanguage.ar ? true : false;
+  }
+
+  void getCachedUser() async {
+    var box = Hive.box<UserModel>(GetStoreageKey.userBox);
+    userModel = box.getAt(0);
+    var box2 = Hive.box<UserInfoModel>(GetStoreageKey.userInfoBox);
+    userInfoModel = box2.getAt(0);
   }
 }
