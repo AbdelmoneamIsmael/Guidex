@@ -628,4 +628,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pleaseSelectCategory => 'يرجى تحديد قسم وتعبئة حقول عربية او انجليزية';
+
+  @override
+  String get noQrcode => 'لا يوجد رمز';
+
+  @override
+  String get noQrcodeYet => 'لا يوجد رمز حتى الان';
+
+  @override
+  String get noQrcodeDescription => 'لا يوجد رمز قم باضافة رمز جديد ليتم عرضة';
+
+  @override
+  String get deleteQrcodeTitle => 'حذف الرمز';
+
+  @override
+  String get deleteQrcodeMessage => 'هل تريد حذف هذا ';
 }

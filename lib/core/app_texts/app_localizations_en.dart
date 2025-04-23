@@ -628,4 +628,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pleaseSelectCategory => 'Please select a category and fill at least Arabic fields or English fields';
+
+  @override
+  String get noQrcode => 'No QR code';
+
+  @override
+  String get noQrcodeYet => 'No QR code yet';
+
+  @override
+  String get noQrcodeDescription => 'No QR codes yet, add a new QR code to see them';
+
+  @override
+  String get deleteQrcodeTitle => 'Delete QR code';
+
+  @override
+  String get deleteQrcodeMessage => 'Are you sure you want to delete  ';
 }

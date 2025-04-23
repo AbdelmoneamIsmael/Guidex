@@ -139,9 +139,6 @@ class AllCategoriesController extends GetxController {
           isLoading = false;
           update();
           UIHelper.showSnackbar(context: context, message: r.message!);
-
-          // categories.clear();
-          // getAllCategories(context: context);
         });
       });
     } else {

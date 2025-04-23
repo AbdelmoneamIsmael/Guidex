@@ -1336,6 +1336,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please select a category and fill at least Arabic fields or English fields'**
   String get pleaseSelectCategory;
+
+  /// No description provided for @noQrcode.
+  ///
+  /// In en, this message translates to:
+  /// **'No QR code'**
+  String get noQrcode;
+
+  /// No description provided for @noQrcodeYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No QR code yet'**
+  String get noQrcodeYet;
+
+  /// No description provided for @noQrcodeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'No QR codes yet, add a new QR code to see them'**
+  String get noQrcodeDescription;
+
+  /// No description provided for @deleteQrcodeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete QR code'**
+  String get deleteQrcodeTitle;
+
+  /// No description provided for @deleteQrcodeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete  '**
+  String get deleteQrcodeMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -33,20 +33,57 @@ class QrCodeRepoImple extends QrcodeRepo {
   }
 
   @override
-  Future<Either<Failure, BasicResponseModel>> deleteQrCode({required int id}) {
-    // TODO: implement deleteQrCode
-    throw UnimplementedError();
+  Future<Either<Failure, BasicResponseModel>> deleteQrCode(
+      {required List<String> codes}) async {
+    try {
+      var result = await remoteDeleteQr.deleteQrCode(codes: codes);
+      return Right(result);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(
+          ServerFailure.fromDioError(e),
+        );
+      } else {
+        return Left(
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
+        );
+      }
+    }
   }
 
   @override
-  Future<Either<Failure, QrcodeResponceModel>> getAllQrcodes(
-      {bool isPagenation = true,
-      required int pageIndex,
-      required int pageSize,
-      String? searchKey,
-      int? categoryId}) {
-    // TODO: implement getAllQrcodes
-    throw UnimplementedError();
+  Future<Either<Failure, QrcodeResponceModel>> getAllQrcodes({
+    bool isPagenation = true,
+    required int pageIndex,
+    required int pageSize,
+    String? searchKey,
+    int? categoryId,
+  }) async {
+    try {
+      var result = await remoteGetQrcodes.getQrcodes(
+        pageIndex: pageIndex,
+        pageSize: pageSize,
+        searchKey: searchKey,
+        categoryId: categoryId,
+      );
+      return Right(result);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(
+          ServerFailure.fromDioError(e),
+        );
+      } else {
+        return Left(
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
+        );
+      }
+    }
   }
 
   @override
@@ -56,10 +93,15 @@ class QrCodeRepoImple extends QrcodeRepo {
       return Right(result);
     } on Exception catch (e) {
       if (e is DioException) {
-        return Left(ServerFailure.fromDioError(e));
+        return Left(
+          ServerFailure.fromDioError(e),
+        );
       } else {
         return Left(
-          ServerFailure(code: internalLocalError, message: e.toString()),
+          ServerFailure(
+            code: internalLocalError,
+            message: e.toString(),
+          ),
         );
       }
     }

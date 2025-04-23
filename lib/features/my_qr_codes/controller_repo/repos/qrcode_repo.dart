@@ -13,7 +13,8 @@ abstract class QrcodeRepo {
     String? searchKey,
     int? categoryId,
   });
-  Future<Either<Failure, BasicResponseModel>> deleteQrCode({required int id});
+  Future<Either<Failure, BasicResponseModel>> deleteQrCode(
+      {required List<String> codes});
   Future<Either<Failure, BasicResponseModel>> updateQrCode({
     required QrcodeModel qrcode,
   });

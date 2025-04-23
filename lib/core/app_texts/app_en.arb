@@ -207,5 +207,10 @@
         "noCategory": "No category",
     "noCategoryYet": "No category yet",
     "noCategoryDescription": "No categories yet, add a new category to see them",
-    "pleaseSelectCategory": "Please select a category and fill at least Arabic fields or English fields"
+    "pleaseSelectCategory": "Please select a category and fill at least Arabic fields or English fields",
+    "noQrcode": "No QR code",
+    "noQrcodeYet": "No QR code yet",
+    "noQrcodeDescription": "No QR codes yet, add a new QR code to see them",
+    "deleteQrcodeTitle": "Delete QR code",
+    "deleteQrcodeMessage": "Are you sure you want to delete  "
 }

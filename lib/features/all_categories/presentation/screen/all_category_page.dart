@@ -87,7 +87,9 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                                     );
                                   }).then((value) {
                                 controller.categories.clear();
-                                controller.getAllCategories(context: context);
+                                controller.getAllCategories(
+                                  context: context,
+                                );
                               }).catchError((e) {});
                             },
                             onDelete: () {

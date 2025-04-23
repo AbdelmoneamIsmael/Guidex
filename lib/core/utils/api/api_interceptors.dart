@@ -27,11 +27,11 @@ class LoggerInterceptor extends Interceptor {
           final newResponse = await dio.fetch(error.requestOptions);
           return handler.resolve(newResponse);
         } catch (e) {
-          Getx.Get.toNamed(Routes.loginScreen);
+          Getx.Get.offAllNamed(Routes.loginScreen);
           return handler.next(error);
         }
       } else {
-        Getx.Get.toNamed(Routes.loginScreen);
+        Getx.Get.offAllNamed(Routes.loginScreen);
 
         return handler.next(error);
       }

@@ -11,10 +11,14 @@ class RemoteGetQrcodes {
     String url =
         '/api/QRCodeModel/GetAllQRCodeModels?pageIndex=$pageIndex&pageSize=$pageSize';
     if (categoryId != null) {
-      url += '&categoryId=$categoryId';
+      if (categoryId != -1) {
+        url += '&categoryId=$categoryId';
+      }
     }
     if (searchKey != null) {
-      url += '&Search=$searchKey';
+      if (searchKey.isNotEmpty) {
+        url += '&Search=$searchKey';
+      }
     }
     var result = await apiServer.getRequest(uri: url);
     QrcodeResponceModel qrcodeResponceModel =

@@ -7,10 +7,4 @@ class ProfileController extends GetxController {
     required this.context,
   });
   final BuildContext context;
-
-
-
-
-
-
 }

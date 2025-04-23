@@ -123,6 +123,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/qrcod.svg
   String get qrcod => 'assets/icons/qrcod.svg';
 
+  /// File path: assets/icons/qrcode.svg
+  String get qrcode => 'assets/icons/qrcode.svg';
+
   /// File path: assets/icons/refresh.svg
   String get refresh => 'assets/icons/refresh.svg';
 
@@ -211,6 +214,7 @@ class $AssetsIconsGen {
         productCart,
         profilePanner,
         qrcod,
+        qrcode,
         refresh,
         removeSlash,
         scanCodeBorder,

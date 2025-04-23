@@ -205,6 +205,11 @@
     "noCategory": "لا يوجد قسم",
     "noCategoryYet": "لا يوجد قسم حتى الان",
     "noCategoryDescription": "لا يوجد اقسام قم باضافة قسم جديد ليتم عرضة",
-    "pleaseSelectCategory": "يرجى تحديد قسم وتعبئة حقول عربية او انجليزية"
+    "pleaseSelectCategory": "يرجى تحديد قسم وتعبئة حقول عربية او انجليزية",
+    "noQrcode": "لا يوجد رمز",
+    "noQrcodeYet": "لا يوجد رمز حتى الان",
+    "noQrcodeDescription": "لا يوجد رمز قم باضافة رمز جديد ليتم عرضة",
+    "deleteQrcodeMessage": "هل تريد حذف هذا ",
+    "deleteQrcodeTitle": "حذف الرمز"
 
 }
