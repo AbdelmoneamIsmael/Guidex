@@ -72,6 +72,8 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                             onEdit: () {
                               controller.prepareCategoryForUpdate(
                                   category: controller.categories[index]);
+                                  var vategory= controller.categories[index]
+                                          .copyWith();
                               showModalBottomSheet(
                                   context: context,
                                   isScrollControlled: true,
@@ -83,7 +85,7 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                                           MediaQuery.of(context).size.width),
                                   builder: (context) {
                                     return EditCategorySheetView(
-                                      category: controller.categories[index],
+                                      category: vategory,
                                     );
                                   }).then((value) {
                                 controller.categories.clear();
