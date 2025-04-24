@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
@@ -35,169 +36,177 @@ class LoginScreen extends GetView<LoginController> {
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 24).w,
               child: Form(
                 key: controller.formKey,
-                child: Column(
-                  children: [
-                    AppTextField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return AppLocalizations.of(context).emailHint;
-                        }
-                        return null;
-                      },
-                      controller: controller.emailController,
-                      hintText: AppLocalizations.of(context).email,
-                      semanticLabel: "Enter your Email Adress",
-                      prefixIcon: const Icon(Icons.person),
-                    ),
-                    16.verticalSpace,
-                    GetBuilder<LoginController>(
-                      builder: (controller) {
-                        return AppTextField(
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return AppLocalizations.of(context).password;
-                            }
-                            return null;
-                          },
-                          controller: controller.passwordController,
-                          hintText: AppLocalizations.of(context).password,
-                          obscureText: controller.passwordSecure,
-                          semanticLabel: "Enter your Passowrd",
-                          prefixIcon: const Icon(Icons.lock),
-                          suffixIcon: Semantics(
-                            label: " Password",
-                            hint: "change  password visibility",
-                            button: true,
-                            value: controller.passwordSecure.toString(),
-                            checked: controller.passwordSecure,
-                            obscured: controller.passwordSecure,
-                            child: GestureDetector(
-                              onTap: () {
-                                controller.changePasswordSecure();
-                              },
-                              child: controller.passwordSecure
-                                  ? const Icon(Icons.visibility_off)
-                                  : const Icon(Icons.visibility),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    8.verticalSpace,
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        onTap: () {
-                          Get.toNamed(Routes.forgetPassScreen);
+                child: AutofillGroup(
+                  child: Column(
+                    children: [
+                      AppTextField(
+                        autofillHints: const [
+                          AutofillHints.email,
+                          AutofillHints.username
+                        ],
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return AppLocalizations.of(context).emailHint;
+                          }
+                          return null;
                         },
-                        child: Text(
-                          AppLocalizations.of(context).forgotPassword,
-                          style: AppTextStyle.medium14(context),
+                        controller: controller.emailController,
+                        hintText: AppLocalizations.of(context).email,
+                        semanticLabel: "Enter your Email Adress",
+                        prefixIcon: const Icon(Icons.person),
+                      ),
+                      16.verticalSpace,
+                      GetBuilder<LoginController>(
+                        builder: (controller) {
+                          return AppTextField(
+                            autofillHints: const [AutofillHints.password],
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return AppLocalizations.of(context).password;
+                              }
+                              return null;
+                            },
+                            controller: controller.passwordController,
+                            hintText: AppLocalizations.of(context).password,
+                            obscureText: controller.passwordSecure,
+                            semanticLabel: "Enter your Passowrd",
+                            prefixIcon: const Icon(Icons.lock),
+                            suffixIcon: Semantics(
+                              label: " Password",
+                              hint: "change  password visibility",
+                              button: true,
+                              value: controller.passwordSecure.toString(),
+                              checked: controller.passwordSecure,
+                              obscured: controller.passwordSecure,
+                              child: GestureDetector(
+                                onTap: () {
+                                  controller.changePasswordSecure();
+                                },
+                                child: controller.passwordSecure
+                                    ? const Icon(Icons.visibility_off)
+                                    : const Icon(Icons.visibility),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                      8.verticalSpace,
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed(Routes.forgetPassScreen);
+                          },
+                          child: Text(
+                            AppLocalizations.of(context).forgotPassword,
+                            style: AppTextStyle.medium14(context),
+                          ),
                         ),
                       ),
-                    ),
-                    32.verticalSpace,
-                    PrimaryButton(
-                      onPressed: () {
-                        if (controller.formKey.currentState!.validate()) {
-                          controller.login(
-                            context: context,
-                            signinRepo: SignWithEmail(
-                              signInModel: LoginPrameters(
-                                username: controller.emailController.text,
-                                password: controller.passwordController.text,
-                                fcmToken: kDeviceToken,
-                              ),
-                            ),
-                            getUserInfo: getIt.get<GetUserInfoRepo>(),
-                          );
-                        }
-                      },
-                      title: AppLocalizations.of(context).signIn,
-                    ),
-                    32.verticalSpace,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Expanded(
-                          child: Divider(thickness: 1),
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          AppLocalizations.of(context).or,
-                          style: AppTextStyle.medium16(context),
-                        ),
-                        const SizedBox(width: 12),
-                        const Expanded(
-                          child: Divider(thickness: 1),
-                        ),
-                      ],
-                    ),
-                    24.verticalSpace,
-                    SocialButton(
-                      label: AppLocalizations.of(context).continueWithGoogle,
-                      hint:
-                          "by clicking on this button you can sign up with google",
-                      onPressed: () {
-                        controller.login(
-                          context: context,
-                          getUserInfo: getIt.get<GetUserInfoRepo>(),
-                          signinRepo: SignWithGoogleRepo(
-                            googleLogin: GoogleLogin(),
-                          ),
-                        );
-                      },
-                      icon: Assets.icons.google,
-                    ),
-                    // 16.verticalSpace,
-                    // SocialButton(
-                    //   label: AppLocalizations.of(context).continueWithFacebook,
-                    //   hint: "by clicking on this button you can sign up with Facebook",
-                    //   onPressed: () {},
-                    //   icon: Assets.icons.facebook,
-                    // ),
-                    32.verticalSpace,
-                    // GestureDetector(
-                    //   onTap: () {
-                    //     NotificationHelper.showNotification(
-                    //       title: "Test Notification",
-                    //       body: "This is a test notification",
-                    //       id: 1,
-                    //     );
-                    //   },
-                    //   child: Text(
-                    //     "Test Notification",
-                    //     style: AppTextStyle.regular16(context),
-                    //   ),
-                    // ),
-                    // 32.verticalSpace,
-
-                    RichText(
-                      text: TextSpan(
-                        style: AppTextStyle.medium16(context),
-                        children: [
-                          TextSpan(
-                            text:
-                                AppLocalizations.of(context).donotHaveAnAccount,
-                            style: AppTextStyle.medium16(context),
-                          ),
-                          WidgetSpan(
-                            child: GestureDetector(
-                              onTap: () {
-                                Get.toNamed(Routes.registerScreen);
-                              },
-                              child: Text(
-                                " ${AppLocalizations.of(context).signUp}",
-                                style: AppTextStyle.bold16(context).copyWith(
-                                  color: Theme.of(context).primaryColor,
+                      32.verticalSpace,
+                      PrimaryButton(
+                        onPressed: () {
+                          if (controller.formKey.currentState!.validate()) {
+                            TextInput.finishAutofillContext();
+                            controller.login(
+                              context: context,
+                              signinRepo: SignWithEmail(
+                                signInModel: LoginPrameters(
+                                  username: controller.emailController.text,
+                                  password: controller.passwordController.text,
+                                  fcmToken: kDeviceToken,
                                 ),
                               ),
-                            ),
+                              getUserInfo: getIt.get<GetUserInfoRepo>(),
+                            );
+                          }
+                        },
+                        title: AppLocalizations.of(context).signIn,
+                      ),
+                      32.verticalSpace,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Expanded(
+                            child: Divider(thickness: 1),
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            AppLocalizations.of(context).or,
+                            style: AppTextStyle.medium16(context),
+                          ),
+                          const SizedBox(width: 12),
+                          const Expanded(
+                            child: Divider(thickness: 1),
                           ),
                         ],
                       ),
-                    )
-                  ],
+                      24.verticalSpace,
+                      SocialButton(
+                        label: AppLocalizations.of(context).continueWithGoogle,
+                        hint:
+                            "by clicking on this button you can sign up with google",
+                        onPressed: () {
+                          controller.login(
+                            context: context,
+                            getUserInfo: getIt.get<GetUserInfoRepo>(),
+                            signinRepo: SignWithGoogleRepo(
+                              googleLogin: GoogleLogin(),
+                            ),
+                          );
+                        },
+                        icon: Assets.icons.google,
+                      ),
+                      // 16.verticalSpace,
+                      // SocialButton(
+                      //   label: AppLocalizations.of(context).continueWithFacebook,
+                      //   hint: "by clicking on this button you can sign up with Facebook",
+                      //   onPressed: () {},
+                      //   icon: Assets.icons.facebook,
+                      // ),
+                      32.verticalSpace,
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     NotificationHelper.showNotification(
+                      //       title: "Test Notification",
+                      //       body: "This is a test notification",
+                      //       id: 1,
+                      //     );
+                      //   },
+                      //   child: Text(
+                      //     "Test Notification",
+                      //     style: AppTextStyle.regular16(context),
+                      //   ),
+                      // ),
+                      // 32.verticalSpace,
+
+                      RichText(
+                        text: TextSpan(
+                          style: AppTextStyle.medium16(context),
+                          children: [
+                            TextSpan(
+                              text: AppLocalizations.of(context)
+                                  .donotHaveAnAccount,
+                              style: AppTextStyle.medium16(context),
+                            ),
+                            WidgetSpan(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(Routes.registerScreen);
+                                },
+                                child: Text(
+                                  " ${AppLocalizations.of(context).signUp}",
+                                  style: AppTextStyle.bold16(context).copyWith(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

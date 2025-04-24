@@ -20,6 +20,7 @@ class AppTextField extends StatelessWidget {
     this.textAlign,
     this.validator,
     this.onChanged,
+    this.autofillHints,
   });
   final TextAlign? textAlign;
 
@@ -32,6 +33,7 @@ class AppTextField extends StatelessWidget {
   final int maxLines;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final Iterable<String>? autofillHints;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -50,6 +52,7 @@ class AppTextField extends StatelessWidget {
             obscureText: obscureText,
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
+            autofillHints: autofillHints,
             readOnly: readOnly,
             textAlign: textAlign,
             hintText: hintText,
@@ -78,6 +81,7 @@ class GuidixFormField extends StatelessWidget {
     this.textAlign,
     this.validator,
     this.onChanged,
+    this.autofillHints,
   });
 
   final bool? obscureText, readOnly;
@@ -92,6 +96,7 @@ class GuidixFormField extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final Iterable<String>? autofillHints;
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +106,7 @@ class GuidixFormField extends StatelessWidget {
       child: TextFormField(
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validator,
+        autofillHints: autofillHints,
         onChanged: onChanged,
         autocorrect: false,
         readOnly: readOnly!,
