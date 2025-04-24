@@ -41,8 +41,9 @@ initializeApplication() async {
   initializeGetIt();
   await CacheHelper.init();
   initialRoute = await CacheHelper.getData(
-    key: GetStoreageKey.initialRoute,
-  )?? Routes.loginScreen;
+        key: GetStoreageKey.initialRoute,
+      ) ??
+      Routes.loginScreen;
 
   kDeviceToken = await NotificationHelper.init();
   log(kDeviceToken);

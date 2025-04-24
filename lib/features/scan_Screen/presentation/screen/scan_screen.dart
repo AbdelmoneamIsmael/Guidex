@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:guidix/core/app_controller/app_controller.dart';
 import 'package:guidix/core/app_texts/app_localizations.dart';
-import 'package:guidix/core/models/qrcode_generation.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/utils/functions/initialize_getit/initialize_getit.dart';

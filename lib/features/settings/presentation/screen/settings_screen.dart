@@ -67,7 +67,7 @@ class SettingsScreen extends StatelessWidget {
                 title: AppLocalizations.of(context).signOut,
                 icon: Assets.icons.logout,
                 onTap: () {
-                  // controller.signOut();
+                  controller.signOut();
                 },
               ),
             ],
