@@ -11,14 +11,17 @@ class GoogleResponseModel extends SocialSignIn {
     required this.id,
     required super.deviceToken,
     required super.loginProvider,
+    required super.phoneNumber,
   }) : super(
           loginProviderKey: id,
+         
         );
 
   final String? id;
 
   factory GoogleResponseModel.fromJson(Map<String, dynamic> json) {
     return GoogleResponseModel(
+      phoneNumber: json["phoneNumber"],
       loginProvider: SocialLogin.values.byName(json["loginProvider"]),
       name: json["name"],
       email: json["email"],
@@ -31,8 +34,10 @@ class GoogleResponseModel extends SocialSignIn {
   factory GoogleResponseModel.fromUserCredentials(
       UserCredential userCredential) {
     return GoogleResponseModel(
+      phoneNumber: userCredential.user?.phoneNumber ?? "",
       name: userCredential.user?.displayName ?? "",
       email: userCredential.user?.email ?? "",
+
       deviceToken: kDeviceToken,
       photoUrl: userCredential.user?.photoURL,
       id: userCredential.user?.providerData[0].uid,
@@ -42,6 +47,6 @@ class GoogleResponseModel extends SocialSignIn {
 
   @override
   String toString() {
-    return "$name, $email, $photoUrl, $id, ";
+    return "$name, $email, $photoUrl, $id, $deviceToken, $phoneNumber";
   }
 }

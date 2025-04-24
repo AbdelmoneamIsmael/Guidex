@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/models/user/user_info.dart';
@@ -45,8 +46,6 @@ class AppController extends GetxController {
     getCachedUser();
     super.onInit();
   }
-
- 
 
   changeTheme(ApplicationTheme theme) {
     switch (theme) {
@@ -155,11 +154,17 @@ class AppController extends GetxController {
 
     CacheHelper.setSecuerString(value: "", key: GetStoreageKey.accessToken);
     CacheHelper.setSecuerString(value: "", key: GetStoreageKey.refreshToken);
-    await CacheHelper.setSecuerString(
+    await CacheHelper.saveData(
       key: GetStoreageKey.initialRoute,
       value: Routes.loginScreen,
     );
-
+    googleLogout();
     Get.offAllNamed(Routes.loginScreen);
+  }
+
+  Future<void> googleLogout() async {
+    try {
+      await GoogleSignIn().signOut();
+    } on Exception catch (_) {}
   }
 }

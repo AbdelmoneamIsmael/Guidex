@@ -10,6 +10,7 @@ class FaceBookLoginResponseModel extends SocialSignIn {
     required this.id,
     required this.token,
     required super.deviceToken,
+    required super.phoneNumber,
   }) : super(
           loginProviderKey: id,
           loginProvider: SocialLogin.facebook,
@@ -22,6 +23,7 @@ class FaceBookLoginResponseModel extends SocialSignIn {
 
   factory FaceBookLoginResponseModel.fromJson(Map<String, dynamic> json) {
     return FaceBookLoginResponseModel(
+      phoneNumber: json["phoneNumber"],
       name: json["name"],
       email: json["email"],
       deviceToken: json["deviceToken"],
@@ -34,7 +36,7 @@ class FaceBookLoginResponseModel extends SocialSignIn {
 
   @override
   String toString() {
-    return "$name, $email, $picture, $id, $token, ";
+    return "$name, $email, $picture, $id, $token, $deviceToken, $phoneNumber";
   }
 }
 

@@ -9,7 +9,7 @@ class FacebookLoginAuthRepo {
       userData["token"] = result.accessToken?.tokenString;
       FaceBookLoginResponseModel faceBookLoginResponseModel =
           FaceBookLoginResponseModel.fromJson(userData);
-          print(faceBookLoginResponseModel);
+      print(faceBookLoginResponseModel);
       return faceBookLoginResponseModel;
     } else {
       throw Exception(result.message);

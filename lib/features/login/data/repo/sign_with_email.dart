@@ -15,7 +15,7 @@ class SignWithEmail extends SigninRepo with PerfumeSignIn {
   @override
   Future<Either<Failure, UserModel>> login() async {
     try {
-      var result = await super.perfumeSignIn(
+      var result = await super.guidxSignIn(
         data: signInModel.toJson(),
         endPoint: '/api/Authentication/login',
       );
@@ -25,7 +25,7 @@ class SignWithEmail extends SigninRepo with PerfumeSignIn {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-         return Left(
+        return Left(
           ServerFailure(
             code: internalLocalError,
             message: e.toString(),
@@ -39,7 +39,7 @@ class SignWithEmail extends SigninRepo with PerfumeSignIn {
 mixin class PerfumeSignIn {
   final ApiServer apiServer = ApiServer();
 
-  Future<Either<Failure, UserModel>> perfumeSignIn({
+  Future<Either<Failure, UserModel>> guidxSignIn({
     required Object? data,
     required String endPoint,
   }) async {
@@ -62,7 +62,8 @@ mixin class PerfumeSignIn {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        return Left(ServerFailure( code: internalLocalError, message: e.toString()));
+        return Left(
+            ServerFailure(code: internalLocalError, message: e.toString()));
       }
     }
   }

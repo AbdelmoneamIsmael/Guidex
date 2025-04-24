@@ -8,6 +8,7 @@ import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/core/utils/functions/initialize_getit/initialize_getit.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
+import 'package:guidix/core/widgets/loading.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/add_new_qr/presentation/screen/add_new_qr.dart';
 import 'package:guidix/features/my_qr_codes/controller_repo/repos/qrcode_repo.dart';
@@ -93,14 +94,18 @@ class ScanScreen extends GetView<ScnnerController> {
                         ? const SuccessScanScreen()
                         : controller.scannerState == ScannerState.notEmplemented
                             ? const SuccessScanNoValueScreen()
-                            : Center(
-                                child: Text(
-                                  AppLocalizations.of(context).notfoundQrCode,
-                                  textAlign: TextAlign.center,
-                                  style: AppTextStyle.medium20(context)
-                                      .copyWith(fontWeight: FontWeight.w600),
-                                ),
-                              ),
+                            : controller.scannerState == ScannerState.loading
+                                ? const LoadingWidget()
+                                : Center(
+                                    child: Text(
+                                      AppLocalizations.of(context)
+                                          .notfoundQrCode,
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyle.medium20(context)
+                                          .copyWith(
+                                              fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
                 59.verticalSpace,
               ],
             ),

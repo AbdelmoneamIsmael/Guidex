@@ -18,13 +18,13 @@ class SignWithFacebook extends SigninRepo with PerfumeSignIn {
     try {
       SocialSignIn result = await facebookLoginAuthRepo.loginWithFacebook();
 
-      var userModel = await super.perfumeSignIn(
+      var userModel = await super.guidxSignIn(
         data: result.toJson(),
         endPoint: '/api/Authentication/ExternalLogin',
       );
       return userModel.fold(
         (l) {
-          return Left(ServerFailure( code:  l.code, message: l.message));
+          return Left(ServerFailure(code: l.code, message: l.message));
         },
         (r) {
           return Right(r);
@@ -32,7 +32,7 @@ class SignWithFacebook extends SigninRepo with PerfumeSignIn {
       );
     } catch (e) {
       if (e is FirebaseAuthException) {
-        return Left(ServerFailure( code: e.hashCode, message: e.code));
+        return Left(ServerFailure(code: e.hashCode, message: e.code));
       } else {
         return Left(
           ServerFailure(

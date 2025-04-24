@@ -11,6 +11,7 @@ class SocialSignIn {
     required this.email,
     required this.deviceToken,
     required this.photoUrl,
+    required this.phoneNumber,
   });
 
   String? loginProviderKey;
@@ -19,6 +20,7 @@ class SocialSignIn {
   String? email;
   String? deviceToken;
   String? photoUrl;
+  String? phoneNumber;
 
   SocialSignIn copyWith({
     String? loginProviderKey,
@@ -27,8 +29,10 @@ class SocialSignIn {
     String? email,
     String? deviceToken,
     String? photoUrl,
+    String? phoneNumber,
   }) {
     return SocialSignIn(
+      phoneNumber: phoneNumber ?? this.phoneNumber,
       photoUrl: photoUrl ?? this.photoUrl,
       loginProviderKey: loginProviderKey ?? this.loginProviderKey,
       loginProvider: loginProvider ?? this.loginProvider,
@@ -40,6 +44,7 @@ class SocialSignIn {
 
   factory SocialSignIn.fromJson(Map<String, dynamic> json) {
     return SocialSignIn(
+      phoneNumber: json["phoneNumber"],
       photoUrl: json["imageUrl"] ?? "",
       loginProviderKey: json["loginProviderKey"],
       loginProvider: SocialLogin.values[json["loginProvider"]],
@@ -51,6 +56,7 @@ class SocialSignIn {
 
   Map<String, dynamic> toJson() => {
         "loginProviderKey": loginProviderKey,
+        "phoneNumber": phoneNumber,
         "loginProvider": loginProvider.name,
         "name": name,
         "email": email,
@@ -60,6 +66,6 @@ class SocialSignIn {
 
   @override
   String toString() {
-    return "$loginProviderKey, ${loginProvider.name}, $name, $email, $deviceToken, ";
+    return "$loginProviderKey, ${loginProvider.name}, $name, $email, $deviceToken, $photoUrl, $phoneNumber";
   }
 }

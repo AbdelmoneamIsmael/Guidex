@@ -24,7 +24,7 @@ class SignWithGoogleRepo extends SigninRepo with PerfumeSignIn {
           GoogleResponseModel.fromUserCredentials(
         result,
       );
-      var userModel = await super.perfumeSignIn(
+      var userModel = await super.guidxSignIn(
         data: googleResponseModel.toJson(),
         endPoint: '/api/Authentication/ExternalLogin',
       );
