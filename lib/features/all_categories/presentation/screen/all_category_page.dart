@@ -72,8 +72,8 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                             onEdit: () {
                               controller.prepareCategoryForUpdate(
                                   category: controller.categories[index]);
-                                  var vategory= controller.categories[index]
-                                          .copyWith();
+                              var vategory =
+                                  controller.categories[index].copyWith();
                               showModalBottomSheet(
                                   context: context,
                                   isScrollControlled: true,
