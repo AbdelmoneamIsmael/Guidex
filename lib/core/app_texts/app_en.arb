@@ -213,5 +213,9 @@
     "noQrcodeDescription": "No QR codes yet, add a new QR code to see them",
     "deleteQrcodeTitle": "Delete QR code",
     "deleteQrcodeMessage": "Are you sure you want to delete  ",
-    "phoneNumber": "Phone number"
+    "phoneNumber": "Phone number",
+    "uploadImageFromGalary": "Upload image from galary",
+    "uploadImageFromCamera": "Upload image from camera",
+        "uploadImage": "Upload image"
+
 }

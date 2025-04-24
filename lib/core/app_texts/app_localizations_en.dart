@@ -646,4 +646,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get phoneNumber => 'Phone number';
+
+  @override
+  String get uploadImageFromGalary => 'Upload image from galary';
+
+  @override
+  String get uploadImageFromCamera => 'Upload image from camera';
+
+  @override
+  String get uploadImage => 'Upload image';
 }

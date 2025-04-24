@@ -75,6 +75,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/forward_ios.svg
   String get forwardIos => 'assets/icons/forward_ios.svg';
 
+  /// File path: assets/icons/gallary.svg
+  String get gallary => 'assets/icons/gallary.svg';
+
   /// File path: assets/icons/help.svg
   String get help => 'assets/icons/help.svg';
 
@@ -198,6 +201,7 @@ class $AssetsIconsGen {
         facebook,
         flash,
         forwardIos,
+        gallary,
         help,
         instapay,
         inventFrinde,

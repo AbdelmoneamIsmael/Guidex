@@ -8,7 +8,7 @@ import 'package:guidix/core/themes/styles/app_text_style.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
 class ProfileOptionWidget extends StatelessWidget {
-  const ProfileOptionWidget( {
+  const ProfileOptionWidget({
     super.key,
     required this.title,
     required this.icon,
@@ -39,6 +39,7 @@ class ProfileOptionWidget extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
+              width: 24.w,
               colorFilter: ColorFilter.mode(
                 Theme.of(context).iconTheme.color!,
                 BlendMode.srcIn,

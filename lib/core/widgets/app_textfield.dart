@@ -108,7 +108,7 @@ class GuidixFormField extends StatelessWidget {
         maxLines: maxLines,
         textAlign: textAlign ?? TextAlign.start,
         obscureText: obscureText!,
-        keyboardType: TextInputType.name,
+        keyboardType: keyboardType ?? TextInputType.name,
         style: AppTextStyle.regular16(context),
         inputFormatters: inputFormatters,
         decoration: InputDecoration(

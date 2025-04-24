@@ -1372,6 +1372,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone number'**
   String get phoneNumber;
+
+  /// No description provided for @uploadImageFromGalary.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload image from galary'**
+  String get uploadImageFromGalary;
+
+  /// No description provided for @uploadImageFromCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload image from camera'**
+  String get uploadImageFromCamera;
+
+  /// No description provided for @uploadImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload image'**
+  String get uploadImage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

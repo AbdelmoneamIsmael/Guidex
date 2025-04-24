@@ -10,6 +10,7 @@ import 'package:guidix/core/widgets/cashed_images.dart';
 import 'package:guidix/core/widgets/guidix_app_bar.dart';
 import 'package:guidix/core/widgets/primary_button.dart';
 import 'package:guidix/features/edit_profile/presentation/controller/controller/edit_profile_controller.dart';
+import 'package:guidix/features/profile_screen/presentation/widget/profile_option_widget.dart';
 import 'package:guidix/gen/assets.gen.dart';
 
 class EditProfile extends StatelessWidget {
@@ -53,52 +54,49 @@ class EditProfile extends StatelessWidget {
                             Assets.icons.profilePanner,
                           ),
                         ),
-                        CupertinoButton(
-                          onPressed: () => controller.pickImage(),
-                          padding: const EdgeInsets.all(0),
-                          minSize: 0,
-                          child: Positioned(
-                            right: 0,
-                            left: 0,
-                            bottom: -110.h,
-                            child: Center(
-                              child: Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(200),
-                                    ),
-                                    child: controller.image == null
-                                        ? CachedImage(
-                                            width: 135.w,
-                                            height: 135.w,
-                                            fit: BoxFit.cover,
-                                            url: controller
-                                                .userInfoModel!.imageUrl!,
-                                          )
-                                        : Image.file(
-                                            controller.image!,
-                                            width: 135.w,
-                                            height: 135.w,
-                                            fit: BoxFit.cover,
-                                          ),
+                        Positioned(
+                          right: 0,
+                          left: 0,
+                          bottom: -110.h,
+                          child: Center(
+                            child: Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(200),
                                   ),
-                                  Positioned(
-                                      bottom: 0,
-                                      right: 0,
-                                      child: CircleAvatar(
-                                          backgroundColor: Theme.of(context)
-                                              .scaffoldBackgroundColor,
-                                          radius: 20.r,
-                                          child: Icon(
-                                            Icons.camera_alt_rounded,
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium!
-                                                .color,
-                                          ))),
-                                ],
-                              ),
+                                  child: controller.image == null
+                                      ? CachedImage(
+                                          width: 135.w,
+                                          height: 135.w,
+                                          fit: BoxFit.cover,
+                                          url: controller
+                                              .userInfoModel!.imageUrl!,
+                                        )
+                                      : Image.file(
+                                          controller.image!,
+                                          width: 135.w,
+                                          height: 135.w,
+                                          fit: BoxFit.cover,
+                                        ),
+                                ),
+                                // Positioned(
+                                //   bottom: 0,
+                                //   right: 0,
+                                //   child: CircleAvatar(
+                                //     backgroundColor: Theme.of(context)
+                                //         .scaffoldBackgroundColor,
+                                //     radius: 20.r,
+                                //     child: Icon(
+                                //       Icons.camera_alt_rounded,
+                                //       color: Theme.of(context)
+                                //           .textTheme
+                                //           .bodyMedium!
+                                //           .color,
+                                //     ),
+                                //   ),
+                                // ),
+                              ],
                             ),
                           ),
                         ),
@@ -126,6 +124,14 @@ class EditProfile extends StatelessWidget {
                     child: Column(
                       spacing: 24.h,
                       children: [
+                        ProfileOptionWidget(
+                          title: AppLocalizations.of(context)
+                              .uploadImageFromGalary,
+                          icon: Assets.icons.gallary,
+                          onTap: () {
+                            controller.pickImage();
+                          },
+                        ),
                         AppTextField(
                           hintText: AppLocalizations.of(context).email,
                           controller: controller.emailController,
@@ -149,6 +155,7 @@ class EditProfile extends StatelessWidget {
                           hintText: AppLocalizations.of(context).phoneNumber,
                           semanticLabel: "",
                           controller: controller.phoneController,
+                          keyboardType: TextInputType.phone,
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly
                           ],

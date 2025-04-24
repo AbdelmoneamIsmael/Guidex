@@ -646,4 +646,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get uploadImageFromGalary => 'تحميل صورة من المعرض';
+
+  @override
+  String get uploadImageFromCamera => 'تحميل صورة من الكاميرا';
+
+  @override
+  String get uploadImage => 'تحميل الصورة';
 }

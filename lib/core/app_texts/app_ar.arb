@@ -211,6 +211,9 @@
     "noQrcodeDescription": "لا يوجد رمز قم باضافة رمز جديد ليتم عرضة",
     "deleteQrcodeMessage": "هل تريد حذف هذا ",
     "deleteQrcodeTitle": "حذف الرمز",
-    "phoneNumber": "رقم الهاتف"
+    "phoneNumber": "رقم الهاتف",
+    "uploadImageFromGalary": "تحميل صورة من المعرض",
+    "uploadImageFromCamera": "تحميل صورة من الكاميرا",
+    "uploadImage": "تحميل الصورة"
 
 }
