@@ -46,14 +46,24 @@ class ServerFailure extends Failure {
     if (response.statusCode == 404) {
       return ServerFailure(
           code: response.statusCode,
-          message: response.data["message"] ?? 'Page Not Found');
+          message: response.data is String
+              ? response.data
+              : response.data["message"] ?? 'Page Not Found');
     } else if (response.statusCode == 500) {
       return ServerFailure(
           code: response.statusCode, message: response.data["message"]);
     } else if (response.statusCode == 400) {
       return ServerFailure(
-          code: response.statusCode, message: '${response.data["message"]}');
-    } else if (response.statusCode == 401 || response.statusCode == 403) {
+        code: response.statusCode,
+        message: '${response.data["message"]}',
+      );
+    } else if (response.statusCode == 401) {
+      return ServerFailure(
+        code: response.statusCode,
+        message:
+            "انتهت صلاحية الجلسة يرجي اعادة التسجيل مجددا \n your session has been expired please login again",
+      );
+    } else if (response.statusCode == 403) {
       return ServerFailure(
           code: response.statusCode,
           message: response.data["message"] ?? "Not allawed");

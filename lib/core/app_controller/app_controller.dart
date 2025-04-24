@@ -192,6 +192,7 @@ class AppController extends GetxController {
     var box = Hive.box<UserInfoModel>(GetStoreageKey.userInfoBox);
     await box.clear();
     await box.add(userInfo!);
+    update();
   }
 
   bool languageAr() {

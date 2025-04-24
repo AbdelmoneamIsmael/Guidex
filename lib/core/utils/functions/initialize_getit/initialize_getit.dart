@@ -3,6 +3,9 @@ import 'package:guidix/features/confirm_otp/data/datasources/remote/confirm_otp.
 import 'package:guidix/features/confirm_otp/data/datasources/remote/send_otp.dart';
 import 'package:guidix/features/confirm_otp/data/repositories/confirm_otp_repo_imple.dart';
 import 'package:guidix/features/confirm_otp/domain/repositories/confirm_otp_repo.dart';
+import 'package:guidix/features/edit_profile/data/remote/remote_update_data.dart';
+import 'package:guidix/features/edit_profile/data/repo/update_profile_repo_imple.dart';
+import 'package:guidix/features/edit_profile/domain/repo/update_profile_repo.dart';
 import 'package:guidix/features/forget_passord/data/remote/change_password.dart';
 import 'package:guidix/features/forget_passord/data/remote/remote_confirm_email.dart';
 import 'package:guidix/features/forget_passord/data/repo/forget_password_repo.dart';
@@ -65,6 +68,11 @@ void initializeGetIt() {
       remoteUpdateQr: RemoteUpdateQr(),
       remoteAddQrCode: RemoteAsignQrcode(),
       remoteGetQrcodes: RemoteGetQrcodes(),
+    ),
+  );
+  getIt.registerLazySingleton<UpdateProfileRepo>(
+    () => UpdateProfileRepoImple(
+      updateProfileRemote: RemoteUpdateData(),
     ),
   );
 }

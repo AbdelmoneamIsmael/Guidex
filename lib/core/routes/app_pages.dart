@@ -7,7 +7,7 @@ import 'package:guidix/features/all_categories/presentation/screen/all_category_
 import 'package:guidix/features/confirm_otp/presentation/controller/confirm_otp_bindings.dart';
 import 'package:guidix/features/confirm_otp/presentation/pages/confirm_otp_screen.dart';
 import 'package:guidix/features/edit_profile/presentation/controller/controller/binndings/edit_profile_bindings.dart';
-import 'package:guidix/features/edit_profile/presentation/edit_profile.dart';
+import 'package:guidix/features/edit_profile/presentation/screen/edit_profile.dart';
 import 'package:guidix/features/forget_passord/bindings/forget_pass_bindings.dart';
 import 'package:guidix/features/forget_passord/presentation/screens/forget_pass_screen.dart';
 import 'package:guidix/features/help/help_screen.dart';
