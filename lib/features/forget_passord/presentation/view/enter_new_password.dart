@@ -74,6 +74,9 @@ class EnterNewPassword extends GetView<ForgetPassController> {
             title: AppLocalizations.of(context).save,
             onPressed: () => controller.changePassword(),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).viewInsets.bottom,
+          )
         ],
       ),
     );

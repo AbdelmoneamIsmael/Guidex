@@ -39,10 +39,12 @@ class EnterEmail extends StatelessWidget {
             prefixIcon: const Icon(Icons.email),
           ),
           32.verticalSpace,
-        
           PrimaryButton(
             title: AppLocalizations.of(context).send,
             onPressed: () => Get.find<ForgetPassController>().confirmEmail(),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).viewInsets.bottom,
           )
         ],
       ),

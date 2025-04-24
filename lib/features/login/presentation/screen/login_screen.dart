@@ -157,20 +157,20 @@ class LoginScreen extends GetView<LoginController> {
                     //   icon: Assets.icons.facebook,
                     // ),
                     32.verticalSpace,
-                    GestureDetector(
-                      onTap: () {
-                        NotificationHelper.showNotification(
-                          title: "Test Notification",
-                          body: "This is a test notification",
-                          id: 1,
-                        );
-                      },
-                      child: Text(
-                        "Test Notification",
-                        style: AppTextStyle.regular16(context),
-                      ),
-                    ),
-                    32.verticalSpace,
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     NotificationHelper.showNotification(
+                    //       title: "Test Notification",
+                    //       body: "This is a test notification",
+                    //       id: 1,
+                    //     );
+                    //   },
+                    //   child: Text(
+                    //     "Test Notification",
+                    //     style: AppTextStyle.regular16(context),
+                    //   ),
+                    // ),
+                    // 32.verticalSpace,
 
                     RichText(
                       text: TextSpan(

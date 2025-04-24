@@ -8,7 +8,7 @@ class RemoteConfirmOtp {
       endPoint: "/api/Authentication/ConfirmEmail",
       data: {"email": email, "otp": otp},
     );
-    UserModel userModel = UserModel.fromJson(result);
+    UserModel userModel = UserModel.fromJson(result["data"]);
     return userModel;
   }
 }

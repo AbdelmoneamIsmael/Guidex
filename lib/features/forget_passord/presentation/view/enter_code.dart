@@ -53,6 +53,9 @@ class EnterCode extends StatelessWidget {
           PrimaryButton(
             title: AppLocalizations.of(context).verify,
             onPressed: () => Get.find<ForgetPassController>().confirmOtp(),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).viewInsets.bottom,
           )
         ],
       ),

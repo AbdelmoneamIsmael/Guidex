@@ -103,40 +103,6 @@ class RegisterScreen extends GetView<RegisterController> {
                       title: AppLocalizations.of(context).signUp,
                     ),
                     24.verticalSpace,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Expanded(
-                          child: Divider(thickness: 1),
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          AppLocalizations.of(context).or,
-                          style: AppTextStyle.medium16(context),
-                        ),
-                        const SizedBox(width: 12),
-                        const Expanded(
-                          child: Divider(thickness: 1),
-                        ),
-                      ],
-                    ),
-                    24.verticalSpace,
-                    SocialButton(
-                      label: AppLocalizations.of(context).continueWithGoogle,
-                      hint:
-                          "by clicking on this button you can sign up with google",
-                      onPressed: () {},
-                      icon: Assets.icons.google,
-                    ),
-                    16.verticalSpace,
-                    SocialButton(
-                      label: AppLocalizations.of(context).continueWithFacebook,
-                      hint:
-                          "by clicking on this button you can sign up with Facebook",
-                      onPressed: () {},
-                      icon: Assets.icons.facebook,
-                    ),
-                    32.verticalSpace,
                     RichText(
                       text: TextSpan(
                         children: [
@@ -148,7 +114,7 @@ class RegisterScreen extends GetView<RegisterController> {
                           WidgetSpan(
                             child: GestureDetector(
                               onTap: () {
-                                Get.toNamed(Routes.loginScreen);
+                                Get.offAllNamed(Routes.loginScreen);
                               },
                               child: Text(
                                 " ${AppLocalizations.of(context).signIn}",

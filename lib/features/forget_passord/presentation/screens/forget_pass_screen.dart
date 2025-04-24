@@ -18,7 +18,7 @@ class ForgetPassScreen extends GetView<ForgetPassController> {
               title: controller.currentTitle[controller.currentStep.value],
               onBack: () => controller.backStep(),
             ),
-            body: Padding(
+            body: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 16.0).w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
