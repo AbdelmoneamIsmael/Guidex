@@ -655,4 +655,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get uploadImage => 'تحميل الصورة';
+
+  @override
+  String get appNotAvailableTitle => 'التطبيق تحت الصيانة';
+
+  @override
+  String get appNotAvailableMessage => 'التطبيق تحت الصيانة يرجي المحاولة في وقت لاحق ويرجي الاتصال بالدعم الفني اذا كنت تظت ان هذة المشكلة ليست منطقية';
+
+  @override
+  String get appNotUpdated => 'هنالك تحديث جديد متوفر';
+
+  @override
+  String get updateAppMessage => ' GooglePaly Or AppStore هناك تحديث جديد متوفر الان يرجي زيارة سيرفير المستخدم لتحديث التطبيق \n';
 }

@@ -47,19 +47,20 @@ class ProfileScreen extends GetView<AppController> {
                   spacing: 24.h,
                   children: [
                     ProfileOptionWidget(
+                      
                       title: AppLocalizations.of(context).profile,
                       icon: Assets.icons.userProfile,
                       onTap: () {
                         Get.toNamed(Routes.editProfile);
                       },
                     ),
-                    ProfileOptionWidget(
-                      title: AppLocalizations.of(context).orders,
-                      icon: Assets.icons.order,
-                      onTap: () {
-                        Get.toNamed(Routes.ordersPage);
-                      },
-                    ),
+                    // ProfileOptionWidget(
+                    //   title: AppLocalizations.of(context).orders,
+                    //   icon: Assets.icons.order,
+                    //   onTap: () {
+                    //     Get.toNamed(Routes.ordersPage);
+                    //   },
+                    // ),
                     // ProfileOptionWidget(
                     //   title: AppLocalizations.of(context).paymentMethod,
                     //   icon: Assets.icons.card,

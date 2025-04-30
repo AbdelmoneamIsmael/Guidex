@@ -102,6 +102,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logout.svg
   String get logout => 'assets/icons/logout.svg';
 
+  /// File path: assets/icons/maintance.svg
+  String get maintance => 'assets/icons/maintance.svg';
+
   /// File path: assets/icons/marker.svg
   String get marker => 'assets/icons/marker.svg';
 
@@ -166,6 +169,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/unlock_window.svg
   String get unlockWindow => 'assets/icons/unlock_window.svg';
 
+  /// File path: assets/icons/update.svg
+  String get update => 'assets/icons/update.svg';
+
   /// File path: assets/icons/user-profile.svg
   String get userProfile => 'assets/icons/user-profile.svg';
 
@@ -210,6 +216,7 @@ class $AssetsIconsGen {
         language,
         lockWindow,
         logout,
+        maintance,
         marker,
         noCanceldProducts,
         noCompletedProducts,
@@ -231,6 +238,7 @@ class $AssetsIconsGen {
         sun,
         thumbUp,
         unlockWindow,
+        update,
         userProfile,
         user,
         visa,

@@ -216,6 +216,9 @@
     "phoneNumber": "Phone number",
     "uploadImageFromGalary": "Upload image from galary",
     "uploadImageFromCamera": "Upload image from camera",
-        "uploadImage": "Upload image"
-
+        "uploadImage": "Upload image",
+        "appNotAvailableTitle": "The app is under maintenance",
+    "appNotAvailableMessage": "The app is under maintenance, please try again later or contact our support team if the problem persists",
+    "appNotUpdated": "A new update is available",
+    "updateAppMessage": "A new update is available now. Please visit the user server to update the application. \n Google Play Or AppStore"
 }

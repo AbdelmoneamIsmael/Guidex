@@ -32,6 +32,17 @@ class SettingsScreen extends StatelessWidget {
               ),
               48.verticalSpace,
               ProfileOptionWidget(
+                leadingWidget: Transform.scale(
+                  scale: .6,
+                  child: SizedBox(
+                    height: 24.h,
+                    child: Switch.adaptive(
+                        value:
+                            controller.appModel.theme == ApplicationTheme.light,
+                        onChanged: (value) =>
+                            controller.changeTheme(ApplicationTheme.light)),
+                  ),
+                ),
                 title: AppLocalizations.of(context).lightMode,
                 icon: Assets.icons.sun,
                 onTap: () {
@@ -40,6 +51,17 @@ class SettingsScreen extends StatelessWidget {
               ),
               24.verticalSpace,
               ProfileOptionWidget(
+                leadingWidget: SizedBox(
+                  height: 24.h,
+                  child: Transform.scale(
+                    scale: .6,
+                    child: Switch.adaptive(
+                        value:
+                            controller.appModel.theme == ApplicationTheme.dark,
+                        onChanged: (value) =>
+                            controller.changeTheme(ApplicationTheme.dark)),
+                  ),
+                ),
                 title: AppLocalizations.of(context).darkMode,
                 icon: Assets.icons.darkMood,
                 onTap: () {
@@ -48,6 +70,17 @@ class SettingsScreen extends StatelessWidget {
               ),
               24.verticalSpace,
               ProfileOptionWidget(
+                leadingWidget: SizedBox(
+                  height: 24.h,
+                  child: Transform.scale(
+                    scale: .6,
+                    child: Switch.adaptive(
+                        value: controller.appModel.theme ==
+                            ApplicationTheme.inverter,
+                        onChanged: (value) =>
+                            controller.changeTheme(ApplicationTheme.inverter)),
+                  ),
+                ),
                 title: AppLocalizations.of(context).inverterTheme,
                 icon: Assets.icons.inverter,
                 onTap: () {

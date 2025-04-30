@@ -1390,6 +1390,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Upload image'**
   String get uploadImage;
+
+  /// No description provided for @appNotAvailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The app is under maintenance'**
+  String get appNotAvailableTitle;
+
+  /// No description provided for @appNotAvailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The app is under maintenance, please try again later or contact our support team if the problem persists'**
+  String get appNotAvailableMessage;
+
+  /// No description provided for @appNotUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'A new update is available'**
+  String get appNotUpdated;
+
+  /// No description provided for @updateAppMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'A new update is available now. Please visit the user server to update the application. \n Google Play Or AppStore'**
+  String get updateAppMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

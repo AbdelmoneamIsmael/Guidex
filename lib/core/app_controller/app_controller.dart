@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:guidix/core/app_controller/configure.dart';
 import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/models/application_model.dart';
 import 'package:guidix/core/models/user/user_info.dart';
@@ -12,9 +13,11 @@ import 'package:guidix/core/routes/app_routes.dart';
 import 'package:guidix/core/themes/theme/custom_theme.dart';
 import 'package:guidix/core/utils/cache_helper.dart';
 import 'package:hive/hive.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class AppController extends GetxController {
   final box = GetStorage();
+  Configure configure = Configure();
   late ApplicationModel appModel = ApplicationModel(
     theme: ApplicationTheme.light,
     language: ApplicationLanguage.en,
@@ -23,8 +26,12 @@ class AppController extends GetxController {
   );
   UserModel? userModel;
   UserInfoModel? userInfoModel;
+  bool appValidation = true;
+  bool appUpdated = true;
+
   @override
   void onInit() async {
+    validate();
     box.read('applicationModel') != null
         ? appModel = appModel.fromJson(jsonDecode(box.read('applicationModel')))
         : appModel = ApplicationModel(
@@ -166,5 +173,25 @@ class AppController extends GetxController {
     try {
       await GoogleSignIn().signOut();
     } on Exception catch (_) {}
+  }
+
+  void validate() {
+    configure.checkAvilability().listen((event) async {
+      if (event.exists) {
+        var packageInfo = await PackageInfo.fromPlatform();
+
+        var data = event.data();
+        printInfo(info: "${packageInfo.version}  $data");
+        if (data?["app_virsion"] != packageInfo.version) {
+          appUpdated = false;
+        } else if (data?["app_avilaility"] == false) {
+          appValidation = false;
+        } else {
+          appUpdated = true;
+          appValidation = true;
+        }
+        update();
+      }
+    });
   }
 }

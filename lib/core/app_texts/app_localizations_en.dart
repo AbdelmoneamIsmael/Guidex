@@ -655,4 +655,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get uploadImage => 'Upload image';
+
+  @override
+  String get appNotAvailableTitle => 'The app is under maintenance';
+
+  @override
+  String get appNotAvailableMessage => 'The app is under maintenance, please try again later or contact our support team if the problem persists';
+
+  @override
+  String get appNotUpdated => 'A new update is available';
+
+  @override
+  String get updateAppMessage => 'A new update is available now. Please visit the user server to update the application. \n Google Play Or AppStore';
 }

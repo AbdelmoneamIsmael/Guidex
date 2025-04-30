@@ -7,31 +7,54 @@ import 'package:guidix/features/my_qr_codes/data/model/category_model.dart';
 
 class AllCategoriesController extends GetxController {
   final CategoryRepo categoryRepo;
-  bool isLoading = false;
+
   List<CategoryModel> categories = [];
   CategoryModel? selectedCategory;
   TextEditingController arabicNameController = TextEditingController();
   TextEditingController englishNameController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AllCategoriesController({required this.categoryRepo});
+  bool isThereMoreItems = true;
+  bool isLoading = false;
+  bool isInitialLoading = false;
+  int pageIndex = 1;
+  ScrollController scrollController = ScrollController();
+
   @override
   void onInit() {
     selectedCategory = Get.arguments["category"];
-    getAllCategories(context: Get.context!);
+    getAllCategories();
+    scrollController.addListener(_onScroll);
     super.onInit();
+  }
+
+  void _onScroll() {
+    if (scrollController.hasClients) {
+      double currentPosition = scrollController.position.pixels;
+      double maxScrollExtent = scrollController.position.maxScrollExtent;
+      double seventyPercentOffset = maxScrollExtent * 0.7;
+      if (currentPosition >= seventyPercentOffset &&
+          isThereMoreItems &&
+          isLoading == false &&
+          isInitialLoading == false) {
+        getAllCategories();
+      }
+    }
   }
 
   @override
   void dispose() {
     arabicNameController.dispose();
     englishNameController.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
-  void getAllCategories({
-    required BuildContext context,
-  }) async {
+  void getAllCategories() async {
     isLoading = true;
+    if (categories.isEmpty) {
+      isInitialLoading = true;
+    }
     update();
     try {
       var result = await categoryRepo.getCategories(
@@ -41,15 +64,20 @@ class AllCategoriesController extends GetxController {
       );
       result.fold((l) {
         isLoading = false;
+        isInitialLoading = false;
         update();
-        UIHelper.showSnackbar(context: context, message: l.message);
+        UIHelper.showSnackbar(context: Get.context!, message: l.message);
       }, (r) {
         isLoading = false;
+        isInitialLoading = false;
         update();
-        categories = r.data;
+        categories.addAll(r.data);
+        isThereMoreItems = r.hasNextPage!;
+        pageIndex++;
       });
     } catch (e) {
       isLoading = false;
+      isInitialLoading = false;
       update();
     }
   }
@@ -61,13 +89,15 @@ class AllCategoriesController extends GetxController {
     categoryRepo.deleteCategory(id: category.id!).then((value) {
       value.fold((l) {
         isLoading = false;
+
         update();
         UIHelper.showSnackbar(context: context, message: l.message);
       }, (r) {
         isLoading = false;
         update();
         UIHelper.showSnackbar(context: context, message: r.message!);
-        getAllCategories(context: context);
+        categories.clear();
+        getAllCategories();
       });
     });
   }

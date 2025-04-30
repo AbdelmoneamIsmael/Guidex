@@ -8,6 +8,8 @@ import 'package:guidix/core/const/app_const.dart';
 import 'package:guidix/core/routes/app_pages.dart';
 import 'package:guidix/core/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:guidix/features/app/app_not_available.dart';
+import 'package:guidix/features/app/app_update.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GuiDixApplication extends StatelessWidget {
@@ -42,7 +44,21 @@ class GuiDixApplication extends StatelessWidget {
               supportedLocales: AppLocalizations.supportedLocales,
               locale: Locale(controller.appModel.language.name),
               builder: (context, child) {
-                return child!;
+                return Stack(
+                  children: [
+                    child!,
+                    GetBuilder<AppController>(builder: (controller) {
+                      return controller.appValidation
+                          ? const SizedBox()
+                          : const AppNotAvailable();
+                    }),
+                    GetBuilder<AppController>(builder: (controller) {
+                      return controller.appUpdated
+                          ? const SizedBox()
+                          : const AppNotUpdated();
+                    }),
+                  ],
+                );
               },
               smartManagement: SmartManagement.full,
               debugShowCheckedModeBanner: false,

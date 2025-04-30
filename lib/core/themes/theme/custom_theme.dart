@@ -7,6 +7,13 @@ import 'package:guidix/core/themes/colors/colors.dart';
 import 'package:guidix/core/utils/functions/get_hight.dart';
 
 ThemeData lightTheme = ThemeData(
+  switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.all<Color>(Colors.white),
+      trackColor: WidgetStateProperty.resolveWith(
+        (states) => states.contains(WidgetState.selected)
+            ? LightColors.mainColor
+            : LightColors.grey1,
+      )),
   fontFamily: kEnglishFontFamily,
   brightness: Brightness.light,
   scaffoldBackgroundColor: LightColors.backgroundColor,
@@ -78,6 +85,14 @@ ThemeData lightTheme = ThemeData(
 ///
 ///
 ThemeData darkTheme = ThemeData(
+  switchTheme: SwitchThemeData(
+    thumbColor: WidgetStateProperty.all<Color>(Colors.white),
+    trackColor: WidgetStateColor.resolveWith(
+      (states) => states.contains(WidgetState.selected)
+          ? DarkColors.mainColor
+          : Colors.grey,
+    ),
+  ),
   fontFamily: kEnglishFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: DarkColors.backgroundColor,
@@ -121,7 +136,6 @@ ThemeData darkTheme = ThemeData(
     ),
     iconTheme: const IconThemeData(
       color: DarkColors.mainColor,
-      
     ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
@@ -154,6 +168,14 @@ ThemeData darkTheme = ThemeData(
 ///
 ///
 ThemeData inverterTheme = ThemeData(
+  switchTheme: SwitchThemeData(
+    thumbColor: WidgetStateProperty.all<Color>(Colors.white),
+    trackColor: WidgetStateColor.resolveWith(
+      (states) => states.contains(WidgetState.selected)
+          ? InverterColors.mainColor
+          : Colors.grey,
+    ),
+  ),
   fontFamily: kEnglishFontFamily,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: InverterColors.backgroundColor,

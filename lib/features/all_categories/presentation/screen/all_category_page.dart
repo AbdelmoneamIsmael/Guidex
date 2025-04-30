@@ -43,13 +43,15 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                       return const AddCategorySheetView();
                     }).then((value) {
                   controller.categories.clear();
-                  controller.getAllCategories(context: context);
+                  controller.getAllCategories();
                 });
               },
             ),
           ),
           body: GetBuilder<AllCategoriesController>(builder: (controller) {
             return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              controller: controller.scrollController,
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
               child: Column(
                 children: [
@@ -89,9 +91,7 @@ class AllCategoryPage extends GetView<AllCategoriesController> {
                                     );
                                   }).then((value) {
                                 controller.categories.clear();
-                                controller.getAllCategories(
-                                  context: context,
-                                );
+                                controller.getAllCategories();
                               }).catchError((e) {});
                             },
                             onDelete: () {

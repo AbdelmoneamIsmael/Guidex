@@ -214,6 +214,10 @@
     "phoneNumber": "رقم الهاتف",
     "uploadImageFromGalary": "تحميل صورة من المعرض",
     "uploadImageFromCamera": "تحميل صورة من الكاميرا",
-    "uploadImage": "تحميل الصورة"
+    "uploadImage": "تحميل الصورة",
+    "appNotAvailableTitle": "التطبيق تحت الصيانة",
+    "appNotAvailableMessage": "التطبيق تحت الصيانة يرجي المحاولة في وقت لاحق ويرجي الاتصال بالدعم الفني اذا كنت تظت ان هذة المشكلة ليست منطقية",
+    "appNotUpdated": "هنالك تحديث جديد متوفر",
+    "updateAppMessage": " GooglePaly Or AppStore هناك تحديث جديد متوفر الان يرجي زيارة سيرفير المستخدم لتحديث التطبيق \n"
 
 }

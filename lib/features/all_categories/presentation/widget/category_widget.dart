@@ -34,15 +34,17 @@ class CategoryWidget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Text(
-              Get.find<AppController>().appModel.language ==
-                      ApplicationLanguage.ar
-                  ? category.nameAr ?? ""
-                  : category.nameEn ?? "",
-              style: AppTextStyle.medium16(context),
+            Expanded(
+              child: Text(
+                Get.find<AppController>().appModel.language ==
+                        ApplicationLanguage.ar
+                    ? category.nameAr ?? ""
+                    : category.nameEn ?? "",
+                style: AppTextStyle.medium16(context),
+              ),
             ),
             SizedBox(
-              width: 20.w,
+              width: 10.w,
             ),
             GestureDetector(
               onTap: onEdit,

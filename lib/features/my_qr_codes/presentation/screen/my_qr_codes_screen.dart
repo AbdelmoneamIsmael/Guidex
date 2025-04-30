@@ -37,6 +37,7 @@ class MyQrCodesScreen extends GetView<MyQrController> {
       body: Padding(
         padding: const EdgeInsets.all(16).w,
         child: CustomScrollView(
+          controller: controller.scrollController,
           slivers: [
             SliverToBoxAdapter(
               child: 24.verticalSpace,
@@ -104,7 +105,7 @@ class MyQrCodesScreen extends GetView<MyQrController> {
               );
             }),
             GetBuilder<MyQrController>(
-              builder: (controller) => controller.isLoading
+              builder: (controller) => controller.isInitialLoading
                   ? const SliverToBoxAdapter()
                   : controller.qrCodes.isEmpty
                       ? SliverToBoxAdapter(
