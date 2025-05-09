@@ -8,6 +8,7 @@ import 'package:guidix/features/register/domain/repo/register_user_repo.dart';
 class RegisterController extends GetxController {
   RegisterController({required this.registerUserRepo});
   TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
@@ -21,6 +22,7 @@ class RegisterController extends GetxController {
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
+    phoneController.dispose();
     nameController.dispose();
     confirmPasswordController.dispose();
     super.dispose();
@@ -44,6 +46,7 @@ class RegisterController extends GetxController {
       try {
         var result = await registerUserRepo.registerUser(
           regesterUserParams: RegesterUserParams(
+            phone: phoneController.text,
             name: nameController.text,
             email: emailController.text,
             password: passwordController.text,

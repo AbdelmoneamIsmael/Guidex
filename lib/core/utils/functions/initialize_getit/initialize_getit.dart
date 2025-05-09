@@ -1,4 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:guidix/features/communityScreen/data/remote_posts/getting_posts.dart';
+import 'package:guidix/features/communityScreen/data/repo/getting_community_posts_repo_imple.dart';
+import 'package:guidix/features/communityScreen/domain/repo/get_community_post_repo.dart';
 import 'package:guidix/features/confirm_otp/data/datasources/remote/confirm_otp.dart';
 import 'package:guidix/features/confirm_otp/data/datasources/remote/send_otp.dart';
 import 'package:guidix/features/confirm_otp/data/repositories/confirm_otp_repo_imple.dart';
@@ -73,6 +76,11 @@ void initializeGetIt() {
   getIt.registerLazySingleton<UpdateProfileRepo>(
     () => UpdateProfileRepoImple(
       updateProfileRemote: RemoteUpdateData(),
+    ),
+  );
+  getIt.registerLazySingleton<GetCommunityPostRepo>(
+    () => GettingCommunityPostsRepoImple(
+      gettingRemotePosts: GettingRemotePosts(),
     ),
   );
 }

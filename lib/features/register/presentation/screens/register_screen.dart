@@ -44,6 +44,14 @@ class RegisterScreen extends GetView<RegisterController> {
                       prefixIcon: const Icon(Icons.email),
                     ),
                     16.verticalSpace,
+                    AppTextField(
+                      controller: controller.phoneController,
+                      hintText: AppLocalizations.of(context).phoneNumber,
+                      keyboardType: TextInputType.phone,
+                      semanticLabel: "Enter your phone number",
+                      prefixIcon: const Icon(Icons.phone),
+                    ),
+                    16.verticalSpace,
                     GetBuilder<RegisterController>(builder: (controller) {
                       return AppTextField(
                         controller: controller.passwordController,
