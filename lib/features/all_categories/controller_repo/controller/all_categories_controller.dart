@@ -59,7 +59,7 @@ class AllCategoriesController extends GetxController {
     try {
       var result = await categoryRepo.getCategories(
         isPagenation: true,
-        pageIndex: 1,
+        pageIndex: pageIndex,
         pageSize: 10,
       );
       result.fold((l) {
@@ -70,10 +70,10 @@ class AllCategoriesController extends GetxController {
       }, (r) {
         isLoading = false;
         isInitialLoading = false;
-        update();
         categories.addAll(r.data);
         isThereMoreItems = r.hasNextPage!;
         pageIndex++;
+        update();
       });
     } catch (e) {
       isLoading = false;

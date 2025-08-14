@@ -12,7 +12,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get helloWorld => 'Hello World!';
 
   @override
-  String get welcomeMessage => 'Welcome to Guidix\nWe designed this app to make life easier for the blind and visually impaired. You can scan QR codes to access information effortlessly, with the ability to edit QR code data or purchase new codes directly through the app. Start now and make the world more accessible for everyone!';
+  String get welcomeMessage =>
+      'Welcome to Guidix\nWe designed this app to make life easier for the blind and visually impaired. You can scan QR codes to access information effortlessly, with the ability to edit QR code data or purchase new codes directly through the app. Start now and make the world more accessible for everyone!';
 
   @override
   String get next => 'Next';
@@ -234,7 +235,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get showNearbyServices => 'Show nearby services';
 
   @override
-  String get accessMessage => 'We need to know your loction in order to suggest nearby services';
+  String get accessMessage =>
+      'We need to know your loction in order to suggest nearby services';
 
   @override
   String get enterAddressManually => 'Enter address manually';
@@ -468,19 +470,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get howToScan => 'How can you scan ?';
 
   @override
-  String get howToScanHint => '1. Open the application.\n2. Select the \'Scan\' button.\n3. Point your camera at the QR code.\n4. The app will scan the code and display options: \'Add New\' or \'View Details\'.\n5. If you select \'Add New\', you can enter information: Name, Category, and Description. You can either choose an existing category or create a new one.\n6. If you choose \'View Details\', you\'ll see the existing details: Name, Category, and Description, with an option to edit them.';
+  String get howToScanHint =>
+      '1. Open the application.\n2. Select the \'Scan\' button.\n3. Point your camera at the QR code.\n4. The app will scan the code and display options: \'Add New\' or \'View Details\'.\n5. If you select \'Add New\', you can enter information: Name, Category, and Description. You can either choose an existing category or create a new one.\n6. If you choose \'View Details\', you\'ll see the existing details: Name, Category, and Description, with an option to edit them.';
 
   @override
   String get howToBuy => 'How can you buy QR code online ?';
 
   @override
-  String get howToBuyHint => '1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.';
+  String get howToBuyHint =>
+      '1. Open the application.\n2. Select the cart.\n3. Choose the material and quantity\n4. Enter your details: name and address.\n5. Select the payment method: Cash, Visa, or Vodafone Cash.\n6. If you choose Visa, enter card details: card number, expiry date, and CVV.\n7. Press confirm order.';
 
   @override
   String get howToEdit => 'How can you edit info in your QR Code ?';
 
   @override
-  String get howToEditHint => '1. Open the application.\n2. Select the \'Scan\' button.\n3. Point the camera at the QR code.\n4. Click on \'View Details\' when it appears.\n5. Click on \'View Details\' to see the information.\n6 .Scroll down and select \'Edit\'.\n7. Modify the information as needed.\n';
+  String get howToEditHint =>
+      '1. Open the application.\n2. Select the \'Scan\' button.\n3. Point the camera at the QR code.\n4. Click on \'View Details\' when it appears.\n5. Click on \'View Details\' to see the information.\n6 .Scroll down and select \'Edit\'.\n7. Modify the information as needed.\n';
 
   @override
   String get refresh => 'Refresh';
@@ -501,13 +506,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enableLocation => 'Enable location';
 
   @override
-  String get enableYourLocation => 'Please enable location services on your device';
+  String get enableYourLocation =>
+      'Please enable location services on your device';
 
   @override
   String get wallet => 'Wallet';
 
   @override
-  String get emptyWallet => 'Your wallet is empty.\n Please add payment methods first';
+  String get emptyWallet =>
+      'Your wallet is empty.\n Please add payment methods first';
 
   @override
   String get connectionError => 'No internet connection';
@@ -525,7 +532,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get scanQrCodeWithCamera => 'Scan QR code with camera';
 
   @override
-  String get scanQrCodeWithCameraAndFlash => 'Scan QR code with camera and flash';
+  String get scanQrCodeWithCameraAndFlash =>
+      'Scan QR code with camera and flash';
 
   @override
   String get communitySoon => 'Community soon';
@@ -543,7 +551,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backLabel => 'Back To Previouse Screen';
 
   @override
-  String get notfoundQrCode => 'This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team';
+  String get notfoundQrCode =>
+      'This QRCode is not supported by Guidix System yet .Try to scan the correct Guidix QRCode .If the problem persist please contact our support team';
 
   @override
   String get saveUpdates => 'Save updates';
@@ -582,7 +591,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordNotMatch => 'Password not match';
 
   @override
-  String get deleteCategoryMessage => 'Are you sure you want to delete this category?';
+  String get deleteCategoryMessage =>
+      'Are you sure you want to delete this category?';
 
   @override
   String get ok => 'OK';
@@ -612,7 +622,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get atLeastOneRequered => 'At least one field is required';
 
   @override
-  String get addCategoryHint => 'Not required to fill both Arabic and English names atleast one';
+  String get addCategoryHint =>
+      'Not required to fill both Arabic and English names atleast one';
 
   @override
   String get editCategory => 'Edit category';
@@ -624,10 +635,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noCategoryYet => 'No category yet';
 
   @override
-  String get noCategoryDescription => 'No categories yet, add a new category to see them';
+  String get noCategoryDescription =>
+      'No categories yet, add a new category to see them';
 
   @override
-  String get pleaseSelectCategory => 'Please select a category and fill at least Arabic fields or English fields';
+  String get pleaseSelectCategory =>
+      'Please select a category and fill at least Arabic fields or English fields';
 
   @override
   String get noQrcode => 'No QR code';
@@ -636,7 +649,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noQrcodeYet => 'No QR code yet';
 
   @override
-  String get noQrcodeDescription => 'No QR codes yet, add a new QR code to see them';
+  String get noQrcodeDescription =>
+      'No QR codes yet, add a new QR code to see them';
 
   @override
   String get deleteQrcodeTitle => 'Delete QR code';
@@ -660,11 +674,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appNotAvailableTitle => 'The app is under maintenance';
 
   @override
-  String get appNotAvailableMessage => 'The app is under maintenance, please try again later or contact our support team if the problem persists';
+  String get appNotAvailableMessage =>
+      'The app is under maintenance, please try again later or contact our support team if the problem persists';
 
   @override
   String get appNotUpdated => 'A new update is available';
 
   @override
-  String get updateAppMessage => 'A new update is available now. Please visit the user server to update the application. \n Google Play Or AppStore';
+  String get updateAppMessage =>
+      'A new update is available now. Please visit the user server to update the application. \n Google Play Or AppStore';
 }

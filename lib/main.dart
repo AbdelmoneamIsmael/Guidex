@@ -25,28 +25,27 @@ void main() async {
   await initializeApplication();
   await GetStorage.init();
 
-  runApp(DevicePreview(
-    // enabled: !kReleaseMode,
-    enabled: false,
-    builder: (context) => const GuiDixApplication(),
-  ));
+  runApp(
+    DevicePreview(
+      // enabled: !kReleaseMode,
+      enabled: false,
+      builder: (context) => const GuiDixApplication(),
+    ),
+  );
 }
 
 initializeApplication() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await hiveInitialization();
   initializeGetIt();
   await CacheHelper.init();
-  initialRoute = await CacheHelper.getData(
-        key: GetStoreageKey.initialRoute,
-      ) ??
+  initialRoute =
+      await CacheHelper.getData(key: GetStoreageKey.initialRoute) ??
       Routes.loginScreen;
 
   kDeviceToken = await NotificationHelper.init();
-  log(kDeviceToken);
+  // log(kDeviceToken);
 }
 
 class MainErrorScreen extends StatelessWidget {
@@ -66,10 +65,7 @@ class MainErrorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 10,
               children: [
-                const Icon(
-                  Icons.error,
-                  color: Colors.red,
-                ),
+                const Icon(Icons.error, color: Colors.red),
                 Text(details.exceptionAsString()),
                 Text(details.stack.toString()),
               ],
